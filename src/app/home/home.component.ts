@@ -5,10 +5,6 @@ import { Subject } from "rxjs";
 import *  as $ from "jquery";
 import { RandomComponent } from '../random/random.component';
 
-
-
-
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -61,10 +57,6 @@ export class HomeComponent implements OnInit {
 
 
   }
-  @ViewChild(RandomComponent) childComponent!: RandomComponent;
-  onRefreshClick(){ 
-    this.childComponent.reloadcomp() 
-}
   redirect(id: string) {
     console.log(id + "epidpage");
     this.router.navigate(['episodes/', id])
