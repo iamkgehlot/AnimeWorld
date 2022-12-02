@@ -1,0 +1,38 @@
+body {
+    font-size: 0.875rem;
+    
+ 
+}
+.limitTextHeight {
+    height: 165px;
+    overflow: hidden;
+}
+.comment-img {
+    width: 3rem;
+    height: 3rem;
+}
+.comment-replies .comment-img {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+.form-control {
+    background-color: rgba(26, 21, 21, 0.05);
+}
+
+.container{
+    text-align: left;
+    color: white;
+}
+.hr1 {
+    border: 0;
+    clear: both;
+    display: block;
+    width: 100%;
+    background-color: #d6d632;
+    height: 1px;
+}
+
+.imgsize{
+    height: 20px;
+    width: 20px;
+}

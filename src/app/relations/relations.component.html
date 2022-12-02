@@ -1,0 +1,59 @@
+<div *ngIf="loadcomponet" class="relationscontainer">
+    <div *ngFor="let rl of relations.data " style="color:white">
+
+
+        <table class="table table-borderless" style="color:white;">
+            <thead>
+                <tr>
+                    <th scope="col " style="color:#1c87c9">{{rl.relation}}</th>
+                </tr>
+                <hr>
+            </thead>
+
+            <tbody style="text-align: left; text-decoration: none;  ">
+                <tr>
+                    <th class="thh" scope="row" *ngFor="let en of rl.entry">
+
+                        <div >
+                        <div >
+                           <div *ngIf="en.type!='manga'" (click)="sendtoepisode(en.mal_id)"> 
+                            {{en.name}}
+                        </div>
+                           <div *ngIf="en.type==='manga'" >{{en.name}}</div>
+                            <br> 
+                            <a style="font-size:12px ;color:rgb(112, 112, 120)">Type : {{en.type}}</a>
+                        </div>
+                    
+                    </div>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+<!-- 
+    <header class="profile-details">
+
+
+      <h3 class="profile-name" *ngFor="let en of rl.entry">{{en.name}}</h3>
+    </header>
+    <blockquote class="profile-quote">
+      <p>{{rl.relation}}</p>
+    </blockquote>
+
+  <ul class="profile-list">
+    <li class="profile-list--item" *ngFor="let rl of relations.data ">
+        <header class="profile-details">
+              <h3 class="profile-name">{{rl.entry.name} }
+                kamle
+              </h3>
+        </header>
+        <blockquote class="profile-quote">
+            <p>{{rl.relation}} kam</p>
+        </blockquote>
+        
+    </li>
+-->

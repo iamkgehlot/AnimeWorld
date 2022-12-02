@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&family=Ubuntu:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Mulish:wght@200&family=Nunito:wght@200&family=Rubik:wght@300&family=Zen+Kurenaido&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.searchbox {
+
+
+    margin-right: 35vw;
+    margin-left: 40vw;
+}
+
+.btn {
+    background: rgb(36, 36, 36);
+}
+
+/* .navbar {
+    height: 60px;
+    background: rgb(60, 58, 58);
+    color: white;
+    
+    margin-left: 0px;
+    margin-right: 0pxl
+
+
+} */
+
+.navbar{
+    justify-content: start;
+    
+    align-items: normal;
+  padding-left: 20px;
+  font-size: 1vw;
+    background: rgb(60, 58, 58);
+}
+
+.nav-item:hover{
+    color:#1c87c9;
+
+
+}
+
+
+.nav-ite{
+    padding-right: 10px;
+    margin-right: 10px;
+    text-align:left;color:white;
+    padding-top: 1.2vw;
+
+}
+.logo {
+    padding-right: 10px;
+    margin-right: 10px;
+    padding-top: 1vw;
+    color: white;
+    font-weight: 600;
+    /* display: "block"; */
+    font-family: 'Press Start 2P', cursive;
+    /* margin-top: 10px; */
+    background: linear-gradient(to right, #8ebf42 50%, #1c87c9 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5vw;
+
+
+
+}
+
+.check {
+    color: white;
+    font-weight: 600;
+    font-family: 'Press Start 2P', cursive;
+    margin-left: 20vw;
+    margin-top: 25vh;
+    background: linear-gradient(to right, #8ebf42 50%, #1c87c9 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 5vw;
+    display: "none",
+
+}
+
+/* @media only screen and (max-width: 1160px) {
+    .check {
+        font-size: 60px;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .check {
+        font-size: 50px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .check {
+        font-size: 40px;
+
+    }
+
+
+}
+
+
+
+@media only screen and (max-width: 650px) {
+    .check {
+        font-size: 30px;
+    }
+
+}
+
+@media only screen and (max-width: 495px) {
+    .check {
+        font-size: 27px;
+        margin-left: 14vw;
+    }
+
+}
+
+@media only screen and (max-width: 420px) {
+    .check {
+        font-size: 25px;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    .check {
+        font-size: 20px;
+    }
+} */
+
+
+
+
+form {
+    margin-top: -15px;
+   margin-left: 33vw;
+   
+  
+    margin-right: 40vw;
+    margin-bottom: 0px;
+    display: flex;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s;
+    height: 50px;
+    background: white;
+    /* box-sizing: border-box; */
+    border-radius: 25px;
+    border: 4px solid white;
+    padding: 5px;
+    width: 400px;
+
+}
+
+input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    ;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: block;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+.fa {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #8ebf42;
+
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+
+
+form:hover input,
+form:valid input {
+    display: block;
+}
+
+form:hover .fa,
+form:valid .fa {
+    background: #8ebf42;
+    color: #1c87c9;
+}
+
+
+
+a {
+    display: none;
+    position: absolute;
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+form:valid a {
+    display: block;
+}

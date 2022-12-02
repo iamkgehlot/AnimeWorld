@@ -1,0 +1,14 @@
+.table{
+    border: solid rgb(240,240,240);
+    border-radius: 25px;
+    margin-top: 20px;
+    display: grid;
+}
+
+.thh{
+   border-right: 2px solid rgb(70, 70, 72);
+
+}
+.thh:hover{
+    color:#1c87c9;
+}

@@ -1,0 +1,44 @@
+<app-searchbox></app-searchbox>
+<div class="container">
+    <div *ngIf="!loadcomponent" class="loadingio-spinner-dual-ball-yi4gz66q48h">
+        <div class="ldio-s9icq3dhhyd">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+    <div class="row " id="row" *ngIf="loadcomponent" >
+        <h1  style="margin-top:10px">Top Anime</h1>
+        <div style="margin-top:15px" class=" col" id="col" *ngFor="let sr of datar.data; let i = index">
+          <div id="Banners-container"
+            (click)="redirect(sr.mal_id)" >
+            <div class="Image-Name">
+              <img [src]="sr.images.jpg.image_url" alt="Fate stye night" style="height: 312px;">
+              <span class="ep" *ngIf="sr.status==='Finished Airing'">{{sr.status}}</span>
+              <span class="epair" *ngIf="sr.status!='Finished Airing'">{{sr.status}}</span>
+              <span class="comments" *ngIf="!sr.score">Rating Not Available</span>
+              <span class="comments" *ngIf="sr.score"><i class="fas fa-star"></i> {{sr.score}}</span>
+              <span class="watch"><i class="fa fa-clock"></i> {{sr.duration |hrtomin}}</span>
+              <div class="content-type">
+                <span class="action">{{sr.type}}</span>
+              </div>
+              <div class="show-name">
+                {{sr.title}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 20px;" *ngIf="loadcomponent" >
+      <div (click)="prevPage()" *ngIf="datar.pagination.current_page > 1" class="prevnex">
+        <i type="submit"  class="fa fa-arrow-left" aria-hidden="true"  style="float: left;" > Previous Page </i>
+    </div>
+      <div class="prevnex" (click)="nextPage()" *ngIf="datar.pagination.last_visible_page!=datar.pagination.current_page" style="float: right;">
+        <i type="submit" class="fa"  style="padding-right: 5px;" aria-hidden="true" >Next Page </i> 
+        <i type="submit" class="fa fa-arrow-right" aria-hidden="true" ></i>
+    </div>
+</div>
+      
+    
+</div>

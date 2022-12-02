@@ -1,0 +1,244 @@
+<app-searchbox></app-searchbox>
+<div class="" style="margin-top:10px">
+
+
+    <div *ngIf="random" class="loadingio-spinner-dual-ball-yi4gz66q48h">
+        <div class="ldio-s9icq3dhhyd">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <header class="cont-slider" *ngIf="!random">
+        <section class="slider">
+
+            <article class="slide" (click)="redirect(randombaner.data[0].mal_id)">
+                <span class="blur"
+                    style=" background-image: url({{randombaner.data[0].images.jpg.large_image_url}});"></span>
+                <span>
+                    <div class="rankfa " style="float:none"><i class="fa fa-trophy" aria-hidden="true"> </i> Top Airing
+                        Anime #1</div>
+                    <div
+                        style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
+
+                        <div style="float: left; padding-right: 10px;"> <img
+                                [src]="randombaner.data[0].images.jpg.image_url" style=" border-radius: 10px;"><br>
+                        </div>
+                        <div>
+                            <a><a class="titile">Title</a> : {{randombaner.data[0].title}}</a><br>
+
+                            <a> <a class="titile">Type</a>: {{randombaner.data[0].type}}</a><br>
+
+                            <a><a class="titile">Status</a> : {{randombaner.data[0].status}}</a><br>
+
+                            <a><a class="titile">Rating </a>: {{randombaner.data[0].score}}/10</a> <br>
+                            <div class="data"> <a class="titile">Synopsis</a>: <br>{{randombaner.data[0].synopsis}}
+                            </div>
+                        </div>
+                    </div>
+
+                </span>
+            </article>
+
+            <article class="slide" (click)="redirect(randombaner.data[1].mal_id)">
+                <span class="blur"
+                    style=" background-image: url({{randombaner.data[1].images.jpg.large_image_url}});"></span>
+                <span>
+                    <div class="rankfa " style="float:none"><i class="fa fa-trophy" aria-hidden="true"> </i> Top Airing
+                        Anime #2</div>
+                    <div
+                        style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
+
+                        <div style="float: left; padding-right: 10px;"> <img
+                                [src]="randombaner.data[1].images.jpg.image_url" style=" border-radius: 10px;"><br>
+                        </div>
+                        <div>
+                            <a><a class="titile">Title</a> : {{randombaner.data[1].title}}</a><br>
+
+                            <a> <a class="titile">Type</a>: {{randombaner.data[1].type}}</a><br>
+
+                            <a><a class="titile">Status</a> : {{randombaner.data[1].status}}</a><br>
+
+                            <a><a class="titile">Rating </a>: {{randombaner.data[1].score}}/10</a> <br>
+                            <div class="data"> <a class="titile">Synopsis</a>: <br>{{randombaner.data[1].synopsis}}
+                            </div>
+                        </div>
+                    </div>
+
+                </span>
+            </article>
+            <article class="slide" (click)="redirect(randombaner.data[2].mal_id)">
+                <span class="blur"
+                    style=" background-image: url({{randombaner.data[2].images.jpg.large_image_url}});"></span>
+                <span>
+                    <div class="rankfa " style="float:none"><i class="fa fa-trophy" aria-hidden="true"> </i> Top Airing
+                        Anime #3</div>
+                    <div
+                        style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
+
+                        <div style="float: left; padding-right: 10px;"> <img
+                                [src]="randombaner.data[2].images.jpg.image_url" style=" border-radius: 10px;"><br>
+                        </div>
+                        <div>
+                            <a><a class="titile">Title</a> : {{randombaner.data[2].title}}</a><br>
+
+                            <a> <a class="titile">Type</a>: {{randombaner.data[2].type}}</a><br>
+
+                            <a><a class="titile">Status</a> : {{randombaner.data[2].status}}</a><br>
+
+                            <a><a class="titile">Rating </a>: {{randombaner.data[2].score}}/10</a> <br>
+                            <div class="data"> <a class="titile">Synopsis</a>: <br>{{randombaner.data[2].synopsis}}
+                            </div>
+                        </div>
+                    </div>
+
+                </span>
+            </article>
+            <article class="slide" (click)="redirect(randombaner.data[3].mal_id)">
+                <span class="blur"
+                    style=" background-image: url({{randombaner.data[3].images.jpg.large_image_url}});"></span>
+                <span>
+                    <div class="rankfa " style="float:none"><i class="fa fa-trophy" aria-hidden="true"> </i> Top Airing
+                        Anime #4</div>
+                    <div
+                        style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
+
+                        <div style="float: left; padding-right: 10px;"> <img
+                                [src]="randombaner.data[3].images.jpg.image_url" style=" border-radius: 10px;"><br>
+                        </div>
+                        <div>
+                            <a><a class="titile">Title</a> : {{randombaner.data[3].title}}</a><br>
+
+                            <a> <a class="titile">Type</a>: {{randombaner.data[3].type}}</a><br>
+
+                            <a><a class="titile">Status</a> : {{randombaner.data[3].status}}</a><br>
+
+                            <a><a class="titile">Rating </a>: {{randombaner.data[3].score}}/10</a> <br>
+                            <div class="data"> <a class="titile">Synopsis</a>: <br>{{randombaner.data[3].synopsis}}
+                            </div>
+                        </div>
+                    </div>
+
+                </span>
+            </article>
+            <article class="slide" (click)="redirect(randombaner.data[4].mal_id)">
+                <span class="blur"
+                    style=" background-image: url({{randombaner.data[4].images.jpg.large_image_url}});"></span>
+                <span>
+                    <div class="rankfa " style="float:none"><i class="fa fa-trophy" aria-hidden="true"> </i> Top Airing
+                        Anime #5</div>
+                    <div
+                        style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
+
+                        <div style="float: left; padding-right: 10px;"> <img
+                                [src]="randombaner.data[4].images.jpg.image_url" style=" border-radius: 10px;"><br>
+                        </div>
+                        <div>
+                            <a><a class="titile">Title</a> : {{randombaner.data[4].title}}</a><br>
+
+                            <a> <a class="titile">Type</a>: {{randombaner.data[4].type}}</a><br>
+
+                            <a><a class="titile">Status</a> : {{randombaner.data[4].status}}</a><br>
+
+                            <a><a class="titile">Rating </a>: {{randombaner.data[4].score}}/10</a> <br>
+                            <div class="data"> <a class="titile">Synopsis</a>: <br>{{randombaner.data[4].synopsis}}
+                            </div>
+                        </div>
+                    </div>
+
+                </span>
+            </article>
+        </section>
+    </header>
+
+
+
+
+    <div>
+
+    </div>
+
+</div>
+
+
+<div class="container">
+    <h1 class=" h1" style="text-align: left;padding:20px"> Popular Anime On Tv </h1>
+    <hr class="hr1">
+    <div *ngIf="pop" class="loadingio-spinner-dual-ball-yi4gz66q48h">
+        <div class="ldio-s9icq3dhhyd">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="row " id="row" *ngIf="!pop">
+        <div class=" col" id="col" *ngFor="let sr of upcoming.data; let i = index">
+            <div id="Banners-container" (click)="redirect(sr.mal_id)">
+                <div class="Image-Name">
+                    <img [src]="sr.images.jpg.image_url" alt="Fate stye night" style="height: 312px;">
+                    <span class="ep" *ngIf="sr.status==='Finished Airing'">{{sr.status}}</span>
+                    <span class="epair" *ngIf="sr.status!='Finished Airing'">{{sr.status}}</span>
+                    <span class="comments" *ngIf="!sr.score">Rating Not Available</span>
+                    <span class="comments" *ngIf="sr.score"><i class="fas fa-star"></i> {{sr.score}}</span>
+                    <span class="watch"><i class="fa fa-clock"></i> {{sr.duration |hrtomin}}</span>
+                    <div class="content-type">
+                        <span class="action">{{sr.type}}</span>
+                    </div>
+                    <div class="show-name">
+                        {{sr.title}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="container">
+    
+    <h1 class="h1" style="text-align: left;padding-left:20px ;display: inline-block; padding-top: 20px;"> Anime Suggestions </h1>  
+   <div class="ref"> <button class="mybtn  " (click)="apphome.reloadcomp()" style="margin-bottom: 20px ;display: inline-block">Refresh</button></div>
+   <hr class="hr1">
+
+  
+    <app-random #apphome  ></app-random>
+   
+</div>
+
+<div class="container">
+
+    <h1 class="h1" style="text-align: left;padding:20px ; "> Popular Anime Movies </h1>
+    <hr class="hr1">
+    <div *ngIf="pop" class="loadingio-spinner-dual-ball-yi4gz66q48h">
+        <div class="ldio-s9icq3dhhyd">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="row " id="row" *ngIf="!pop">
+        <div class=" col" id="col" *ngFor="let sr of popmov.data; let i = index">
+            <div id="Banners-container" (click)="redirect(sr.mal_id)">
+                <div class="Image-Name">
+                    <img [src]="sr.images.jpg.image_url" alt="Fate stye night" style="height: 312px;">
+                    <span class="ep" *ngIf="sr.status==='Finished Airing'">{{sr.status}}</span>
+                    <span class="epair" *ngIf="sr.status!='Finished Airing'">{{sr.status}}</span>
+                    <span class="comments" *ngIf="!sr.score">Rating Not Available</span>
+                    <span class="comments" *ngIf="sr.score"><i class="fas fa-star"></i> {{sr.score}}</span>
+                    <span class="watch"><i class="fa fa-clock"></i> {{sr.duration |hrtomin}}</span>
+                    <div class="content-type">
+                        <span class="action">{{sr.type}}</span>
+                    </div>
+                    <div class="show-name">
+                        {{sr.title}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

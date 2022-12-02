@@ -1,0 +1,238 @@
+<!-- <--------------- Navigation content--------------> 
+<app-searchbox></app-searchbox>
+<!-- <--------------- If not 404 error content--------------> 
+<div class="container" *ngIf="errorep&&erroryt&&errorss&&errortop">
+    <h1>404 Not Found</h1>
+
+</div>
+<!-- <--------------- If not 404 error content--------------> 
+<div class="container" *ngIf="!errorep&&!erroryt&&!errorss&&!errortop">
+    <div class="episodesContainer">
+        <div *ngIf="errortop">
+            <h1>404 Not Found</h1>
+        </div>
+
+        <div *ngIf="loader2" class="loadingio-spinner-dual-ball-yi4gz66q48h">
+            <div class="ldio-s9icq3dhhyd">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <div class="both" *ngIf="dataload">
+            <div class="left"><img class="img" [src]="datar.data.images.jpg.image_url"></div>
+
+            <div class="left">
+                <ul class="list-group list-group-flush" style="text-align:left;" *ngIf="dataload">
+                    <li class="list-group-item" *ngIf="datar.data.title "><a class="title">Title:</a> <a
+                            class="name">{{datar.data.title}}</a>
+                    </li>
+                    <li class="list-group-item" *ngIf="datar.data.score"><a class="title">Score:</a> <a
+                            class="name">{{datar.data.score}}</a></li>
+                    <li class="list-group-item" *ngIf="datar.data.year"><a class="title">Year of Release:</a> <a
+                            class="name">{{datar.data.year}}</a></li>
+                    <li class="list-group-item" *ngIf="datar.data.synopsis">
+                        <a class="title">Synopsis:</a> <a class="name">{{datar.data.synopsis}}</a>
+                    </li>
+                    <li class="list-group-item" *ngIf="!datar.data.title"><a class="title">Title:</a> <a class="not">Not
+                            Available</a>
+                    </li>
+                    <li class="list-group-item" *ngIf="!datar.data.score"><a class="title">Score:</a> <a class="not">Not
+                            Available</a>
+                    </li>
+                    <li class="list-group-item" *ngIf="!datar.data.year"><a class="title">Year of Release:</a> <a
+                            class="not">Not
+                            Available</a></li>
+                    <li class="list-group-item" *ngIf="!datar.data.synopsis">
+                        <a class="title">Synopsis:</a> <a class="not">Not Available</a>
+                    </li>
+                </ul>
+                <a style="font-size: 20px;  float: left;text-align: left;"> <br> <br></a>
+            </div>
+        </div>
+   <!-- <--------------- In Episode component Navigation content--------------> 
+        <nav>
+            <div class="nav nav-tabs both" id="nav-tab" role="tablist">
+                <button class="nav-link active " id="nav-Episode-tab" data-bs-toggle="tab" data-bs-target="#nav-Episode"
+                    type="button" role="tab" aria-controls="nav-Episode" aria-selected="true"
+                    (click)="showep()">Episodes</button>
+                <button class="nav-link" id="nav-yt-tab" data-bs-toggle="tab" data-bs-target="#nav-yt"
+                    type="button" role="tab" aria-controls="nav-yt" aria-selected="false"
+                    (click)="getyt()">Trailers & Reviews</button>
+                <button class="nav-link" id="nav-music-tab" data-bs-toggle="tab" data-bs-target="#nav-music"
+                    type="button" role="tab" aria-controls="nav-music" aria-selected="false"
+                    (click)="getmusic()">Music Videos</button>
+                <button class="nav-link" id="nav-images-tab" data-bs-toggle="tab" data-bs-target="#nav-images"
+                    type="button" role="tab" aria-controls="nav-images" aria-selected="false"
+                    (click)="showreview()">Images</button>
+                <button class="nav-link" id="nav-relations-tab" data-bs-toggle="tab" data-bs-target="#nav-relations"
+                    type="button" role="tab" aria-controls="nav-relations" aria-selected="false"
+                    (click)="showrelated()">Related Anime</button>
+            </div>
+        </nav>
+
+        <!-- <--------------- Tab content--------------> 
+        <div class="tab-content " id="nav-tabContent">
+
+             <!-- <--------------- Episode details content--------------> 
+            <div class="tab-pane fade show active " id="nav-Episode" role="tabpanel" aria-labelledby="nav-Episode-tab"
+                tabindex="0">
+                <div *ngIf="errorep">
+                    <h1>404 Not Found</h1>
+                </div>
+
+                <div *ngIf="loader" class="loadingio-spinner-dual-ball-yi4gz66q48h">
+                    <div class="ldio-s9icq3dhhyd">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h1 *ngIf="episodesArray?.length===0" style="padding: 30px;">No Episodes found</h1>
+                    <div class="both" *ngIf="episodesArray?.length!=0">
+                        <table class="table boderless border-1">
+                            <thead>
+                                <tr>
+                                    <th class="th" scope="col">Episode Number</th>
+                                    <th class="th" scope="col">Episode Name</th>
+                                    <th class="th" scope="col">Aired On</th>
+                                    <th class="th" scope="col">Rating</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr *ngFor="let ep of episodesArray">
+                                    <th scope="row" *ngIf="ep.mal_id">{{ep.mal_id}}</th>
+                                    <td *ngIf="!ep.mal_id" class="note">Not Available</td>
+                                    <td *ngIf="ep.title">{{ep.title}}</td>
+                                    <td *ngIf="!ep.title" class="note">Not Available</td>
+                                    <td *ngIf="ep.aired">{{ep.aired.substr(0,10)}}</td>
+                                    <td *ngIf="!ep.aired" class="note">Not Available</td>
+                                    <td *ngIf="ep.score">{{ep.score}}</td>
+                                    <td *ngIf="!ep.score" class="note">Not Available</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+             <!-- <--------------- Youtube & reviews content--------------> 
+            <div class="tab-pane fade " id="nav-yt" role="tabpanel" aria-labelledby="nav-yt-tab"
+                tabindex="0" style=" justify-content: center;">
+                <div *ngIf="noytvidfound" style="width:100% ;padding: 30px;">
+                    <h1>No Trailer Found</h1>
+                </div>
+                <div *ngIf="erroryt">
+                    <h1>404 Not Found</h1>
+                </div>
+                <div *ngIf="showytspin" class="loadingio-spinner-dual-ball-yi4gz66q48h">
+                    <div class="ldio-s9icq3dhhyd">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 " style="width:100% ;" *ngIf="ytvid">
+                    <a style="float:left"> Trailer : {{datar.data.title}}</a>
+                    <div class="gallery" style="background-color: black;">
+                        <div>
+                            <iframe style="border-radius: 20px;" [src]="yturl" allowfullscreen frameborder="0"
+                                name="tab"></iframe>
+
+                        </div>
+                        <div>
+                            <span>
+                                <div style="background-color: black;border-radius: 20px;"
+                                    *ngFor="let vid of viddata.data.promo">
+                                    <a [href]="vid.trailer.embed_url" target="tab"><img
+                                            [src]="vid.trailer.images.image_url"
+                                            style="content:none;padding-top:5px"></a>
+                                </div>
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="both" *ngIf="!erroryt">
+                    <app-reviews [id]="sendid()"></app-reviews>
+                </div>
+
+            </div>
+
+             <!-- <--------------- Music content--------------> 
+            <div class="tab-pane fade " id="nav-music" role="tabpanel" aria-labelledby="nav-music-tab"
+                tabindex="0" style=" justify-content: center; ">
+
+                <div *ngIf="nomusicvidfound" style="padding: 30px;">
+                    <h1> No Music Videos Found</h1>
+                </div>
+                <div *ngIf="errorss" >
+                    <h1>404 Not Found</h1>
+                </div>
+                <div *ngIf="showmusicspin" class="loadingio-spinner-dual-ball-yi4gz66q48h">
+                    <div class="ldio-s9icq3dhhyd">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 " style="width:100% ;" *ngIf="musicvid">
+                    <a style="float:left"> Music Video : {{datar.data.title}}</a>
+                    <div class="gallery" style="background-color: black;">
+                        <div>
+                            <iframe style="border-radius: 20px;" [src]="musicurl" allowfullscreen frameborder="0"
+                                name="tab"></iframe>
+                        </div>
+                        <div>
+                            <span>
+                                <div style="border-radius: 20px;" *ngFor="let vids of musicviddata.data.music_videos">
+                                    <a [href]="vids.video.embed_url" target="tab"><img
+                                            [src]="vids.video.images.image_url"
+                                            style="content:none;padding-top:5px"></a>
+
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+              
+
+
+
+
+            </div>
+         
+             <!-- <--------------- Images content--------------> 
+            <div class="tab-pane fade " id="nav-images" role="tabpanel" aria-labelledby="nav-images-tab"
+                tabindex="0">
+                <div class="both">
+                    <app-images *ngIf="inreview" [id]="sendid()"></app-images>
+                </div>
+            </div>
+
+             <!-- <--------------- Relations content--------------> 
+            <div class="tab-pane fade " id="nav-relations" role="tabpanel" aria-labelledby="nav-relations-tab"
+                tabindex="0">
+                <div class="both1">
+                    <app-relations *ngIf="showrelations" [id]="sendid()"></app-relations>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+   
+</div>
+<!-- <--------------- Recommendations content--------------> 
+<app-recommendations [id]="sendid()"></app-recommendations>
+
+  
