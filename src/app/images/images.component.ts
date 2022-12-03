@@ -45,7 +45,6 @@ export class ImagesComponent implements OnInit {
         } else {
           this.loadspin = false;
           this.loadnotfound = true;
-
         }
 
       })
