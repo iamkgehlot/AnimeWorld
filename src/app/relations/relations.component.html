@@ -1,7 +1,7 @@
 <div *ngIf="loadcomponet" class="relationscontainer">
+
+    <!-- <--------------- loop 1 for getting relation heading-------------->
     <div *ngFor="let rl of relations.data " style="color:white">
-
-
         <table class="table table-borderless" style="color:white;">
             <thead>
                 <tr>
@@ -12,19 +12,18 @@
 
             <tbody style="text-align: left; text-decoration: none;  ">
                 <tr>
+                    <!-- <--------------- loop 2 for getting anime name according to relation-------------->
                     <th class="thh" scope="row" *ngFor="let en of rl.entry">
-
-                        <div >
-                        <div >
-                           <div *ngIf="en.type!='manga'" (click)="sendtoepisode(en.mal_id)"> 
-                            {{en.name}}
+                        <div>
+                            <div>
+                                <div *ngIf="en.type!='manga'" (click)="sendtoepisode(en.mal_id)">
+                                    {{en.name}}
+                                </div>
+                                <div *ngIf="en.type==='manga'">{{en.name}}</div>
+                                <br>
+                                <a style="font-size:12px ;color:rgb(112, 112, 120)">Type : {{en.type}}</a>
+                            </div>
                         </div>
-                           <div *ngIf="en.type==='manga'" >{{en.name}}</div>
-                            <br> 
-                            <a style="font-size:12px ;color:rgb(112, 112, 120)">Type : {{en.type}}</a>
-                        </div>
-                    
-                    </div>
                     </th>
                 </tr>
             </tbody>

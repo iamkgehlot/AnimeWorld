@@ -3,10 +3,6 @@ export interface SearchResultArray {
     data: Array<arr>;
 }
 
-
-
-
-
 export interface arr {
     mal_id: string;
     url: string;

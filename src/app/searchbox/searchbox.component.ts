@@ -10,82 +10,36 @@ declare var window: any;
   styleUrls: ['./searchbox.component.css']
 })
 export class SearchboxComponent implements OnInit {
-  
-  constructor(private router : Router) { }
 
-  ngOnInit(): void {
-    
+  constructor(private router: Router) { }
 
-  }
-  sendtop(){
+  ngOnInit(): void { }
 
-      this.router.navigate(["top/page/",1]);
-     
-  
-   
+  //redirect to top Anime page
+  sendtop() {
+    this.router.navigate(["top/page/", 1]);
   }
 
-  sendcurrent(){
+  //redirect to current anime seasons
+  sendcurrent() {
+    this.router.navigate(["current/page/", 1]);
+  }
+  //redirect to upcoming season
+  sendupcoming() {
+    this.router.navigate(["upcoming/page/", 1]);
+  }
 
-    this.router.navigate(["current/page/",1]);
-   
-
- 
-}
-
-
-sendupcoming(){
-
-  this.router.navigate(["upcoming/page/",1]);
- 
-
-
-}
-
+  //redirect home
   sendhome() {
     this.router.navigate(["/"]);
-   
 
   }
 
-  enteredSearchValue!: "";
-
-
+  enteredSearchValue!: ""; //two way binded
 
   SendSearchedvalueMethod() {
-
-
     //send data from search field to search-result coponent
     this.router.navigate(['search/', this.enteredSearchValue]);
-    $("#navshow").css({
-      'margin-left': '0px',
-      'margin-right': '0px',
-      transition: '  display .1s ease'
-    });
 
-    $("#hideme").css({
-      display: "none",
-      transition: '  display .1s ease'
-    });
-
-    $("#hideme2").css({
-      display: "none",
-      transition: '  display .1s ease'
-    });
-
-    $("#showme").css({
-      display: "block",
-      
-      transition: 'display .5s ease'
-    });
-
-    $('#formchange').css({
-      // "margin-left": "33vw",
-      "margin-top": '-30px',
-      
-      transition: ' margin-top .5s ease'
-    });
-  
   }
-
 }

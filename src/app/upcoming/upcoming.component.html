@@ -1,15 +1,11 @@
+<!-- <--------------- Navigation content-------------->
 <app-searchbox></app-searchbox>
 <div class="container">
-    <div *ngIf="!loadcomponent" class="loadingio-spinner-dual-ball-yi4gz66q48h">
-        <div class="ldio-s9icq3dhhyd">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
 
+    <app-loading-spinner *ngIf="!loadcomponent"></app-loading-spinner>
+    <!-- <--------------- Main content-------------->
     <div class="row " id="row" *ngIf="loadcomponent">
-        <h1  style="margin-top:10px">Upcoming Anime</h1>
+        <h1 style="margin-top:10px">Upcoming Anime</h1>
         <div style="margin-top:15px" class=" col" id="col" *ngFor="let sr of datar.data; let i = index">
             <div id="Banners-container" (click)="redirect(sr.mal_id)">
                 <div class="Image-Name">
@@ -29,7 +25,8 @@
             </div>
         </div>
     </div>
-    <div style="margin-top: 20px;" *ngIf="loadcomponent" >
+    <!-- <---------------Previous Next button content-------------->
+    <div style="margin-top: 20px;" *ngIf="loadcomponent">
         <div (click)="prevPage()" *ngIf="datar.pagination.current_page > 1" class="prevnex">
             <i type="submit" class="fa fa-arrow-left" aria-hidden="true" style="float: left;"> Previous Page </i>
         </div>

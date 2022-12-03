@@ -8,28 +8,28 @@ import { SearchResultServiceService } from '../services/search-result-service.se
 })
 export class ReviewsComponent implements OnInit {
 
-  constructor(private urlservice:SearchResultServiceService) { }
-reviewsarr:any;
- @Input() id:any;
-laoddata=false;
-readMore = false;
+  constructor(private urlservice: SearchResultServiceService) { }
+  reviewsarr: any;
+  @Input() id: any;
+  laoddata = false;
+  readMore = false;
 
-public isReadMore:boolean = true;
-lengtharr:any;
+  public isReadMore: boolean = true;
+  lengtharr: any;
 
 
   ngOnInit(): void {
-    console.log(this.id+"review id")
+
+    //get reviews
     setTimeout(() => {
-    this.urlservice.getReviews(this.id).subscribe((result:any)=>
-    {
-      this.reviewsarr=result;
-      
-      this.laoddata=true;
-      this.lengtharr=(this.reviewsarr.data).length;
-    })
-  }, 2000);
-   
+      this.urlservice.getReviews(this.id).subscribe((result: any) => {
+        this.reviewsarr = result;
+
+        this.laoddata = true;
+        this.lengtharr = (this.reviewsarr.data).length;
+      })
+    }, 2000);
+
   }
 
 }

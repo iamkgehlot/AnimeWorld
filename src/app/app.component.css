@@ -1,22 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+
 body {
   background-color: #0b0c2a;
   background: rgb(60, 58, 58);
   text-align: center;
-  max-width:100%;
+  max-width: 100%;
   min-height: 100vh;
   padding-bottom: 30px;
-  
+
 }
 
-
-
 footer {
- 
   font-size: 1vw;
- 
   align-items: center;
-  
   width: 100%;
   height: 13vw;
   margin: 0 auto;
@@ -29,6 +25,7 @@ footer {
     font-size: 1vw;
     height: 50vw;
   }
+
   body {
     background-color: #0b0c2a;
     background: rgb(60, 58, 58);
@@ -36,7 +33,7 @@ footer {
     max-width: 100vw;
     min-height: 70vh;
     padding-bottom: 5px;
-    
+
   }
 }
 
@@ -45,6 +42,7 @@ footer {
     font-size: 1vw;
   }
 }
+
 @media screen and (max-width: 340px) {
   .social-medias a {
     margin-top: 1vw;
@@ -54,16 +52,14 @@ footer {
 .logo {
   height: 1.25rem;
   display: flex;
-  
+
   padding-top: 5vw;
- font-family: 'Times New Roman';
- font-size: 3vw;
+  font-family: 'Times New Roman';
+  font-size: 3vw;
   align-items: center;
   color: #e5e5e5;
   justify-content: center;
 }
-
-
 
 .techs {
   gap: 1rem;
@@ -73,7 +69,7 @@ footer {
   color: #ccc;
   text-decoration: none;
   margin-top: 2vw;
- 
+
   border-radius: 0.5rem;
   border: 1px solid transparent;
   transition: all 0.25s ease 0s;
@@ -97,17 +93,18 @@ footer {
 
 
 .scroll-to-top {
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    opacity: 0;
-    transition: all .2s ease-in-out;
-   }
-   .show-scrollTop {
-    opacity: 1;
-    transition: all .2s ease-in-out;
-   }
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  opacity: 0;
+  transition: all .2s ease-in-out;
+}
 
-   .scroll-to-top:hover{
-    color:red;
-   }
+.show-scrollTop {
+  opacity: 1;
+  transition: all .2s ease-in-out;
+}
+
+.scroll-to-top:hover {
+  color: red;
+}

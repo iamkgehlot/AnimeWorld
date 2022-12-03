@@ -1,22 +1,15 @@
 <div class="episodesContainer">
+
+    <!-- <--------------- api error content-------------->
     <div *ngIf="errortop">
         <h1>404 Not Found</h1>
     </div>
 
-    <div *ngIf="loader2" class="loadingio-spinner-dual-ball-yi4gz66q48h">
-        <div class="ldio-s9icq3dhhyd">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
+    <app-loading-spinner *ngIf="loader2"></app-loading-spinner>
 
+    <!-- <--------------- Main content-------------->
     <div class="both" *ngIf="dataload">
-
-       
         <div class="left"><img class="img" [src]="datar.data.images.jpg.image_url"></div>
-        
-
         <div class="left">
             <ul class="list-group list-group-flush" style="text-align:left;" *ngIf="dataload">
                 <li class="list-group-item" *ngIf="datar.data.title "><a class="title">Title:</a> <a
@@ -44,8 +37,7 @@
             </ul>
             <div class="btn">
                 <button class="mybtn" (click)="redirect(datar.data.mal_id)">View More Info</button>
-            
-            <a style="font-size: 20px;  float: left;text-align: left;"> <br> <br></a>
+                <a style="font-size: 20px;  float: left;text-align: left;"> <br> <br></a>
+            </div>
         </div>
     </div>
-</div>

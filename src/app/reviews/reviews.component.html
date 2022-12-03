@@ -1,85 +1,85 @@
-
-    <div class="container" *ngIf="laoddata">
-
+<div class="container" *ngIf="laoddata">
 
         <div class=" rounded-3 shadow-sm p-4">
+                <h4 class="mb-4">{{lengtharr}} Reviews</h4>
+                <hr class="hr1">
 
-            <h4 class="mb-4">{{lengtharr}} Reviews</h4>
-            <hr class="hr1">
+                <div class="">
+                        <div class="py-3" *ngFor="let rv of reviewsarr.data">
 
-            <div class="" >
-                <div class="py-3" *ngFor="let rv of reviewsarr.data">
-                    <div class="d-flex comment">
-                        <img class="rounded-circle comment-img" [src]="rv.user.images.jpg.image_url" />
-                        <div class="flex-grow-1 ms-3">
-                            <div class="mb-1 text-left"><a 
-                                    class="fw-bold link-light me-1" style="text-decoration: none;">{{rv.user.username}}</a> <span
-                                    class="text-muted text-nowrap" style="padding-left: 5px;">{{rv.date.substr(0,10)}}</span></div>
-                            <div class="mb-2" [ngClass]="{'limitTextHeight': isReadMore}">
-                                <p [innerHTML]="rv.review">
-                                </p>
-                            </div>
-                            <div class="hstack align-items-center mb-2">
-                                <a class="link-primary me-2" > <img class="imgsize"
-                                        src="https://cdn.myanimelist.net/images/emoticon/72x72/1f44d.png" alt="Nice">
-                                </a>
-                                <span class="me-3 small">{{rv.reactions.nice}}</span>
+                                <!-- <--------------- User comment-------------->
+                                <div class="d-flex comment">
+                                        <img class="rounded-circle comment-img" [src]="rv.user.images.jpg.image_url" />
+                                        <div class="flex-grow-1 ms-3">
+                                                <div class="mb-1 text-left"><a class="fw-bold link-light me-1"
+                                                                style="text-decoration: none;">{{rv.user.username}}</a>
+                                                        <span class="text-muted text-nowrap"
+                                                                style="padding-left: 5px;">{{rv.date.substr(0,10)}}</span>
+                                                </div>
+                                                <div class="mb-2" [ngClass]="{'limitTextHeight': isReadMore}">
+                                                        <p [innerHTML]="rv.review">
+                                                        </p>
+                                                </div>
 
-                                <a class="link-primary me-2"> <img class="imgsize"
-                                        src="https://cdn.myanimelist.net/images/emoticon/72x72/2764.png" alt="Love it">
-                                </a>
-                                <span class="me-3 small">{{rv.reactions.love_it}}</span>
+                                                <!-- <--------------- Emoji Reactions -------------->
+                                                <div class="hstack align-items-center mb-2">
 
+                                                        <a class="link-primary me-2"> <img class="imgsize"
+                                                                        src="https://cdn.myanimelist.net/images/emoticon/72x72/1f44d.png"
+                                                                        alt="Nice">
+                                                        </a>
+                                                        <span class="me-3 small">{{rv.reactions.nice}}</span>
 
-                                <a class="link-primary me-2" > <img class="imgsize"
-                                        src="https://cdn.myanimelist.net/images/emoticon/72x72/1f602.png"
-                                        alt="Funny"></a>
-                                <span class="me-3 small">{{rv.reactions.funny}}</span>
-
-
-                                <a class="link-primary me-2" > <img class="imgsize"
-                                        src="https://cdn.myanimelist.net/images/emoticon/72x72/1f928.png"
-                                        alt="Confusing"> </a>
-                                <span class="me-3 small">{{rv.reactions.confusing}}</span>
+                                                        <a class="link-primary me-2"> <img class="imgsize"
+                                                                        src="https://cdn.myanimelist.net/images/emoticon/72x72/2764.png"
+                                                                        alt="Love it">
+                                                        </a>
+                                                        <span class="me-3 small">{{rv.reactions.love_it}}</span>
 
 
-                                <a class="link-primary me-2" > <img class="imgsize"
-                                        src="https://cdn.myanimelist.net/images/emoticon/72x72/1f4a1.png"
-                                        alt="Informative"> </a>
-                                <span class="me-3 small">{{rv.reactions.informative}}</span>
+                                                        <a class="link-primary me-2"> <img class="imgsize"
+                                                                        src="https://cdn.myanimelist.net/images/emoticon/72x72/1f602.png"
+                                                                        alt="Funny"></a>
+                                                        <span class="me-3 small">{{rv.reactions.funny}}</span>
 
 
-                                <a class="link-primary me-2" > <img class="imgsize"
-                                        src="https://cdn.myanimelist.net/images/emoticon/72x72/1f4dd.png"
-                                        alt="Well-written"></a>
-                                <span class="me-3 small">{{rv.reactions.well_written}}</span>
+                                                        <a class="link-primary me-2"> <img class="imgsize"
+                                                                        src="https://cdn.myanimelist.net/images/emoticon/72x72/1f928.png"
+                                                                        alt="Confusing"> </a>
+                                                        <span class="me-3 small">{{rv.reactions.confusing}}</span>
 
 
-                                <a class="link-primary me-2" > <img class="imgsize"
-                                        src="https://cdn.myanimelist.net/images/emoticon/72x72/1f3a8.png"
-                                        alt="Creative"></a>
-                                <span class="me-3 small">{{rv.reactions.creative}}</span>
+                                                        <a class="link-primary me-2"> <img class="imgsize"
+                                                                        src="https://cdn.myanimelist.net/images/emoticon/72x72/1f4a1.png"
+                                                                        alt="Informative"> </a>
+                                                        <span class="me-3 small">{{rv.reactions.informative}}</span>
+
+
+                                                        <a class="link-primary me-2"> <img class="imgsize"
+                                                                        src="https://cdn.myanimelist.net/images/emoticon/72x72/1f4dd.png"
+                                                                        alt="Well-written"></a>
+                                                        <span class="me-3 small">{{rv.reactions.well_written}}</span>
+
+
+                                                        <a class="link-primary me-2"> <img class="imgsize"
+                                                                        src="https://cdn.myanimelist.net/images/emoticon/72x72/1f3a8.png"
+                                                                        alt="Creative"></a>
+                                                        <span class="me-3 small">{{rv.reactions.creative}}</span>
 
 
 
+                                                        <a class="link-secondary me-4" href="#"></a>
+                                                        <a class="link-danger small ms-3"
+                                                                (click)="isReadMore=!isReadMore">{{ isReadMore ? 'Read
+                                                                More': 'Read Less' }}</a>
+                                                </div>
 
-
-
-
-
-
-
-                                <a class="link-secondary me-4" href="#"></a>
-                                <a class="link-danger small ms-3" (click)="isReadMore=!isReadMore">{{ isReadMore ? 'Read
-                                    More': 'Read Less' }}</a>
-                            </div>
+                                        </div>
+                                </div>
+                                <hr class="hr1">
 
                         </div>
-                    </div>
-                    <hr class="hr1">
-
                 </div>
-            </div>
 
         </div>
 
@@ -93,4 +93,4 @@
         <button class="app-dl-mode btn btn-primary d-flex align-items-center justify-content-center"><i
                 class="zmdi zmdi-sun"></i></button>
     </div> -->
-    </div>
+</div>

@@ -13,40 +13,32 @@
     background: rgb(36, 36, 36);
 }
 
-/* .navbar {
-    height: 60px;
-    background: rgb(60, 58, 58);
-    color: white;
-    
-    margin-left: 0px;
-    margin-right: 0pxl
 
-
-} */
-
-.navbar{
+.navbar {
     justify-content: start;
-    
+
     align-items: normal;
-  padding-left: 20px;
-  font-size: 1vw;
+    padding-left: 20px;
+    font-size: 1vw;
     background: rgb(60, 58, 58);
 }
 
-.nav-item:hover{
-    color:#1c87c9;
+.nav-item:hover {
+    color: #1c87c9;
 
 
 }
 
 
-.nav-ite{
+.nav-ite {
     padding-right: 10px;
     margin-right: 10px;
-    text-align:left;color:white;
+    text-align: left;
+    color: white;
     padding-top: 1.2vw;
 
 }
+
 .logo {
     padding-right: 10px;
     margin-right: 10px;
@@ -81,65 +73,10 @@
 
 }
 
-/* @media only screen and (max-width: 1160px) {
-    .check {
-        font-size: 60px;
-    }
-}
-
-@media only screen and (max-width: 990px) {
-    .check {
-        font-size: 50px;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .check {
-        font-size: 40px;
-
-    }
-
-
-}
-
-
-
-@media only screen and (max-width: 650px) {
-    .check {
-        font-size: 30px;
-    }
-
-}
-
-@media only screen and (max-width: 495px) {
-    .check {
-        font-size: 27px;
-        margin-left: 14vw;
-    }
-
-}
-
-@media only screen and (max-width: 420px) {
-    .check {
-        font-size: 25px;
-    }
-
-}
-
-@media only screen and (max-width: 400px) {
-    .check {
-        font-size: 20px;
-    }
-} */
-
-
-
 
 form {
     margin-top: -15px;
-   margin-left: 33vw;
-   
-  
+    margin-left: 33vw;
     margin-right: 40vw;
     margin-bottom: 0px;
     display: flex;

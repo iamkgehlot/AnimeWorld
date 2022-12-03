@@ -3,19 +3,19 @@ import { SearchResultServiceService } from '../services/search-result-service.se
 
 
 
-function downloadImage(url:any, name:any){
+function downloadImage(url: any, name: any) {
   fetch(url)
     .then(resp => resp.blob())
     .then(blob => {
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.style.display = 'none';
-        a.href = url;
-        
-        a.download = name;
-        document.body.appendChild(a);
-        a.click();
-        window.URL.revokeObjectURL(url);
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = url;
+
+      a.download = name;
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
     })
     .catch(() => alert('An error sorry'));
 }
@@ -27,37 +27,37 @@ function downloadImage(url:any, name:any){
 })
 export class ImagesComponent implements OnInit {
 
-  constructor(private urlservice:SearchResultServiceService) { }
-@Input() id:any;
-images:any;
-loadcomponent=false;
-loadnotfound=false;
-loadspin=true;
+  constructor(private urlservice: SearchResultServiceService) { }
+  @Input() id: any;
+  images: any;
+  loadcomponent = false;
+  loadnotfound = false;
+  loadspin = true;
   ngOnInit(): void {
 
     setTimeout(() => {
-this.urlservice.getImages(this.id).subscribe((result:any)=>{
-  this.loadspin=false;
-  this.images=result;
-  if((this.images).length!=0){
-    this.loadspin=false;
-    this.loadcomponent=true;
-  }else{
-    this.loadspin=false;
-    this.loadnotfound=true;
+      this.urlservice.getImages(this.id).subscribe((result: any) => {
+        this.loadspin = false;
+        this.images = result;
+        if ((this.images).length != 0) {
+          this.loadspin = false;
+          this.loadcomponent = true;
+        } else {
+          this.loadspin = false;
+          this.loadnotfound = true;
+
+        }
+
+      })
+    }, 1500);
 
   }
- 
-})
-}, 1500);
-
-}
 
 
-todownload(url:any,name:any){
-  downloadImage(url,name);
+  todownload(url: any, name: any) {
+    downloadImage(url, name);
 
-}
+  }
 
 
 }

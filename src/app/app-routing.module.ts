@@ -16,8 +16,6 @@ const routes: Routes = [
   { path: 'recommondations', component: RecommendationsComponent },
   { path: 'episodes/:id', component: EpisodesComponent },
   {path: 'search/:value',component:SearchResultComponent},
-
-  
   
 ];
 

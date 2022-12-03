@@ -1,22 +1,18 @@
 <nav class="navbar " id="navshow">
-  <div class="nav-item" >
+  <!-- <--------------- Nav details-------------->
+  <div class="nav-item">
     <div class="logo" (click)="sendhome()" id="showme">AnimeWorld</div>
-    
   </div>
-  <div class="nav-item nav-ite"  (click)="sendtop()">
+  <div class="nav-item nav-ite" (click)="sendtop()">
     Top Anime
   </div>
-  <div class="nav-item nav-ite" (click)="sendcurrent()" >
-    Current Season
+  <div class="nav-item nav-ite" (click)="sendcurrent()">
+    Currently Airing
   </div>
   <div class="nav-item nav-ite" (click)="sendupcoming()">
-Upcoming
+    Upcoming
   </div>
- 
-  
-
-
-
+  <!-- <--------------- Search box -------------->
   <form class="form" id="formchange">
     <input type="text" name="searchbox" class="input" id="input" [(ngModel)]="enteredSearchValue" required
       placeholder="Search Anime..." (keyup.enter)="SendSearchedvalueMethod()">

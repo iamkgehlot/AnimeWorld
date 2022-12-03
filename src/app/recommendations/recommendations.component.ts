@@ -9,43 +9,43 @@ import { SearchResultServiceService } from '../services/search-result-service.se
 })
 export class RecommendationsComponent implements OnInit {
 
-  constructor(private urlservice:SearchResultServiceService,private router :Router) { }
+  constructor(private urlservice: SearchResultServiceService, private router: Router) { }
 
-  datar:any;
-  @Input() id:any;
-  loadcomponent=false;
+  datar: any;
+  @Input() id: any;
+  loadcomponent = false;
   ngOnInit(): void {
 
     setTimeout(() => {
-    this.urlservice.getRecommendations(this.id).subscribe((result: any) => {
-      this.datar = result;
-   
-      if((this.datar.data).length!=0){
-        this.loadcomponent=true;
-        
-        
-      }else{
-        this.loadcomponent=false;
-     
-      }
-    },
-   err=>{
-    console.log("404 error")
-    this.loadcomponent=false;
-   } 
-    )
-  }, 3000);
-    
+      this.urlservice.getRecommendations(this.id).subscribe((result: any) => {
+        this.datar = result;
+
+        if ((this.datar.data).length != 0) {
+          this.loadcomponent = true;
+
+
+        } else {
+          this.loadcomponent = false;
+
+        }
+      },
+        err => {
+          console.log("404 error")
+          this.loadcomponent = false;
+        }
+      )
+    }, 3000);
+
 
   }
-    redirect(id: string) {
-      
-      
-      
-      this.router.navigateByUrl('/episodes/'+id);
+  redirect(id: string) {
 
 
-  
-    }
+
+    this.router.navigateByUrl('/episodes/' + id);
+
+
+
+  }
 
 }

@@ -1,24 +1,19 @@
-<!-- <--------------- Navigation content--------------> 
+<!-- <--------------- Navigation content-------------->
 <app-searchbox></app-searchbox>
-<!-- <--------------- If not 404 error content--------------> 
+<!-- <--------------- If 404 error content-------------->
 <div class="container" *ngIf="errorep&&erroryt&&errorss&&errortop">
     <h1>404 Not Found</h1>
 
 </div>
-<!-- <--------------- If not 404 error content--------------> 
+<!-- <--------------- If not 404 error content-------------->
 <div class="container" *ngIf="!errorep&&!erroryt&&!errorss&&!errortop">
     <div class="episodesContainer">
         <div *ngIf="errortop">
-            <h1>404 Not Found</h1>
+            <h1>404 Not Found</h1> <!--  server side error -->
         </div>
 
-        <div *ngIf="loader2" class="loadingio-spinner-dual-ball-yi4gz66q48h">
-            <div class="ldio-s9icq3dhhyd">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
+
+        <app-loading-spinner *ngIf="loader2"></app-loading-spinner>
 
         <div class="both" *ngIf="dataload">
             <div class="left"><img class="img" [src]="datar.data.images.jpg.image_url"></div>
@@ -51,44 +46,45 @@
                 <a style="font-size: 20px;  float: left;text-align: left;"> <br> <br></a>
             </div>
         </div>
-   <!-- <--------------- In Episode component Navigation content--------------> 
+        <!-- <--------------- In Episode component Navigation content-------------->
         <nav>
             <div class="nav nav-tabs both" id="nav-tab" role="tablist">
                 <button class="nav-link active " id="nav-Episode-tab" data-bs-toggle="tab" data-bs-target="#nav-Episode"
                     type="button" role="tab" aria-controls="nav-Episode" aria-selected="true"
                     (click)="showep()">Episodes</button>
-                <button class="nav-link" id="nav-yt-tab" data-bs-toggle="tab" data-bs-target="#nav-yt"
-                    type="button" role="tab" aria-controls="nav-yt" aria-selected="false"
-                    (click)="getyt()">Trailers & Reviews</button>
+                <button class="nav-link" id="nav-yt-tab" data-bs-toggle="tab" data-bs-target="#nav-yt" type="button"
+                    role="tab" aria-controls="nav-yt" aria-selected="false" (click)="getyt()">Trailers &
+                    Reviews</button>
                 <button class="nav-link" id="nav-music-tab" data-bs-toggle="tab" data-bs-target="#nav-music"
-                    type="button" role="tab" aria-controls="nav-music" aria-selected="false"
-                    (click)="getmusic()">Music Videos</button>
+                    type="button" role="tab" aria-controls="nav-music" aria-selected="false" (click)="getmusic()">Music
+                    Videos</button>
                 <button class="nav-link" id="nav-images-tab" data-bs-toggle="tab" data-bs-target="#nav-images"
                     type="button" role="tab" aria-controls="nav-images" aria-selected="false"
-                    (click)="showreview()">Images</button>
+                    (click)="showImages()">Images</button>
                 <button class="nav-link" id="nav-relations-tab" data-bs-toggle="tab" data-bs-target="#nav-relations"
                     type="button" role="tab" aria-controls="nav-relations" aria-selected="false"
                     (click)="showrelated()">Related Anime</button>
             </div>
         </nav>
 
-        <!-- <--------------- Tab content--------------> 
+        <!-- <--------------- Tab content-------------->
         <div class="tab-content " id="nav-tabContent">
 
-             <!-- <--------------- Episode details content--------------> 
+            <!-- <--------------- Episode details content-------------->
             <div class="tab-pane fade show active " id="nav-Episode" role="tabpanel" aria-labelledby="nav-Episode-tab"
                 tabindex="0">
                 <div *ngIf="errorep">
                     <h1>404 Not Found</h1>
                 </div>
 
-                <div *ngIf="loader" class="loadingio-spinner-dual-ball-yi4gz66q48h">
+                <!-- <div *ngIf="loader" class="loadingio-spinner-dual-ball-yi4gz66q48h">
                     <div class="ldio-s9icq3dhhyd">
                         <div></div>
                         <div></div>
                         <div></div>
                     </div>
-                </div>
+                </div> -->
+                <app-loading-spinner *ngIf="loader"></app-loading-spinner>
 
                 <div>
                     <h1 *ngIf="episodesArray?.length===0" style="padding: 30px;">No Episodes found</h1>
@@ -122,29 +118,24 @@
                 </div>
             </div>
 
-             <!-- <--------------- Youtube & reviews content--------------> 
-            <div class="tab-pane fade " id="nav-yt" role="tabpanel" aria-labelledby="nav-yt-tab"
-                tabindex="0" style=" justify-content: center;">
+            <!-- <--------------- Youtube & reviews content-------------->
+            <div class="tab-pane fade " id="nav-yt" role="tabpanel" aria-labelledby="nav-yt-tab" tabindex="0"
+                style=" justify-content: center;">
                 <div *ngIf="noytvidfound" style="width:100% ;padding: 30px;">
                     <h1>No Trailer Found</h1>
                 </div>
                 <div *ngIf="erroryt">
                     <h1>404 Not Found</h1>
                 </div>
-                <div *ngIf="showytspin" class="loadingio-spinner-dual-ball-yi4gz66q48h">
-                    <div class="ldio-s9icq3dhhyd">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
+
+                <app-loading-spinner *ngIf="showytspin"></app-loading-spinner>
+
                 <div class="col-lg-4 " style="width:100% ;" *ngIf="ytvid">
                     <a style="float:left"> Trailer : {{datar.data.title}}</a>
                     <div class="gallery" style="background-color: black;">
                         <div>
                             <iframe style="border-radius: 20px;" [src]="yturl" allowfullscreen frameborder="0"
                                 name="tab"></iframe>
-
                         </div>
                         <div>
                             <span>
@@ -152,7 +143,9 @@
                                     *ngFor="let vid of viddata.data.promo">
                                     <a [href]="vid.trailer.embed_url" target="tab"><img
                                             [src]="vid.trailer.images.image_url"
-                                            style="content:none;padding-top:5px"></a>
+                                            style="content:none;padding-top:5px">
+                                            <a >{{vid.title}}</a>
+                                        </a>
                                 </div>
                             </span>
 
@@ -168,23 +161,19 @@
 
             </div>
 
-             <!-- <--------------- Music content--------------> 
-            <div class="tab-pane fade " id="nav-music" role="tabpanel" aria-labelledby="nav-music-tab"
-                tabindex="0" style=" justify-content: center; ">
+            <!-- <--------------- Music content-------------->
+            <div class="tab-pane fade " id="nav-music" role="tabpanel" aria-labelledby="nav-music-tab" tabindex="0"
+                style=" justify-content: center; ">
 
                 <div *ngIf="nomusicvidfound" style="padding: 30px;">
                     <h1> No Music Videos Found</h1>
                 </div>
-                <div *ngIf="errorss" >
+                <div *ngIf="errorss">
                     <h1>404 Not Found</h1>
                 </div>
-                <div *ngIf="showmusicspin" class="loadingio-spinner-dual-ball-yi4gz66q48h">
-                    <div class="ldio-s9icq3dhhyd">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
+        
+                <app-loading-spinner *ngIf="showmusicspin"></app-loading-spinner>
+
                 <div class="col-lg-4 " style="width:100% ;" *ngIf="musicvid">
                     <a style="float:left"> Music Video : {{datar.data.title}}</a>
                     <div class="gallery" style="background-color: black;">
@@ -197,29 +186,30 @@
                                 <div style="border-radius: 20px;" *ngFor="let vids of musicviddata.data.music_videos">
                                     <a [href]="vids.video.embed_url" target="tab"><img
                                             [src]="vids.video.images.image_url"
-                                            style="content:none;padding-top:5px"></a>
+                                            style="content:none;padding-top:5px">
+                                            <a >{{vids.title}}</a>
+                                        </a>
 
                                 </div>
                             </span>
                         </div>
                     </div>
                 </div>
-              
+
 
 
 
 
             </div>
-         
-             <!-- <--------------- Images content--------------> 
-            <div class="tab-pane fade " id="nav-images" role="tabpanel" aria-labelledby="nav-images-tab"
-                tabindex="0">
+
+            <!-- <--------------- Images content-------------->
+            <div class="tab-pane fade " id="nav-images" role="tabpanel" aria-labelledby="nav-images-tab" tabindex="0">
                 <div class="both">
-                    <app-images *ngIf="inreview" [id]="sendid()"></app-images>
+                    <app-images *ngIf="inImages" [id]="sendid()"></app-images>
                 </div>
             </div>
 
-             <!-- <--------------- Relations content--------------> 
+            <!-- <--------------- Relations content-------------->
             <div class="tab-pane fade " id="nav-relations" role="tabpanel" aria-labelledby="nav-relations-tab"
                 tabindex="0">
                 <div class="both1">
@@ -230,9 +220,7 @@
         </div>
 
     </div>
-   
-</div>
-<!-- <--------------- Recommendations content--------------> 
-<app-recommendations [id]="sendid()"></app-recommendations>
 
-  
+</div>
+<!-- <--------------- Recommendations content-------------->
+<app-recommendations [id]="sendid()"></app-recommendations>

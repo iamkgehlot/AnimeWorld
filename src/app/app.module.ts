@@ -18,6 +18,7 @@ import { CurrentseasonComponent } from './currentseason/currentseason.component'
 import { UpcomingComponent } from './upcoming/upcoming.component';
 import { RandomComponent } from './random/random.component';
 import { TotopComponent } from './totop/totop.component';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { TotopComponent } from './totop/totop.component';
     CurrentseasonComponent,
     UpcomingComponent,
     RandomComponent,
-    TotopComponent
+    TotopComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,

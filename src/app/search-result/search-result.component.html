@@ -1,12 +1,10 @@
-<app-searchbox class="searchbox" ></app-searchbox>
+<app-searchbox class="searchbox"></app-searchbox>
 <!-- no result found  -->
 <div class="noResult" *ngIf="SearchResultArray?.length===0">
   <div class="container">
     <h1 style="font-size: 25px; color:red">No Results Found</h1>
   </div>
 </div>
-
-
 
 <div class="container" id="container" *ngIf="SearchResultArray?.length!=0">
   <!-- searching for -->
@@ -16,19 +14,11 @@
   <h1 class="Showing" id='Showing' *ngIf="!loader && searchText;loadComponent" style="font-size: 25px;"> Showing Results
     For : {{ searchText.value}}</h1>
   <!-- loader -->
-  <div *ngIf="loader && searchText;loadComponent" class="loadingio-spinner-dual-ball-yi4gz66q48h">
-    <div class="ldio-s9icq3dhhyd">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    Searching...
-  </div>
+  <app-loading-spinner *ngIf="loader && searchText;loadComponent"></app-loading-spinner>
   <!-- results -->
   <div class="row " id="row" *ngIf="loadComponent">
     <div class=" col" id="col" *ngFor="let sr of SearchResultArray; let i = index">
-      <div id="Banners-container"
-        (click)="redirect(sr.mal_id) ">
+      <div id="Banners-container" (click)="redirect(sr.mal_id) ">
         <div class="Image-Name">
           <img [src]="sr.images.jpg.image_url" alt="Fate stye night" style="height: 312px;">
           <span class="ep" *ngIf="sr.status==='Finished Airing'">{{sr.status}}</span>
@@ -46,9 +36,6 @@
       </div>
     </div>
   </div>
-
-  <!-- episodes componet -->
-  
 
 
 </div>

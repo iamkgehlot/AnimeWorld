@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { SearchResultServiceService } from '../services/search-result-service.service';
 import { Subject } from "rxjs";
@@ -13,26 +13,29 @@ import { RandomComponent } from '../random/random.component';
 export class HomeComponent implements OnInit {
 
 
-  
+
   constructor(private urlservice: SearchResultServiceService, private router: Router) { }
+
+
   randombaner: any;
   upcoming: any;
   popmov: any;
   up = true;
   pop = true;
-  random = true;
+  random = false;
 
   ngOnInit(): void {
+
+    //banner
     setTimeout(() => {
       this.urlservice.getTop(1).subscribe((result: any) => {
         this.randombaner = result;
-        this.random = false;
-
-
+        this.random = true;
       })
 
     }, 1000);
 
+    //pop tv
     setTimeout(() => {
       this.urlservice.getTopUpcoming().subscribe((result: any) => {
         this.upcoming = result;
@@ -41,10 +44,9 @@ export class HomeComponent implements OnInit {
     }, 2000);
 
 
+    //pop movie
     setTimeout(() => {
-
       this.up = false;
-
       this.urlservice.getpopmov().subscribe((result: any) => {
         this.popmov = result;
         this.pop = false;
@@ -54,16 +56,13 @@ export class HomeComponent implements OnInit {
 
     }, 3000);
 
-
-
   }
+
   redirect(id: string) {
     console.log(id + "epidpage");
     this.router.navigate(['episodes/', id])
 
   }
-
-
 
 
 }

@@ -1,17 +1,18 @@
-
 .scroll-to-top {
-    background-color:#8ebf42;
+    background-color: #8ebf42;
     border-radius: 100px;
     position: fixed;
     bottom: 15px;
     right: 15px;
     opacity: 0;
     transition: all .2s ease-in-out;
-   }
-   .btn{
-    border:none;
-   }
-   .show-scrollTop {
+}
+
+.btn {
+    border: none;
+}
+
+.show-scrollTop {
     opacity: 1;
     transition: all .2s ease-in-out;
-   }
+}

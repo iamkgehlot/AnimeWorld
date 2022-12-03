@@ -7,9 +7,9 @@
     color: white;
     
 }  */
-.border{
-    --bs-border-color:#FFFF00;
- 
+.border {
+    --bs-border-color: #FFFF00;
+
 }
 
 
@@ -25,27 +25,27 @@
 
 .container {
     border-radius: 20px;
-      margin-top: 20px;
-      background: #252525;
-      color: #1c87c9;
-      min-height: 70vh;
-      width: 90vw;
-      display:table;
-     padding-bottom: 20px;
-    
-    
-    
-    }
-    
-    @media screen and (max-width: 767px) {
-      .container {
+    margin-top: 20px;
+    background: #252525;
+    color: #1c87c9;
+    min-height: 70vh;
+    width: 90vw;
+    display: table;
+    padding-bottom: 20px;
+
+
+
+}
+
+@media screen and (max-width: 767px) {
+    .container {
         min-height: 50vh;
         padding-bottom: 5px;
         margin-top: 5px;
         margin-bottom: 5px;
-       
-      }
+
     }
+}
 
 .th {
     color: #1c87c9;
@@ -57,8 +57,7 @@
     color: white;
     font-family: 'Mulish', sans-serif;
     padding-top: 20px;
-    margin-top:20px
-
+    margin-top: 20px
 }
 
 .both {
@@ -89,7 +88,7 @@
 
 
 
-  
+
 .list-group {
     padding-left: revert;
     width: 60vw;
@@ -107,14 +106,16 @@
 
     float: right;
 }
-.both1{
+
+.both1 {
     padding: 30px;
     background-color: rgb(46 45 45);
     margin-top: 20px;
     border-radius: 20px;
-   
-    
+
+
 }
+
 .both {
     display: flex;
     padding: 30px;
@@ -122,12 +123,13 @@
     margin-top: 20px;
     border-radius: 20px;
     justify-content: center;
-    
+
 }
+
 @media only screen and (max-width: 768px) {
     .both {
         display: block;
-        
+
     }
 
 }
@@ -238,20 +240,22 @@
 
 .gallery {
     display: flex;
-    flex-flow:nowrap;
-    border: solid rgb(240,240,240);
+    flex-flow: nowrap;
+    border: solid rgb(240, 240, 240);
     width: 70vw;
     height: 35vw;
     border-radius: 20px;
 
-  
-  }
-  .gallery div {  /* блоки видео + списков */
+
+}
+
+.gallery div {
+    /* блоки видео + списков */
     flex: 150px;
     position: relative;
     text-align: center;
     display: inline-flex;
-    padding-left:1vw;
+    padding-left: 1vw;
     padding-right: 1vw;
     /* flex: 40%;
     position: relative;
@@ -260,76 +264,84 @@
     padding-left: 1vw;
     padding-right: 1vw;
     height: 10vh; */
-   
-  }
-  
-  .gallery div:nth-of-type(1) {
-    flex: 10000 1 300px;  /* если ширина менее 300 + 150 = 450px , то списки миниатюр смещаются на нижний ряд, подробнее про свойство flex */
-  }
 
-  .gallery div::before {
+}
+
+.gallery div:nth-of-type(1) {
+    flex: 10000 1 300px;
+    /* если ширина менее 300 + 150 = 450px , то списки миниатюр смещаются на нижний ряд, подробнее про свойство flex */
+}
+
+.gallery div::before {
     content: "";
     display: contents;
     padding-top: 100px;
-  }
-  .gallery div:nth-of-type(1)::before {
+}
+
+.gallery div:nth-of-type(1)::before {
     padding-top: 56.25%;
-  }
-  .gallery iframe,
-  .gallery span {
+}
+
+.gallery iframe,
+.gallery span {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-  }
-  .gallery a {  /* для разнообразия, иконки не затемнены, так проще оценить код галереи видео */
+}
+
+.gallery a {
+    /* для разнообразия, иконки не затемнены, так проще оценить код галереи видео */
     display: inline-block;
     margin-top: 5px;
-  }
-  .gallery a:last-child {
+}
+
+.gallery a:last-child {
     margin-bottom: 5px;
-  }
-  .gallery iframe,
-  .gallery img {
+}
+
+.gallery iframe,
+.gallery img {
     max-width: 100%;
 
     vertical-align: left;
-  }
+}
 
-  /* navlink */
-  .nav-link {
+/* navlink */
+.nav-link {
     font-family: 'Mulish', sans-serif;
     color: #1c87c9;
     font-weight: bolder;
 
-  }
+}
 
-  /* downbutton */
-  
-.btn{
-   
+/* downbutton */
+
+.btn {
+
     text-align: center;
-  }
-  
-  .mybtn{
-          border-radius:30px;
-          border-color: #8ebf42;
-          text-decoration:none;
-          font-family:sans-serif;
-          font-size:15px;
-          font-weight: bolder;
-          padding: 8px 16px;
-          background-color:#8ebf42;
-          color:black;
-          transition-delay:.2s;
-          transition:.3s;
-          font-variant-caps:all-small-caps;
-          /* box-shadow:4px 3px 11px 0 #00ad25; */
-          }
-  .mybtn:hover{
-          background-color:#8ebf42;
-          box-shadow:4px 3px 11px 0 #005a13;
-          transform: scale(1.1);
-          }
+}
+
+.mybtn {
+    border-radius: 30px;
+    border-color: #8ebf42;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+    padding: 8px 16px;
+    background-color: #8ebf42;
+    color: black;
+    transition-delay: .2s;
+    transition: .3s;
+    font-variant-caps: all-small-caps;
+    /* box-shadow:4px 3px 11px 0 #00ad25; */
+}
+
+.mybtn:hover {
+    background-color: #8ebf42;
+    box-shadow: 4px 3px 11px 0 #005a13;
+    transform: scale(1.1);
+}
