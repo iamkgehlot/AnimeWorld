@@ -6,13 +6,7 @@
     border: 0 none;
 }
 
-.container {
-    height: 100%;
-    width: 100vw;
-    font-size: 1rem;
-    font-family: 'Exo', sans-serif;
-    font-weight: 100;
-}
+
 
 
 /* silder */
@@ -109,7 +103,6 @@
     font-family: 'Alexandria', sans-serif;
     font-size: 2vw;
     float: left;
-
 }
 
 
@@ -181,32 +174,34 @@
 
 /* container */
 
+/* .container {
+    height: 100%;
+    width: 100vw;
+    font-size: 1rem;
+    font-family: 'Exo', sans-serif;
+    font-weight: 100;
+    min-height: fit-content;
+    width: auto;
+    display: inline-block;
+} */
+
 .container {
     border-radius: 20px;
     margin-top: 20px;
     background: #252525;
     color: #1c87c9;
-    min-height: 70vh;
-    width: 90vw;
-    display: table;
+
     margin-top: 5vw;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    margin-left: auto;
+    margin-right: auto;
     padding-bottom: 20px;
+    min-height: fit-content;
+    width: -webkit-fill-available;
+    display: flow-root;
 }
 
-/* media queries */
-@media screen and (max-width: 767px) {
-    .container {
-        min-height: 50vh;
-        padding-bottom: 5px;
-        margin-top: 5px;
-        margin-bottom: 5px;
 
-    }
-}
-
-.container {
+/* .container {
     border-radius: 20px;
     margin-top: 20px;
     background: #252525;
@@ -218,17 +213,7 @@
 
 
 
-}
-
-@media screen and (max-width: 767px) {
-    .container {
-        min-height: 50vh;
-        padding-bottom: 5px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-
-    }
-}
+} */
 
 
 /* data */
@@ -282,15 +267,19 @@
 #Banners-container {
     margin-top: 5px;
     width: 217px;
-
+    margin-left: auto;
+    margin-right: auto;
     flex-wrap: wrap;
     display: flex;
     border-color: aliceblue;
-    margin-left: 15px;
+    /* margin-left: 15px; */
 }
-
+.img{
+    height: 20vw;
+}
 #Banners-container img {
     width: 217px;
+    
     border-radius: 5px;
     margin-right: 20px;
     margin-top: 12px;
@@ -444,4 +433,78 @@
     background-color: #8ebf42;
 
     transform: scale(1.1);
+}
+@media only screen and (max-width: 768px) {
+  
+    .img{
+        height: 20vw;
+    }
+    .cont-slider{
+        height: 50vw;
+    }
+    
+   
+   .slide{
+    height: 50vw;
+    font-size: 2vw;
+    line-height: 2.5vw;
+    overflow: hidden;
+   }
+   .bannercontent{
+    font-size: 2vw;
+    line-height: 2.5vw;
+  
+   }
+   .rankfa{
+    font-size: 2vw;
+    line-height: 2.5vw;
+
+   }
+   .titile{
+    font-size: 2vw;
+    line-height: 2.5vw;
+   }
+   #Banners-container {
+    margin-top: 5px;
+margin: auto;
+    height: auto;
+    width: 15vw;
+   }
+   #Banners-container img {
+    width: 15vw;
+    height: 20vw;
+   }
+ .ep{
+    display: none;
+ }
+ .epair{
+    display: none;
+ }
+ .comments{
+    display: none;
+ }
+ .watch{
+    display: none;
+ }
+ .show-name{
+    width: 14vw;
+    font-size: 2vw;
+ }
+ .Image-Name{
+    width: auto;
+    margin: auto;
+ }
+ .container{
+    padding: auto;
+    height: auto;
+ }
+ .action{
+    font-size: 1vw;
+ }
+ .mybtn{
+    font-size: 2vw;
+    font-weight: bolder;
+    padding: 8px 16px;
+   }
+ 
 }

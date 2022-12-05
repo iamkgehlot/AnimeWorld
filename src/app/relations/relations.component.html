@@ -1,7 +1,11 @@
-<div *ngIf="loadcomponet" class="relationscontainer">
+<app-loading-spinner *ngIf="loadspinner"></app-loading-spinner>
 
+<div *ngIf="notfound">
+    <h1 *ngIf="notfound" style="padding: 30px;">No Related Content found</h1>
+</div>
+<div *ngIf="loadcomponet" class="relationscontainer">
     <!-- <--------------- loop 1 for getting relation heading-------------->
-    <div *ngFor="let rl of relations.data " style="color:white">
+    <div class="overflowcheck" *ngFor="let rl of relations.data " style="color:white">
         <table class="table table-borderless" style="color:white;">
             <thead>
                 <tr>
@@ -31,28 +35,3 @@
 
     </div>
 </div>
-
-
-<!-- 
-    <header class="profile-details">
-
-
-      <h3 class="profile-name" *ngFor="let en of rl.entry">{{en.name}}</h3>
-    </header>
-    <blockquote class="profile-quote">
-      <p>{{rl.relation}}</p>
-    </blockquote>
-
-  <ul class="profile-list">
-    <li class="profile-list--item" *ngFor="let rl of relations.data ">
-        <header class="profile-details">
-              <h3 class="profile-name">{{rl.entry.name} }
-                kamle
-              </h3>
-        </header>
-        <blockquote class="profile-quote">
-            <p>{{rl.relation}} kam</p>
-        </blockquote>
-        
-    </li>
--->

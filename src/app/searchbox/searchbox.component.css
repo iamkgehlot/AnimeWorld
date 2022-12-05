@@ -13,6 +13,9 @@
     background: rgb(36, 36, 36);
 }
 
+.desk {
+    display: none;
+}
 
 .navbar {
     justify-content: start;
@@ -157,4 +160,74 @@ a {
 
 form:valid a {
     display: block;
+}
+
+
+.navbar {
+    display: flex;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .desk {
+        display: flex;
+    }
+
+    .mob {
+        display: none;
+    }
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .mob {
+        display: block;
+    }
+
+    .desk {
+        display: none;
+    }
+
+    .navbar {
+        font-size: 2vw;
+    }
+
+    form {
+        margin-top: 2vw;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        display: block;
+        position: relative;
+        top: 0%;
+        left: 0%;
+        transform: translate(0%, 0%);
+        transition: all 1s;
+        height: 60px;
+        background: white;
+        border-radius: 25px;
+        border: 4px solid white;
+        padding: 5px;
+        width: auto;
+        height: 5.5vw;
+    }
+
+    .input {
+        height: 4vw;
+    }
+
+    .fa {
+        
+        width: 4vw;
+        padding: 3px;
+        height: 4vw;
+        font-size: 2.5vw;
+        /* line-height: 1vw; */
+        /* top: 0.5vw; */
+        right: 1vw;
+    }
+    .logo{
+        font-size: 3vw;
+    }
 }

@@ -13,13 +13,11 @@ export class SearchResultComponent implements OnInit {
 
 
   constructor(private searchresultserive: SearchResultServiceService, private router: Router, private activatedRoute: ActivatedRoute) { }
-
   SearchResultArray: any;
   animeId: any;
   synopsis: any; title: any; type: any; duration: any; score: any; year: any;
   img: any;
   loader = true;
-
   searchText: any;
 
   ngOnInit(): void {
@@ -40,14 +38,11 @@ export class SearchResultComponent implements OnInit {
 
   }
 
-
   loadEpisode = false; //inital property for Episodes component
   loadComponent = true; // ................. search-result component
   redirect(id: string) {
     this.router.navigate(["episodes/", id]);
   }
-
-
 
   tochild() {
     return this.animeId; //get anime details

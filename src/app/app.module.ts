@@ -19,6 +19,13 @@ import { UpcomingComponent } from './upcoming/upcoming.component';
 import { RandomComponent } from './random/random.component';
 import { TotopComponent } from './totop/totop.component';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { EpisodevidsComponent } from './episodevids/episodevids.component';
+import { VideoplayerComponent } from './videoplayer/videoplayer.component';
+
+import { VgCoreModule } from 'ngx-videogular';
+import { VgControlsModule } from 'ngx-videogular';
+import { VgOverlayPlayModule } from 'ngx-videogular';
+import { VgBufferingModule ,VgStreamingModule} from 'ngx-videogular';
 
 
 @NgModule({
@@ -38,13 +45,23 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     UpcomingComponent,
     RandomComponent,
     TotopComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    EpisodevidsComponent,
+    VideoplayerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule,
+    VgStreamingModule,
+  
+
+
 
   ],
   providers: [RandomComponent],

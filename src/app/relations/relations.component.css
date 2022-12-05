@@ -13,3 +13,8 @@
 .thh:hover {
     color: #1c87c9;
 }
+
+.table{
+    display: block;
+  overflow-y: auto;
+}

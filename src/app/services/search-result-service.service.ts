@@ -78,31 +78,21 @@ export class SearchResultServiceService {
   getRandom():Observable<any>{
     return this.http.get("https://api.jikan.moe/v4/random/anime?sfw");
   }
-  
+  //get episode details
+consumetapi(id:any):Observable<any>{
+  return this.http.get("https://api.consumet.org/meta/anilist/info/"+id)
+}
+//get episode m3u8 links
+consumetepisodevid(episodeId:any):Observable<any>{
+  console.log(episodeId)
+  return this.http.get("https://api.consumet.org/meta/anilist/watch/"+episodeId);
+}
+
+
+
 }
 
 
 
 
 
-
-
-// line-height: 1.15;
-// -webkit-text-size-adjust: 100%;
-// font-family: 'Open Sans',sans-serif;
-// font-size: 16px;
-// text-decoration: none;
-// color: #224187;
-// height: 230px;
-// width: 150px;
-// margin: 10px;
-// border-radius: 8px;
-// background: #fff;
-// overflow: hidden;
-
-// line-height: 1.15;
-// -webkit-text-size-adjust: 100%;
-// font-family: 'Open Sans',sans-serif;
-// font-size: 16px;
-// display: flex;
-// flex-wrap: wrap;

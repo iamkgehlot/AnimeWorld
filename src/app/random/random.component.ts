@@ -1,8 +1,7 @@
 import { Component, OnInit, } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { arr2, EpisodesArray } from '../services/EpisodesArray';
+import {  Router } from '@angular/router';
 import { SearchResultServiceService } from '../services/search-result-service.service';
-import { Subject } from "rxjs";
+
 
 @Component({
   selector: 'app-random',

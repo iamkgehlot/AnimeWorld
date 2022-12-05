@@ -1,6 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import *  as $ from "jquery";
 
 declare var window: any;
 
@@ -9,11 +8,13 @@ declare var window: any;
   templateUrl: './searchbox.component.html',
   styleUrls: ['./searchbox.component.css']
 })
-export class SearchboxComponent implements OnInit {
+export class SearchboxComponent implements OnInit  {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    
+  }
 
   //redirect to top Anime page
   sendtop() {
@@ -42,4 +43,6 @@ export class SearchboxComponent implements OnInit {
     this.router.navigate(['search/', this.enteredSearchValue]);
 
   }
+
+ 
 }

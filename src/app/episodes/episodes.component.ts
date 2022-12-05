@@ -33,23 +33,7 @@ export class EpisodesComponent implements OnInit {
     });
 
 
-    //episode details
-    setTimeout(() => {
-      this.urlService.getEpisodes(this.episodenum.id).subscribe((response: Array<arr2>) => {
-        this.episodesArray = response;
-        this.showep();
-        this.loader = false;
 
-      }, error => {
-        console.log('404 not found')
-        this.errorep = true;
-        this.loader = false;
-
-      })
-
-    }, 500);
-
-    //anime top banner
     setTimeout(() => {
       this.urlService.getEpFull(this.episodenum.id).subscribe((result: any) => {
         this.datar = result;
@@ -67,8 +51,20 @@ export class EpisodesComponent implements OnInit {
 
 
       });
-    }, 500);
+      //episode details
+      this.urlService.getEpisodes(this.episodenum.id).subscribe((response: Array<arr2>) => {
+        this.episodesArray = response;
+        this.showep();
+        this.loader = false;
 
+      }, error => {
+        console.log('404 not found')
+        this.errorep = true;
+        this.loader = false;
+
+      })
+
+    }, 500);
 
   }
 
@@ -109,6 +105,7 @@ export class EpisodesComponent implements OnInit {
           console.log("in Yt no vid found condn")
 
         }
+
       }, error => {
         console.log('404 not found')
         console.log(error)

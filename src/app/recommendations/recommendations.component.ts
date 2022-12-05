@@ -17,6 +17,7 @@ export class RecommendationsComponent implements OnInit {
   ngOnInit(): void {
 
     setTimeout(() => {
+      //get data
       this.urlservice.getRecommendations(this.id).subscribe((result: any) => {
         this.datar = result;
 
@@ -39,13 +40,7 @@ export class RecommendationsComponent implements OnInit {
 
   }
   redirect(id: string) {
-
-
-
     this.router.navigateByUrl('/episodes/' + id);
-
-
-
   }
 
 }

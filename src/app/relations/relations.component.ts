@@ -15,6 +15,8 @@ export class RelationsComponent implements OnInit {
 
   relations: any;
   loadcomponet = false;
+  loadspinner = true;
+  notfound = false;
   @Input() id: any
 
   //get relation data
@@ -22,22 +24,21 @@ export class RelationsComponent implements OnInit {
     setTimeout(() => {
       this.urlservice.getRelations(this.id).subscribe((result: any) => {
         this.relations = result;
-
-        this.loadcomponet = true;
-
+        this.loadspinner = false;
+        if ((this.relations.data).length != 0) {
+          this.loadcomponet = true;
+        } else {
+          this.loadcomponet = false;
+          this.notfound = true;
+        }
       })
     }, 3000);
 
 
   }
-
-
   //get anime detailes
   sendtoepisode(id: any) {
-
     this.router.navigate(['episodes/', id])
-
-
   }
 
 }

@@ -1,9 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SearchResultServiceService } from '../services/search-result-service.service';
-import { Subject } from "rxjs";
+
 import *  as $ from "jquery";
-import { RandomComponent } from '../random/random.component';
+
 
 @Component({
   selector: 'app-home',
@@ -12,10 +12,7 @@ import { RandomComponent } from '../random/random.component';
 })
 export class HomeComponent implements OnInit {
 
-
-
   constructor(private urlservice: SearchResultServiceService, private router: Router) { }
-
 
   randombaner: any;
   upcoming: any;
@@ -23,41 +20,47 @@ export class HomeComponent implements OnInit {
   up = true;
   pop = true;
   random = false;
+  api3 = false;
 
   ngOnInit(): void {
 
-    //banner
+    //calling 3 apis at max
     setTimeout(() => {
+      //banner
       this.urlservice.getTop(1).subscribe((result: any) => {
         this.randombaner = result;
-        this.random = true;
+        if ((this.randombaner.data).lenghth != 0) {
+          this.random = true;
+        }
+        else {
+          this.random = false;
+        }
+
+      })
+      // //pop tv
+      this.urlservice.getTopUpcoming().subscribe((result: any) => {
+        this.upcoming = result;
+        if ((this.upcoming.data).length != 0) {
+          this.up = false;
+        }
+
+      })
+      //pop movie
+      this.urlservice.getpopmov().subscribe((result: any) => {
+        this.popmov = result;
+        if ((this.popmov.data).length != 0) {
+          this.pop = false;
+        }
+
       })
 
     }, 1000);
 
-    //pop tv
-    setTimeout(() => {
-      this.urlservice.getTopUpcoming().subscribe((result: any) => {
-        this.upcoming = result;
-        this.up = false;
-      })
-    }, 2000);
-
-
-    //pop movie
-    setTimeout(() => {
-      this.up = false;
-      this.urlservice.getpopmov().subscribe((result: any) => {
-        this.popmov = result;
-        this.pop = false;
-
-      })
-
-
-    }, 3000);
+    setTimeout(() => { this.api3 = true; }, 2000);
 
   }
 
+  //Anime Details
   redirect(id: string) {
     console.log(id + "epidpage");
     this.router.navigate(['episodes/', id])

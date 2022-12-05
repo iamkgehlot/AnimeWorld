@@ -3,6 +3,11 @@ body {
 
 
 }
+.container{
+    margin-top: 20px;
+    background-color: rgb(46 45 45);
+    border-radius: 20px;
+}
 
 .limitTextHeight {
     height: 165px;

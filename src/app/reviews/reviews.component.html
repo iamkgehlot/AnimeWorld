@@ -1,9 +1,7 @@
 <div class="container" *ngIf="laoddata">
-
         <div class=" rounded-3 shadow-sm p-4">
                 <h4 class="mb-4">{{lengtharr}} Reviews</h4>
                 <hr class="hr1">
-
                 <div class="">
                         <div class="py-3" *ngFor="let rv of reviewsarr.data">
 
@@ -12,11 +10,12 @@
                                         <img class="rounded-circle comment-img" [src]="rv.user.images.jpg.image_url" />
                                         <div class="flex-grow-1 ms-3">
                                                 <div class="mb-1 text-left"><a class="fw-bold link-light me-1"
-                                                                style="text-decoration: none;">{{rv.user.username}}</a>
+                                                                style="text-decoration: none; color:darkturquoise">{{rv.user.username}}</a>
                                                         <span class="text-muted text-nowrap"
                                                                 style="padding-left: 5px;">{{rv.date.substr(0,10)}}</span>
                                                 </div>
-                                                <div class="mb-2" [ngClass]="{'limitTextHeight': isReadMore}">
+                                                <div class="mb-2" style="color: white;"
+                                                [ngClass]="{'limitTextHeight': isReadMore}">
                                                         <p [innerHTML]="rv.review">
                                                         </p>
                                                 </div>
@@ -83,14 +82,8 @@
 
         </div>
 
-
-
-
-
-        <!-- Testing //-->
-        <!-- <div class="app-menu position-fixed bg-white shadow-sm border rounded p-2 vstack gap-2"
-        style="bottom:15px;right:15px;">
-        <button class="app-dl-mode btn btn-primary d-flex align-items-center justify-content-center"><i
-                class="zmdi zmdi-sun"></i></button>
-    </div> -->
 </div>
+
+
+
+     

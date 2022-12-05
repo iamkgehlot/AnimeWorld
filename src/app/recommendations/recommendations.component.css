@@ -2,14 +2,20 @@
   margin-top: 20px;
   background: #252525;
   color: #1c87c9;
-  min-height: 10vh;
-  width: 100%;
+
+  height:auto;
+  overflow: hidden;
+  width: auto;
   padding-left: 0px;
   padding-right: 0px;
-  display: table;
+  /* display: table; */
+  break-inside: avoid;
+  display: grid;
+
+  justify-content: center;
   padding-bottom: 20px;
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* line */
@@ -25,10 +31,10 @@
 /* heading */
 .h1 {
   font-family: 'Alexandria', sans-serif;
-  font-size: 2vw;
-  padding-left: 1vw;
-  padding-top: 1.5vw;
-  padding-bottom: 1vw;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 
 }
 
@@ -208,4 +214,10 @@
   display: contents;
   margin-top: 20px;
 
+}
+.row {
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
