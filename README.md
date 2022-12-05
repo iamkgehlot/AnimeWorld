@@ -1,4 +1,4 @@
-#All in One Anime Web-App to get all Any Anime details.
+A website for Anime Searching and Getting Details Based on Open Source Api
 
 #Fuctions -
 
