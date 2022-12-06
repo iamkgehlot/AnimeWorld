@@ -1,0 +1,4 @@
+export interface comparedata{
+    "mal_id":string;
+    "anilist_id":string;
+}

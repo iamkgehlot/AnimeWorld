@@ -25,7 +25,10 @@ import { VideoplayerComponent } from './videoplayer/videoplayer.component';
 import { VgCoreModule } from 'ngx-videogular';
 import { VgControlsModule } from 'ngx-videogular';
 import { VgOverlayPlayModule } from 'ngx-videogular';
-import { VgBufferingModule ,VgStreamingModule} from 'ngx-videogular';
+import { VgBufferingModule } from 'ngx-videogular';
+import { VgStreamingModule } from 'ngx-videogular';
+
+
 
 
 @NgModule({

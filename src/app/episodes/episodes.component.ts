@@ -13,6 +13,7 @@ import *  as $ from "jquery";
 })
 export class EpisodesComponent implements OnInit {
 
+  Anilistid: any;
   constructor(private urlService: SearchResultServiceService, private activatedRoute: ActivatedRoute, private sanitizer: DomSanitizer, private router: Router) { }
   episodesArray: any;
   episodenum: any; //getting value from search result componet
@@ -23,8 +24,41 @@ export class EpisodesComponent implements OnInit {
   errorep = false;
   erroryt = false;
   errortop = false;
-
+  comparedata: any;
+  lengths: any
   ngOnInit(): void {
+
+    this.urlService.compare().subscribe((result: any) => {
+      this.comparedata = result;
+     
+
+      for(let i =0;i<= (result).length+1;i++){
+        // console.log(this.comparedata[i].mal_id)
+        if(this.comparedata[i].mal_id==this.episodenum.id){
+          console.log(this.comparedata[i].mal_id+"pass")
+          if((this.comparedata[i].anilist_id)!=0){
+            this.Anilistid=this.comparedata[i]["anilist_id"];
+            console.log(this.Anilistid);
+            if(!this.Anilistid){
+              console.log("false")
+              this.Anilistid=-1;
+            }
+            break;
+          }
+          
+          break;
+        }
+      }
+    })
+     
+    
+
+
+      
+    //     }
+
+
+
 
     //getting params from routes
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -134,7 +168,6 @@ export class EpisodesComponent implements OnInit {
       this.urlService.getVids(this.episodenum.id).subscribe((result: any) => {
         this.showmusicspin = false;
         this.musicviddata = result;
-        console.log(result.data.music_videos + "get Music videos")
         if ((this.musicviddata.data.music_videos).length != 0) {
           this.musicurl = this.sanitizer.bypassSecurityTrustResourceUrl(this.musicviddata.data.music_videos[0].video.embed_url);
           this.musicvid = true;
@@ -151,6 +184,8 @@ export class EpisodesComponent implements OnInit {
       })
     }, 500);
   }
+
+
 
   //send id to components
   sendid() {

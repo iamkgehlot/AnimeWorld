@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+.vg-buffering .bufferingContainer {
+    width: 100%;
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    margin-top: -50px;
+    zoom: 1;
+    filter: alpha(opacity=60);
+    opacity: .6;
+}
+
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

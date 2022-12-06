@@ -1,56 +1,98 @@
-
-<div style="margin-top: 20px">
-    <div *ngIf="check" >
-<vg-player style="width: 854px;height:480px ; margin: auto;">
-    <vg-overlay-play vgFor="my-video"></vg-overlay-play>
-    <vg-buffering vgFor="my-video"></vg-buffering>
-    <vg-controls vgFor="my-video" [vgAutohide]="true" [vgAutohideTime]="5">
-        <vg-play-pause vgFor="my-video"></vg-play-pause>
-        <vg-playback-button vgFor="my-video" [playbackValues]="[ '1.0', '2.0', '4.0' ]"></vg-playback-button>
-        <vg-time-display vgFor="my-video" [vgProperty]="'current'" [vgFormat]="'mm:ss'"></vg-time-display>
-        <vg-scrub-bar vgFor="my-video" [vgSlider]="false">
-            <vg-scrub-bar-current-time vgFor="my-video" [vgSlider]="true"></vg-scrub-bar-current-time>
-            <vg-scrub-bar-buffering-time vgFor="my-video"></vg-scrub-bar-buffering-time>
-        </vg-scrub-bar>
-        <vg-time-display vgFor="my-video" [vgProperty]="'total'" [vgFormat]="'mm:ss'"></vg-time-display>
-        <vg-volume vgFor="my-video"></vg-volume>
-        <vg-mute vgFor="my-video"></vg-mute>
-        <vg-fullscreen></vg-fullscreen>
-    </vg-controls>
-    <video [vgMedia]="$any(media)" [vgHls]="url12" #media id="my-video" preload="auto" crossorigin 
-  ></video>
-</vg-player>
+<!-- -------if No vids--------- -->
+<div *ngIf="noContentFound" style="margin-top: 70px">
+    <h1>No Episodes Found</h1>
 </div>
 
-<div *ngIf="loadcomp" style="color:white">
-    <h1 style="padding: 30px;">No Episodes found</h1>
-    <div class="both" style="color:white">
-        <table class="table boderless border-1">
-            <thead>
-                <tr style="color:white">
-                    <th class="th" scope="col">Episode Number</th>
-                    <th class="th" scope="col">Episode Name</th>
-                    <th class="th" scope="col">Aired On</th>
-                    <th class="th" scope="col">Rating</th>
-                </tr>
-            </thead>
+<div *ngIf="!loadcomp&&!noContentFound">
+    <app-loading-spinner></app-loading-spinner> <br>Loading Content
+</div>
+<div *ngIf="loadcomp">
+    <div style="margin-top: 20px">
+        <div *ngIf="!check&&loadcomp&&!clickonwatchspin" style="margin-top: 20px">
+            <h1> Click On Watch Now To Stream Episodes </h1>
+        </div>
+        <div *ngIf="!check&&clickonwatchspin" style="text-align:center">
+            <app-loading-spinner></app-loading-spinner><br>Loading Video
+        </div>
+        <div *ngIf="check">
+            <!-- -------Video Player--------- -->
+            <vg-player style="width: 854px;height:480px ; margin: auto;">
+                <vg-buffering>
+                </vg-buffering>
+                <vg-overlay-play vgFor="my-video">
+                </vg-overlay-play>
 
-            <tbody  *ngFor="let ep of episodedetails.episodes;let i=index " >
-                <tr *ngIf=" i<5"style="color:white">
-                   
-                    <th scope="row" *ngIf="ep.number">{{ep.number}}</th>
-                    <td *ngIf="!ep.number" class="note">Not Available</td>
-                    <td *ngIf="ep.title">{{ep.title}}</td>
-                    <td *ngIf="!ep.title" class="note">Not Available</td>
-                    <td *ngIf="ep.airDate">{{ep.airDate.substr(0,10)}}</td>
-                    <td *ngIf="!ep.airDate" class="note">Not Available</td>
-                    <td><button class="btn btn-primary" (click)="getepisodevideo(ep.id)">watch</button></td>
-             
-                </tr>
+                <vg-controls vgFor="my-video" [vgAutohide]="true" [vgAutohideTime]="5">
+                    <vg-play-pause vgFor="my-video"></vg-play-pause>
+                    <vg-playback-button vgFor="my-video" [playbackValues]="[ '1.0', '2.0', '4.0' ]">
+                    </vg-playback-button>
+                    <vg-time-display vgFor="my-video" [vgProperty]="'current'" [vgFormat]="'mm:ss'"></vg-time-display>
+                    <vg-scrub-bar vgFor="my-video" [vgSlider]="false">
+                        <vg-scrub-bar-current-time vgFor="my-video" [vgSlider]="true"></vg-scrub-bar-current-time>
+                        <vg-scrub-bar-buffering-time vgFor="my-video"></vg-scrub-bar-buffering-time>
+                    </vg-scrub-bar>
+                    <vg-time-display vgFor="my-video" [vgProperty]="'total'" [vgFormat]="'mm:ss'"></vg-time-display>
+                    <vg-volume vgFor="my-video"></vg-volume>
+                    <vg-mute vgFor="my-video"></vg-mute>
+                    <vg-fullscreen></vg-fullscreen>
 
-            </tbody>
 
-        </table>
+                </vg-controls>
+                <video [vgMedia]="$any(media)" [vgHls]="url12" #media id="my-video" preload="auto"></video>
+            </vg-player>
+            <div style="font-size:2vw;color:white"> Episode Name : {{title}}</div>
+            <hr>
+        </div>
+
+        <div *ngIf="loadcomp" style="color:white">
+
+            <hr>
+            <!-- -------contents--------- -->
+            <div class="both" style="color:white">
+                <table class="table boderless border-1">
+                    <thead>
+                        <tr style="color:white">
+                            <th class="th" scope="col">Episode Number</th>
+                            <th class="th" scope="col">Episode Name</th>
+                            <th class="th" scope="col">Aired On</th>
+                            <th class="th" scope="col">Rating</th>
+                        </tr>
+                    </thead>
+
+                    <tbody *ngFor="let ep of episodedetails.episodes;let i=index ">
+                        <tr *ngIf="i>=min && i<max" style="color:white">
+                            <th scope="row" *ngIf="ep.number">{{ep.number}}</th>
+                            <td *ngIf="!ep.number" class="note">Not Available</td>
+                            <td *ngIf="ep.title">{{ep.title}}</td>
+                            <td *ngIf="!ep.title" class="note">Not Available</td>
+                            <td *ngIf="ep.airDate">{{ep.airDate.substr(0,10)}}</td>
+                            <td *ngIf="!ep.airDate" class="note">Not Available</td>
+                            <td><button class="btn btn-primary" (click)="getepisodevideo(ep.id,ep.title)">Watch
+                                    Now</button></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+
+                <div (click)="PrevPage()" *ngIf="hasPrevPage" class="prevnex">
+                    <i type="submit" class="fa fa-arrow-left" aria-hidden="true" style="float: left;"> Previous Page
+                    </i>
+                </div>
+                <div class="prevnex" (click)="NextPage()" *ngIf="hasNextPage " style="float: right;">
+                    <i type="submit" class="fa" style="padding-right: 5px; columns: white;" aria-hidden="true">Next Page
+                    </i>
+                    <i type="submit" class="fa fa-arrow-right" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div *ngIf="max<totalepisodes"> Showing {{max}}/{{totalepisodes}} Episodes </div>
+            <div *ngIf="max>=totalepisodes"> Showing {{totalepisodes}}/{{totalepisodes}} Episodes</div>
+        </div>
+
     </div>
-</div>
+
+
+
 </div>

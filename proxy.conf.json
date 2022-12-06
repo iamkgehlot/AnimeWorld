@@ -1,0 +1,6 @@
+{
+    "/api": {
+      "target": "www.google.com",
+      "secure": false
+    }
+  }

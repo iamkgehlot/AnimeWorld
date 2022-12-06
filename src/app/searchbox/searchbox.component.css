@@ -28,7 +28,7 @@
 
 .nav-item:hover {
     color: #1c87c9;
-
+    cursor: pointer;
 
 }
 
@@ -141,6 +141,7 @@ form:hover .fa,
 form:valid .fa {
     background: #8ebf42;
     color: #1c87c9;
+    cursor: pointer;
 }
 
 

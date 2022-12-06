@@ -88,7 +88,10 @@ consumetepisodevid(episodeId:any):Observable<any>{
   return this.http.get("https://api.consumet.org/meta/anilist/watch/"+episodeId);
 }
 
-
+//searchCompare
+compare():Observable<any>{
+  return this.http.get("./assets/data.json")
+}
 
 }
 

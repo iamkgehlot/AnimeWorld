@@ -34,7 +34,13 @@
     padding-bottom: 20px;
 
 }
+.name{
+    display: -webkit-box;
 
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 .th {
     color: #1c87c9;
 }

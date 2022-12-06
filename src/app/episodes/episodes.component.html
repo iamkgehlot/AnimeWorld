@@ -1,3 +1,8 @@
+
+
+
+
+
 <!-- <--------------- Navigation content-------------->
 <app-searchbox></app-searchbox>
 <!-- <--------------- If 404 error content-------------->
@@ -79,11 +84,11 @@
 
 
                 <app-loading-spinner *ngIf="loader"></app-loading-spinner>
-                <!-- <app-episodevids [id]="episodenum.id" ></app-episodevids> -->
-                <div>
+                <app-episodevids *ngIf="Anilistid!=null" [id]="Anilistid" ></app-episodevids>
+                <!-- <div>
                     <h1 *ngIf="episodesArray?.length===0" style="padding: 30px;">No Episodes found</h1>
-                    <div class="both" *ngIf="episodesArray?.length!=0">
-                        <table class="table boderless border-1">
+                    <div class="both" *ngIf="episodesArray?.length!=0 && !loader">
+                        <table class="table boderless border-1" >
                             <thead>
                                 <tr>
                                     <th class="th" scope="col">Episode Number</th>
@@ -109,7 +114,7 @@
 
                         </table>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <!-- <--------------- Youtube & reviews content-------------->
@@ -125,7 +130,7 @@
                 <app-loading-spinner *ngIf="showytspin"></app-loading-spinner>
 
                 <div class="col-lg-4 " style="width:100% ;" *ngIf="ytvid">
-                    <a style="float:left"> Trailer : {{datar.data.title}}</a>
+                   
                     <div class="gallery" style="background-color: black;">
                         <div>
                             <iframe style="border-radius: 20px;" [src]="yturl" allowfullscreen frameborder="0"
@@ -145,10 +150,10 @@
                         </div>
 
                     </div>
-
+                    <a> Trailer : {{datar.data.title}}</a>
                 </div>
                 <!-- <--------------- reviews content-------------->
-                <div class="reviews" style="width: auto;" *ngIf="!erroryt">
+                <div class="reviews" style="width: auto;" *ngIf="!erroryt&&ytvid">
                     <app-reviews [id]="sendid()"></app-reviews>
                 </div>
 
@@ -170,26 +175,27 @@
                 <app-loading-spinner *ngIf="showmusicspin"></app-loading-spinner>
 
                 <div class="col-lg-4 " style="width:100% ;" *ngIf="musicvid">
-                    <a style="float:left"> Music Video : {{datar.data.title}}</a>
+
                     <div class="gallery" style="background-color: black;">
                         <div>
                             <iframe style="border-radius: 20px;" [src]="musicurl" allowfullscreen frameborder="0"
-                                name="tab"></iframe>
+                                name="tabmusic"></iframe>
                         </div>
                         <div>
                             <span>
-                                <div style="border-radius: 20px;" *ngFor="let vids of musicviddata.data.music_videos">
-                                    <a [href]="vids.video.embed_url" target="tab"><img
+                                <div style="background-color: black;border-radius: 20px;" 
+                                *ngFor="let vids of musicviddata.data.music_videos">
+                                    <a [href]="vids.video.embed_url" target="tabmusic"><img
                                             [src]="vids.video.images.image_url" style="content:none;padding-top:5px">
                                         <a>{{vids.title}}</a>
                                     </a>
-
                                 </div>
                             </span>
                         </div>
                     </div>
+                   
                 </div>
-
+              
 
 
 
