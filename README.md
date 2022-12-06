@@ -1,3 +1,33 @@
+A website for Anime Searching and Getting Details Based on Open Source Api
+
+#Fuctions -
+
+Search Anime
+
+Get Recommendations 
+
+Popular Anime
+
+UpComing Anime
+
+Top Anime
+
+Random Anime Generator
+
+View Trailer
+
+View Episode details
+
+View Music Videos
+
+Download Images
+
+View Related Anime With Categories 
+
+
+
+
+
 # Anime
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
