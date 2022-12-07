@@ -26,10 +26,16 @@
     background: rgb(60, 58, 58);
 }
 
-.nav-item:hover {
-    color: #1c87c9;
-    cursor: pointer;
+.logo:hover {
+  
+    transform: scale(1.2);
+    transition: transform .9s,transform .5s,transform .5s;
+    -webkit-transition: transform .9s, transform .5s, transform .5s;
+    cursor:pointer
 
+}
+.nav-ite:hover{
+    color: #1c87c9;
 }
 
 
@@ -39,6 +45,7 @@
     text-align: left;
     color: white;
     padding-top: 1.2vw;
+    cursor:pointer
 
 }
 
@@ -58,7 +65,11 @@
     font-size: 1.5vw;
 
 
-
+}
+.logo{
+    transform: scale(1.1);
+    transition: opacity .9s,transform .5s,transform .5s;
+    -webkit-transition: opacity .9s, transform .5s, transform .5s;
 }
 
 .check {
@@ -141,7 +152,6 @@ form:hover .fa,
 form:valid .fa {
     background: #8ebf42;
     color: #1c87c9;
-    cursor: pointer;
 }
 
 

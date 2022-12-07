@@ -1,4 +1,5 @@
 <!-- -------if No vids--------- -->
+
 <div *ngIf="noContentFound" style="margin-top: 70px">
     <h1>No Episodes Found</h1>
 </div>
@@ -8,9 +9,6 @@
 </div>
 <div *ngIf="loadcomp">
     <div style="margin-top: 20px">
-        <div *ngIf="!check&&loadcomp&&!clickonwatchspin" style="margin-top: 20px">
-            <h1> Click On Watch Now To Stream Episodes </h1>
-        </div>
         <div *ngIf="!check&&clickonwatchspin" style="text-align:center">
             <app-loading-spinner></app-loading-spinner><br>Loading Video
         </div>
@@ -55,7 +53,7 @@
                             <th class="th" scope="col">Episode Number</th>
                             <th class="th" scope="col">Episode Name</th>
                             <th class="th" scope="col">Aired On</th>
-                            <th class="th" scope="col">Rating</th>
+                            <th class="th" scope="col">Stream</th>
                         </tr>
                     </thead>
 

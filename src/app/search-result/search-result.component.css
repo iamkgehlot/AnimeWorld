@@ -64,8 +64,9 @@
 
 }
 
-.prevnex:hover {
-  color: #8ebf42;
+.prevnex:hover {  transform: scale(1.1);
+  transition: opacity .9s,transform .5s,transform .5s;
+  -webkit-transition: opacity .9s, transform .5s, transform .5s;
 
 
 }
@@ -73,9 +74,10 @@
 .Image-Name:hover {
   color: #1c87c9;
   transform: scale(1.1);
+  transition: opacity .9s,transform .5s,transform .5s;
+  -webkit-transition: opacity .9s, transform .5s, transform .5s;
 
 }
-
 .Showing {
   padding: 5px;
 }
@@ -88,6 +90,9 @@
   width: 210px;
   display: block;
   overflow: visible;
+  transform: scale(1.1);
+  transition: opacity .9s,transform .5s,transform .5s;
+  -webkit-transition: opacity .9s, transform .5s, transform .5s;
 
 }
 

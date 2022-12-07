@@ -1,6 +1,6 @@
 .container {
   border-radius: 20px;
-  margin-top: 20px;
+  margin-top: 0px;
   background: #252525;
   color: #1c87c9;
   min-height: 70vh;
@@ -45,14 +45,27 @@
 
 
 .prevnex:hover {
-  color: #8ebf42;
-
+  color: #8ebf42
 
 }
 
+.rating {
+  background: rgb(32, 241, 216);
+  padding: 2px 8px;
+  border-radius: 3px;
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  top: 295px;
+  left: 10px;
+  font-size: 0.5em;
+  font-family: 'Ubuntu', sans-serif;
+}
 .Image-Name:hover {
   color: #1c87c9;
   transform: scale(1.1);
+  transition: opacity .9s,transform .5s,transform .5s;
+  -webkit-transition: opacity .9s, transform .5s, transform .5s;
 
 }
 
@@ -68,6 +81,11 @@
   width: 210px;
   display: block;
   overflow: visible;
+  transform: scale(1.1);
+
+
+  transition: opacity .9s, transform .5s, transform.5s;
+  -webkit-transition: opacity .9s, transform .5s, transform .5s;
 
 }
 
@@ -93,6 +111,11 @@
   position: relative;
   color: white;
   width: 217px;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 
 }
 
@@ -123,18 +146,6 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
-.rating {
-  background: rgb(32, 241, 216);
-  padding: 2px 8px;
-  border-radius: 3px;
-  color: black;
-  font-weight: bold;
-  position: absolute;
-  top: 295px;
-  left: 10px;
-  font-size: 0.5em;
-  font-family: 'Ubuntu', sans-serif;
-}
 
 .watch {
   background: rgb(32, 241, 216);
@@ -181,6 +192,11 @@
   width: 210px;
   overflow: visible;
   font-weight: 600;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .epcon {

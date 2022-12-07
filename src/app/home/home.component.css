@@ -23,6 +23,8 @@
 
 .slider {
     animation: sliding 25s ease-out 0s backwards infinite;
+    transition: animation .9s,animation .5s,animation .5s;
+    -webkit-transition: animation .9s, animation .5s, animation .5s;
     position: absolute;
     left: 0;
     top: 0;
@@ -238,7 +240,9 @@
 
 
 .prevnex:hover {
-    color: #8ebf42;
+    transform: scale(1.1);
+    transition: opacity .9s,transform .5s,transform .5s;
+    -webkit-transition: opacity .9s, transform .5s, transform .5s;
 
 
 }
@@ -246,8 +250,10 @@
 .Image-Name:hover {
     color: #1c87c9;
     transform: scale(1.1);
-
-}
+    transition: opacity .9s,transform .5s,transform .5s;
+    -webkit-transition: opacity .9s, transform .5s, transform .5s;
+  
+  }
 
 .Showing {
     padding: 5px;
@@ -261,6 +267,9 @@
     width: 210px;
     display: block;
     overflow: visible;
+    transform: scale(1.1);
+    transition: opacity .9s,transform .5s,transform .5s;
+    -webkit-transition: opacity .9s, transform .5s, transform .5s;
 
 }
 
@@ -431,8 +440,9 @@
 
 .mybtn:hover {
     background-color: #8ebf42;
-
     transform: scale(1.1);
+    transition: opacity .9s,transform .5s,transform .5s;
+    -webkit-transition: opacity .9s, transform .5s, transform .5s;
 }
 @media only screen and (max-width: 768px) {
   

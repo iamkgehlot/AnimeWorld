@@ -1,8 +1,9 @@
 
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { SearchResultServiceService } from '../services/search-result-service.service';
-
+var document!: Document
 @Component({
   selector: 'app-episodevids',
   templateUrl: './episodevids.component.html',
@@ -10,7 +11,7 @@ import { SearchResultServiceService } from '../services/search-result-service.se
 })
 export class EpisodevidsComponent implements OnInit {
 
-  constructor(private urlservice: SearchResultServiceService, private sanitizer: DomSanitizer) {
+  constructor(private router: Router, private urlservice: SearchResultServiceService, private sanitizer: DomSanitizer) {
 
   }
 
@@ -31,52 +32,52 @@ export class EpisodevidsComponent implements OnInit {
   clickonwatchspin = false;
   noContentFound = false;
   async ngOnInit() {
-   //get episodes detail
- if(this.id>=0){
+    //get episodes detail
+    if (this.id >= 0) {
 
-    this.episodedetails = await this.urlservice.consumetapi(this.id).toPromise();
-    if ((this.episodedetails.episodes)?.length != 0) {
-      this.loadcomp = true;
-      this.totalepisodes = (this.episodedetails.episodes)?.length
-  
-      this.totalPages = Math.ceil(this.totalepisodes / 10)
-      if (this.totalPages > 1) {
-        this.hasNextPage = true
-  
+      this.episodedetails = await this.urlservice.consumetapi(this.id).toPromise();
+      if ((this.episodedetails.episodes)?.length != 0) {
+        this.loadcomp = true;
+        this.totalepisodes = (this.episodedetails.episodes)?.length
 
-      } else {
-        this.hasNextPage = false;
+        this.totalPages = Math.ceil(this.totalepisodes / 10)
+        if (this.totalPages > 1) {
+          this.hasNextPage = true
+
+
+        } else {
+          this.hasNextPage = false;
+        }
+      } else if ((this.episodedetails.episodes)?.length == 0) {
+        this.noContentFound = true;
       }
-    } else if ((this.episodedetails.episodes)?.length == 0) {
-      this.noContentFound = true;
-    }}else{
+    } else {
       this.noContentFound = true;
     }
- 
-}
+
+  }
 
 
   videoid: any;
   url12: any
-  title:any;
-  backupurl:any;
+  title: any;
+  backupurl: any;
   //get episode video
-  async getepisodevideo(episodeid: any,title:any) {
-    this.title=title;
-    this.clickonwatchspin = true;
+  async getepisodevideo(episodeid: any, title: any) {
+    this.title = title;
     this.videoid = episodeid;
+    this.clickonwatchspin = true;
     this.episodevideo = await this.urlservice.consumetepisodevid(episodeid).toPromise();
-    for(let i=(this.episodevideo.sources).length;i>=0;i--){
+    for (let i = (this.episodevideo.sources).length; i >= 0; i--) {
 
-      if(this.episodevideo.sources[i]?.url){
-      this.url12 = (this.episodevideo.sources[i-1].url);
-      
-
-      this.check = true;
-      break;
+      if (this.episodevideo.sources[i]?.url) {
+        this.url12 = (this.episodevideo.sources[i - 1].url);
+        this.check = true;
+        break;
       }
     }
   }
+
 
   checkpage: any
   //next set of episode
@@ -86,8 +87,6 @@ export class EpisodevidsComponent implements OnInit {
     this.hasPrevPage = true;
     this.hasNextPage = false;
     if (this.currentpage + 1 < this.totalPages) {
-
-
       this.hasNextPage = true;
       this.currentpage += 1;
     } else {
@@ -109,6 +108,7 @@ export class EpisodevidsComponent implements OnInit {
     }
 
   }
+
 }
 
 

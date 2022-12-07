@@ -45,7 +45,9 @@
 
 
 .prevnex:hover {
-  color: #8ebf42;
+  transform: scale(1.1);
+  transition: opacity .9s,transform .5s,transform .5s;
+  -webkit-transition: opacity .9s, transform .5s, transform .5s;
 
 
 }
@@ -62,6 +64,9 @@
   width: 210px;
   display: block;
   overflow: visible;
+  transform: scale(1.1);
+  transition: opacity .9s,transform .5s,transform .5s;
+  -webkit-transition: opacity .9s, transform .5s, transform .5s;
 
 }
 
@@ -306,4 +311,6 @@
   background-color: #8ebf42;
   box-shadow: 4px 3px 11px 0 #005a13;
   transform: scale(1.1);
+  transition: opacity .9s,transform .5s,transform .5s;
+  -webkit-transition: opacity .9s, transform .5s, transform .5s;
 }
