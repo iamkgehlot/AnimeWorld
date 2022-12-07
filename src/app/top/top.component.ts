@@ -28,7 +28,6 @@ export class TopComponent implements OnInit {
     this.urlservice.getTop(this.currentpage).subscribe((result: any) => {
 
       this.datar = result;
-      console.log(result.pagination.last_visible_page)
       this.loadcomponent = true;
     })
 
@@ -64,31 +63,25 @@ export class TopComponent implements OnInit {
   prevPage() {
 
 
-    console.log("prev click1")
+
     if (this.datar.pagination.current_page > 1) {
       this.nextpage = this.datar.pagination.current_page - 1;
       this.router.navigate(['top/page/', this.nextpage]).then(page => { window.location.reload(); });
-      console.log(this.nextpage)
 
     }
-    console.log("out")
 
 
   }
   nextPage() {
 
-    console.log("next click1")
     if (this.datar.pagination.last_visible_page != this.datar.pagination.current_page) {
       this.nextpage = this.datar.pagination.current_page + 1;
       this.router.navigate(['top/page/', this.nextpage]).then(page => { window.location.reload(); });
-      console.log(this.nextpage)
     }
-    console.log("out")
 
   }
 
   redirect(id: string) {
-    console.log(id + "epidpage");
     this.router.navigateByUrl('episodes/' + id);
 
   }

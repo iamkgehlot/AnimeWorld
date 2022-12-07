@@ -26,7 +26,6 @@ export class UpcomingComponent implements OnInit {
     //get data
     this.urlservice.getUpcominngSeason(this.currentpage).subscribe((result: any) => {
       this.datar = result;
-      console.log(result)
       this.loadcomponent = true;
     })
   }
@@ -34,28 +33,22 @@ export class UpcomingComponent implements OnInit {
   //previous page
   nextpage: any;
   prevPage() {
-    console.log("prev click1")
     if (this.datar.pagination.current_page > 1) {
       this.nextpage = this.datar.pagination.current_page - 1;
       this.router.navigate(['upcoming/page/', this.nextpage]).then(page => { window.location.reload(); });
-      console.log(this.nextpage)
     }
-    console.log("out")
   }
 
   //next page
   nextPage() {
-    console.log("next click1")
     if (this.datar.pagination.last_visible_page != this.datar.pagination.current_page) {
       this.nextpage = this.datar.pagination.current_page + 1;
       this.router.navigate(['upcoming/page/', this.nextpage]).then(page => { window.location.reload(); });
-      console.log(this.nextpage)
     }
-    console.log("out")
   }
   //get anime details
   redirect(id: string) {
-    console.log(id + "epidpage");
+
     this.router.navigateByUrl('episodes/' + id);
   }
 

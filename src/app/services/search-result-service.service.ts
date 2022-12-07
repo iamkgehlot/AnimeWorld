@@ -84,7 +84,6 @@ consumetapi(id:any):Observable<any>{
 }
 //get episode m3u8 links
 consumetepisodevid(episodeId:any):Observable<any>{
-  console.log(episodeId)
   return this.http.get("https://api.consumet.org/meta/anilist/watch/"+episodeId);
 }
 

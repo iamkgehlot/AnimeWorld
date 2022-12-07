@@ -10,7 +10,7 @@ export class VideoplayerComponent implements OnInit {
   constructor() { }
 @Input() url:any;
   ngOnInit(): void {
-    console.log(this.url+"cvvvv")
+ 
   }
 
   

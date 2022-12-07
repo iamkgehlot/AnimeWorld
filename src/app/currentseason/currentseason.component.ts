@@ -25,7 +25,6 @@ export class CurrentseasonComponent implements OnInit {
     //current page subscribe
     this.urlservice.getCurrentSeason(this.currentpage).subscribe((result: any) => {
       this.datar = result;
-      console.log(result)
       this.loadcomponent = true;
     })
   }
@@ -33,14 +32,11 @@ export class CurrentseasonComponent implements OnInit {
   //prev page
   nextpage: any;
   prevPage() {
-    console.log("prev click1")
     if (this.datar.pagination.current_page > 1) {
       this.nextpage = this.datar.pagination.current_page - 1;
       this.router.navigate(['current/page/', this.nextpage]).then(page => { window.location.reload(); });
-      console.log(this.nextpage)
 
     }
-    console.log("out")
 
 
   }
@@ -51,12 +47,11 @@ export class CurrentseasonComponent implements OnInit {
     if (this.datar.pagination.last_visible_page != this.datar.pagination.current_page) {
       this.nextpage = this.datar.pagination.current_page + 1;
       this.router.navigate(['current/page/', this.nextpage]).then(page => { window.location.reload(); });
-      console.log(this.nextpage)
+
     }
   }
 
   redirect(id: string) {
-    console.log(id + "epidpage");
     this.router.navigateByUrl('episodes/' + id);
   }
 }

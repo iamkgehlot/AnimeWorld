@@ -21,11 +21,9 @@ export class RandomComponent implements OnInit {
     setTimeout(() => {
       this.urlService.getRandom().subscribe((result: any) => {
         this.datar = result;
-        console.log(this.datar.data.title);
         this.dataload = true;
         this.loader2 = false;
       }, error => {
-        console.log('404 not found')
         this.loader2 = false;
         this.errortop = true;
       });

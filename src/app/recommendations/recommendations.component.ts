@@ -31,7 +31,6 @@ export class RecommendationsComponent implements OnInit {
         }
       },
         err => {
-          console.log("404 error")
           this.loadcomponent = false;
         }
       )

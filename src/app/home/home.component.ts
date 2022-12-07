@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit {
 
   //Anime Details
   redirect(id: string) {
-    console.log(id + "epidpage");
+
     this.router.navigate(['episodes/', id])
 
   }

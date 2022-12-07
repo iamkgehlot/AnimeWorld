@@ -35,12 +35,9 @@ export class EpisodesComponent implements OnInit {
       for(let i =0;i<= (result).length+1;i++){
         // console.log(this.comparedata[i].mal_id)
         if(this.comparedata[i].mal_id==this.episodenum.id){
-          console.log(this.comparedata[i].mal_id+"pass")
           if((this.comparedata[i].anilist_id)!=0){
             this.Anilistid=this.comparedata[i]["anilist_id"];
-            console.log(this.Anilistid);
             if(!this.Anilistid){
-              console.log("false")
               this.Anilistid=-1;
             }
             break;
@@ -74,12 +71,8 @@ export class EpisodesComponent implements OnInit {
 
         this.dataload = true;
         this.loader2 = false;
-        console.log("ep full ");
 
       }, error => {
-        console.log(error)
-        console.log('404 not found')
-
         this.loader2 = false;
         this.errortop = true;
 
@@ -92,7 +85,6 @@ export class EpisodesComponent implements OnInit {
         this.loader = false;
 
       }, error => {
-        console.log('404 not found')
         this.errorep = true;
         this.loader = false;
 
@@ -132,17 +124,13 @@ export class EpisodesComponent implements OnInit {
         if ((this.viddata.data.promo).length != 0) {
           this.yturl = this.sanitizer.bypassSecurityTrustResourceUrl(this.viddata.data.promo[0].trailer.embed_url);
           this.ytvid = true;
-          console.log(result + "getvids");
         } else if (((this.viddata.data.promo).length == 0)) {
           this.showytspin = false;
           this.noytvidfound = true;
-          console.log("in Yt no vid found condn")
 
         }
 
       }, error => {
-        console.log('404 not found')
-        console.log(error)
         this.erroryt = true;
         this.showytspin = false;
 
@@ -175,10 +163,8 @@ export class EpisodesComponent implements OnInit {
           this.nomusicvidfound = true;
         }
       }, error => {
-        console.log('404 not found')
         this.showmusicspin = false;
         this.errorss = true;
-        console.log(error)
 
 
       })
