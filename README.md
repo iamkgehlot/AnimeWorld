@@ -1,4 +1,4 @@
-A website for Anime Searching and Getting Details Based on Open Source Api
+A website for Anime Streaming and Getting Details Based on Open Source Api
 
 #Fuctions -
 
