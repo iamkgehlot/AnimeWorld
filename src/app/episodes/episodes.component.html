@@ -19,7 +19,7 @@
 
 
         <app-loading-spinner *ngIf="loader2"></app-loading-spinner>
-
+<!-- <--------------- Summary content-------------->
         <div class="both" *ngIf="dataload">
             <div class="left"><img class="img" [src]="datar.data.images.jpg.image_url"></div>
 
@@ -85,36 +85,6 @@
 
                 <app-loading-spinner *ngIf="loader"></app-loading-spinner>
                 <app-episodevids *ngIf="Anilistid!=null" [id]="Anilistid" ></app-episodevids>
-                <!-- <div>
-                    <h1 *ngIf="episodesArray?.length===0" style="padding: 30px;">No Episodes found</h1>
-                    <div class="both" *ngIf="episodesArray?.length!=0 && !loader">
-                        <table class="table boderless border-1" >
-                            <thead>
-                                <tr>
-                                    <th class="th" scope="col">Episode Number</th>
-                                    <th class="th" scope="col">Episode Name</th>
-                                    <th class="th" scope="col">Aired On</th>
-                                    <th class="th" scope="col">Rating</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr *ngFor="let ep of episodesArray">
-                                    <th scope="row" *ngIf="ep.mal_id">{{ep.mal_id}}</th>
-                                    <td *ngIf="!ep.mal_id" class="note">Not Available</td>
-                                    <td *ngIf="ep.title">{{ep.title}}</td>
-                                    <td *ngIf="!ep.title" class="note">Not Available</td>
-                                    <td *ngIf="ep.aired">{{ep.aired.substr(0,10)}}</td>
-                                    <td *ngIf="!ep.aired" class="note">Not Available</td>
-                                    <td *ngIf="ep.score">{{ep.score}}</td>
-                                    <td *ngIf="!ep.score" class="note">Not Available</td>
-                                </tr>
-
-                            </tbody>
-
-                        </table>
-                    </div>
-                </div> -->
             </div>
 
             <!-- <--------------- Youtube & reviews content-------------->
