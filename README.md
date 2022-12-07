@@ -2,6 +2,8 @@ A website for Anime Searching and Getting Details Based on Open Source Api
 
 #Fuctions -
 
+Stream Anime
+
 Search Anime
 
 Get Recommendations 
