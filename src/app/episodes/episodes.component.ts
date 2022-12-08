@@ -30,8 +30,6 @@ export class EpisodesComponent implements OnInit {
 
     this.urlService.compare().subscribe((result: any) => {
       this.comparedata = result;
-     
-
       for(let i =0;i<= (result).length+1;i++){
         // console.log(this.comparedata[i].mal_id)
         if(this.comparedata[i].mal_id==this.episodenum.id){
@@ -68,7 +66,6 @@ export class EpisodesComponent implements OnInit {
     setTimeout(() => {
       this.urlService.getEpFull(this.episodenum.id).subscribe((result: any) => {
         this.datar = result;
-
         this.dataload = true;
         this.loader2 = false;
 
@@ -312,8 +309,8 @@ export class EpisodesComponent implements OnInit {
 
     $("#nav-yt").css({
       "display": "block",
-      "padding-left": "9vw",
-      "padding-right": "9vw",
+      "padding-left": "2vw",
+      "padding-right": "2vw",
       "padding-top": "3vw",
       transition: '  display .1s ease'
     });
@@ -382,8 +379,8 @@ export class EpisodesComponent implements OnInit {
 
     $("#nav-music").css({
       "display": "block",
-      "padding-left": "9vw",
-      "padding-right": "9vw",
+      "padding-left": "2vw",
+      "padding-right": "2vw",
       "padding-top": "3vw",
       transition: '  display .1s ease'
     });
