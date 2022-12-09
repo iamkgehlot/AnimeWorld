@@ -5,8 +5,10 @@
     <app-loading-spinner *ngIf="!loadcomponent"></app-loading-spinner>
     <!-- <--------------- Main content-------------->
     <div class="row " id="row" *ngIf="loadcomponent">
-        <h1 style="margin-top:10px">Upcoming Anime</h1>
-        <div style="margin-top:15px" class=" col" id="col" *ngFor="let sr of datar.data; let i = index">
+        <hr class="hr1">
+        <h1  style="margin-top:0px">Upcoming Anime</h1>
+        <hr class="hr1">
+        <div style="margin-top:0px" class=" col" id="col" *ngFor="let sr of datar.data; let i = index">
             <div id="Banners-container" (click)="redirect(sr.mal_id)">
                 <div class="Image-Name">
                     <img [src]="sr.images.jpg.image_url" alt="Fate stye night" style="height: 312px;">

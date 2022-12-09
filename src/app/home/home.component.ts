@@ -44,28 +44,29 @@ export class HomeComponent implements OnInit {
           this.up = false;
         }
 
-      })
-      //pop movie
-      this.urlservice.getpopmov().subscribe((result: any) => {
-        this.popmov = result;
-        if ((this.popmov.data).length != 0) {
-          this.pop = false;
-        }
+      
+    })
+        //pop movie
+        this.urlservice.getpopmov().subscribe((result: any) => {
+          this.popmov = result;
+          if ((this.popmov.data).length != 0) {
+            this.pop = false;
+          }
 
-      })
+        })
 
-    }, 1000);
+      }, 1000);
 
-    setTimeout(() => { this.api3 = true; }, 2000);
+      setTimeout(() => { this.api3 = true; }, 2000);
 
-  }
+    }
 
   //Anime Details
   redirect(id: string) {
 
-    this.router.navigate(['episodes/', id])
+      this.router.navigate(['episodes/', id])
 
-  }
+    }
 
 
 }

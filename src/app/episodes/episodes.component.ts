@@ -26,8 +26,8 @@ export class EpisodesComponent implements OnInit {
   errortop = false;
   comparedata: any;
   lengths: any
+  
   ngOnInit(): void {
-
     this.urlService.compare().subscribe((result: any) => {
       this.comparedata = result;
       for(let i =0;i<= (result).length+1;i++){
@@ -47,14 +47,6 @@ export class EpisodesComponent implements OnInit {
     })
      
     
-
-
-      
-    //     }
-
-
-
-
     //getting params from routes
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.activatedRoute.params.subscribe(routeParams => {
@@ -64,16 +56,15 @@ export class EpisodesComponent implements OnInit {
 
 
     setTimeout(() => {
+      //getFull Episode Details for banner
       this.urlService.getEpFull(this.episodenum.id).subscribe((result: any) => {
         this.datar = result;
         this.dataload = true;
         this.loader2 = false;
 
-      }, error => {
+      },(error:any)  => {
         this.loader2 = false;
         this.errortop = true;
-
-
       });
       //episode details
       this.urlService.getEpisodes(this.episodenum.id).subscribe((response: Array<arr2>) => {
@@ -132,8 +123,6 @@ export class EpisodesComponent implements OnInit {
         this.showytspin = false;
 
       }
-
-
       )
     }, 500);
 

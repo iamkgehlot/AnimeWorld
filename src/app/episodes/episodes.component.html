@@ -1,8 +1,3 @@
-
-
-
-
-
 <!-- <--------------- Navigation content-------------->
 <app-searchbox></app-searchbox>
 <!-- <--------------- If 404 error content-------------->
@@ -11,19 +6,26 @@
 
 </div>
 <!-- <--------------- If not 404 error content-------------->
+<app-loading-spinner *ngIf="loader2"></app-loading-spinner>
 <div class="container" *ngIf="!errorep&&!erroryt&&!errorss&&!errortop">
     <div class="episodesContainer">
+        <div class="background-image" style="background:url({{datar.data.images.jpg.image_url}});    
+        height: 100%;
+        width: 100%;
+         background-attachment: fixed;
+        background-position: center center;
+        background-size: cover;
+        background-size:cover;"></div>
         <div *ngIf="errortop">
             <h1>404 Not Found</h1> <!--  server side error -->
         </div>
 
 
-        <app-loading-spinner *ngIf="loader2"></app-loading-spinner>
-<!-- <--------------- Summary content-------------->
-        <div class="both" *ngIf="dataload" >
+      
+        <!-- <--------------- Summary content-------------->
+        <div class="both" *ngIf="dataload">
             <div class="left"><img class="img" [src]="datar.data.images.jpg.image_url"></div>
-
-            <div class="left" style="display: contents;">
+            <div class="left">
                 <ul class="list-group list-group-flush" style="text-align:left;" *ngIf="dataload">
                     <li class="list-group-item" *ngIf="datar.data.title "><a class="title">Title:</a> <a
                             class="name">{{datar.data.title}}</a>
@@ -48,12 +50,15 @@
                         <a class="title ">Synopsis:</a> <a class="not">Not Available</a>
                     </li>
                 </ul>
-                <a style="font-size: 20px;  float: left;text-align: left;"> <br> <br></a>
-            </div>
+          </div>
         </div>
+
+
+
+
         <!-- <--------------- In Episode component Navigation content-------------->
-        <nav>
-            <div class="nav nav-tabs both" id="nav-tab" role="tablist">
+        <nav *ngIf="dataload" >
+            <div class="nav nav-tabs both" style="justify-content: center;" id="nav-tab" role="tablist">
                 <button class="nav-link active " id="nav-Episode-tab" data-bs-toggle="tab" data-bs-target="#nav-Episode"
                     type="button" role="tab" aria-controls="nav-Episode" aria-selected="true"
                     (click)="showep()">Episodes</button>
@@ -73,7 +78,7 @@
         </nav>
 
         <!-- <--------------- Tab content-------------->
-        <div class="tab-content " id="nav-tabContent">
+        <div class="tab-content bb " id="nav-tabContent">
 
             <!-- <--------------- Episode details content-------------->
             <div class="tab-pane fade show active " id="nav-Episode" role="tabpanel" aria-labelledby="nav-Episode-tab"
@@ -84,7 +89,7 @@
 
 
                 <app-loading-spinner *ngIf="loader"></app-loading-spinner>
-                <app-episodevids *ngIf="Anilistid!=null" [id]="Anilistid" ></app-episodevids>
+                <app-episodevids *ngIf="Anilistid!=null" [id]="Anilistid"></app-episodevids>
             </div>
 
             <!-- <--------------- Youtube & reviews content-------------->
@@ -100,7 +105,7 @@
                 <app-loading-spinner *ngIf="showytspin"></app-loading-spinner>
 
                 <div class="col-lg-4 " style="width:100% ;" *ngIf="ytvid">
-                   
+
                     <div class="gallery" style="background-color: black;">
                         <div>
                             <iframe style="border-radius: 20px;" [src]="yturl" allowfullscreen frameborder="0"
@@ -123,10 +128,9 @@
                     <a> Trailer : {{datar.data.title}}</a>
                 </div>
                 <!-- <--------------- reviews content-------------->
-                <div class="reviews" style="width: auto;" *ngIf="!erroryt&&ytvid">
+                <div class="reviews" style="width: auto;" >
                     <app-reviews [id]="sendid()"></app-reviews>
                 </div>
-
             </div>
 
 
@@ -153,8 +157,8 @@
                         </div>
                         <div>
                             <span>
-                                <div style="background-color: black;border-radius: 20px;" 
-                                *ngFor="let vids of musicviddata.data.music_videos">
+                                <div style="background-color: black;border-radius: 20px;"
+                                    *ngFor="let vids of musicviddata.data.music_videos">
                                     <a [href]="vids.video.embed_url" target="tabmusic"><img
                                             [src]="vids.video.images.image_url" style="content:none;padding-top:5px">
                                         <a>{{vids.title}}</a>
@@ -163,9 +167,9 @@
                             </span>
                         </div>
                     </div>
-                   
+
                 </div>
-              
+
 
 
 
@@ -174,7 +178,7 @@
 
             <!-- <--------------- Images content-------------->
             <div class="tab-pane fade " id="nav-images" role="tabpanel" aria-labelledby="nav-images-tab" tabindex="0">
-                <div class="both">
+                <div>
                     <app-images *ngIf="inImages" [id]="sendid()"></app-images>
                 </div>
             </div>
@@ -190,7 +194,6 @@
         </div>
 
     </div>
-
+    <!-- <--------------- Recommendations content-------------->
+    <app-recommendations [id]="sendid()"></app-recommendations>
 </div>
-<!-- <--------------- Recommendations content-------------->
-<app-recommendations [id]="sendid()"></app-recommendations>

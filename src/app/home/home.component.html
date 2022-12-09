@@ -11,8 +11,7 @@
         <section class="slider">
             <!-- <--------------- #1 Banner content-------------->
             <article class="slide" (click)="redirect(randombaner.data[0].mal_id)">
-                <span class="blur"
-                    style=" background-image: url({{randombaner.data[0].images.jpg.large_image_url}});"></span>
+                <span class="blur" style=" background-image: url({{randombaner.data[0].images.jpg.large_image_url}});"></span>
                 <span>
                     <div class="rankfa " style="float:none"><i class="fa fa-trophy" aria-hidden="true"> </i> #1 Top
                         Airing </div>
@@ -162,7 +161,7 @@
 
 <!-- <--------------- Popular Tv content-------------->
 <div class="container">
-    <h1 class=" h1" style="text-align: left;padding:20px"> Popular Anime On Tv </h1>
+    <h1 class=" h1" style="text-align: left;padding:20px"><i class="fa fa-desktop" aria-hidden="true"></i> Trending On Tv </h1>
     <hr class="hr1">
 
     <app-loading-spinner *ngIf="up"></app-loading-spinner>
@@ -188,21 +187,29 @@
         </div>
     </div>
 
-
+    <hr >
 </div>
 
 <!-- <--------------- Suggestion content-------------->
 <div class="container">
-    <h1 class="h1" style="text-align: left;padding-left:20px ;display: inline-block; padding-top: 20px;"> Anime
-        Suggestions </h1>
-    <div class="ref"> <button class="mybtn  " (click)="apphome.reloadcomp()"
-            style="margin-bottom: 20px ;display: flex">Refresh</button></div>
-    <hr class="hr1">
+    <div style="justify-content: space-between;
+    display: flex;
+    padding-right: 10px;
+">
+        <h1 class="h1" style="text-align: left;padding-left:20px ;display: inline-block; padding-top: 20px;"><i class="fa fa-random" aria-hidden="true"></i> Random
+            Suggestions </h1>
+
+        <button class="mybtn  " (click)="apphome.reloadcomp()"
+        >Refresh</button>
+    </div>
+   
+    
+<hr class="hr1">
     <app-random #apphome></app-random>
 </div>
 <!-- <--------------- Popular movie content-------------->
 <div class="container">
-    <h1 class="h1" style="text-align: left;padding:20px ; "> Popular Anime Movies </h1>
+    <h1 class="h1" style="text-align: left;padding:20px ; "><i class="fa fa-film" aria-hidden="true"></i> Trending Movies <i class="fa fa-video-camera" aria-hidden="true"></i> </h1>
     <hr class="hr1">
     <app-loading-spinner *ngIf="pop"></app-loading-spinner>
     <div class="row " id="row" *ngIf="!pop">

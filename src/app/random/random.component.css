@@ -13,6 +13,7 @@
 }
 
 
+
 .hr1 {
     border: 0;
     clear: both;
@@ -21,14 +22,17 @@
     background-color: #d6d632;
     height: 1px;
 }
+.list-group{
+    background-color: black;
+}
 
 
 .container {
     border-radius: 20px;
-    margin-top: 20px;
-    background: #252525;
+    margin-top: 0px;
+    background: black;
     color: #1c87c9;
-    min-height: 70vh;
+    /* min-height: 70vh; */
     width: 90vw;
     display: table;
     padding-bottom: 20px;
@@ -50,11 +54,12 @@
     color: white;
     font-family: 'Mulish', sans-serif;
     padding-top: 20px;
-    margin-top: 20px
+    margin-top: 0px
 }
 
 .both {
-    display: flex;
+    display: block;
+    min-width:80vw;
 
 }
 
@@ -80,9 +85,9 @@
 
 .list-group {
     padding-left: revert;
-    width: 50vw;
+    /* width: 50vw; */
     --bs-list-group-border-color: white;
-    --bs-list-group-bg: rgb(46 45 45)
+    --bs-list-group-bg:rgba(0, 0, 0, 0);
 }
 
 .not {
@@ -96,7 +101,7 @@
 
 .both1 {
     padding: 30px;
-    background-color: rgb(46 45 45);
+    background-color:black;
     margin-top: 20px;
     border-radius: 20px;
 
@@ -106,7 +111,7 @@
 .both {
     display: flex;
     padding: 30px;
-    background-color: rgb(46 45 45);
+    background-color: black;
     margin: auto;
     border-radius: 20px;
     justify-content: center;
@@ -122,9 +127,7 @@
     }
 
 
-    .img {
-        height: 30vw;
-    }
+    
 
     .slider {
         height: 50%;
@@ -154,11 +157,7 @@
         display: block;
     }
 
-    .both {
-        display: block;
-        margin: auto;
-
-    }
+  
 
 }
 
@@ -166,7 +165,7 @@
 
 
 .episodesContainer {
-    margin-top: 20px;
+    margin-top: 00px;
     display: flex;
 }
 

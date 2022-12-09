@@ -5,7 +5,7 @@ body {
 }
 .container{
     margin-top: 20px;
-    background-color: rgb(46 45 45);
+    /* background-color:black; */
     border-radius: 20px;
 }
 
@@ -25,7 +25,7 @@ body {
 }
 
 .form-control {
-    background-color: rgba(26, 21, 21, 0.05);
+    background-color: black
 }
 
 .container {
