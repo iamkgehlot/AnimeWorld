@@ -31,6 +31,8 @@ export class EpisodevidsComponent implements OnInit {
   hasPrevPage = false;
   clickonwatchspin = false;
   noContentFound = false;
+  firstepisode:any;
+
   async ngOnInit() {
     //get episodes detail
     if (this.id >= 0) {
@@ -39,8 +41,8 @@ export class EpisodevidsComponent implements OnInit {
       if ((this.episodedetails.episodes)?.length != 0) {
         this.loadcomp = true;
         this.totalepisodes = (this.episodedetails.episodes)?.length
-
         this.totalPages = Math.ceil(this.totalepisodes / 10)
+        this.firstepisode = await this.urlservice.consumetepisodevid(this.episodedetails.episodes[1].id).toPromise();
         if (this.totalPages > 1) {
           this.hasNextPage = true
 
@@ -107,6 +109,17 @@ export class EpisodevidsComponent implements OnInit {
       this.hasPrevPage = false;
     }
 
+  }
+change=false;
+  onclick(){
+this.change=true;
+    var body = $("html, body");
+    console.log("clcicke")
+    body.stop().animate({scrollTop:$('video').offset()?.top}, '10000');
+   
+  }
+  scrollToTop(): void {
+    window.scrollTo(0, 600);
   }
 
 }

@@ -1,29 +1,35 @@
+
 <nav class="navbar desk" id="navshow">
   <!-- <--------------- Nav details-------------->
   <div class="nav-item">
     <div class="logo" (click)="sendhome()" id="showme">AnimeWorld</div>
   </div>
   <div class="nav-item nav-ite" (click)="sendtop()">
-    Top Anime
+    Top Trending
   </div>
   <div class="nav-item nav-ite" (click)="sendcurrent()">
-    Currently Airing
+    Currently Streaming
   </div>
   <div class="nav-item nav-ite" (click)="sendupcoming()">
     Upcoming
   </div>
   <!-- <--------------- Search box -------------->
-  <form class="form" id="formchange">
+  <form class="d-flex">
+    <input class="input "name="searchbox" type="search" id="input" placeholder="Search" aria-label="Search" [(ngModel)]="enteredSearchValue" required
+    placeholder="Search Anime..." (keyup.enter)="SendSearchedvalueMethod()">
+    <i class="fa fa-search" type="submit" (click)="SendSearchedvalueMethod() "></i>
+  </form>
+  <!-- <form class="form" id="formchange">
     <input type="text" name="searchbox" class="input" id="input" [(ngModel)]="enteredSearchValue" required
       placeholder="Search Anime..." (keyup.enter)="SendSearchedvalueMethod()">
     <i class="fa fa-search" type="submit" (click)="SendSearchedvalueMethod() "></i>
-  </form>
+  </form> -->
 
 </nav>
 
 
   <!-- <---------------Responsive navbar Search box -------------->
-<div class="mob" role="navigation">
+<!-- <div class="mob" role="navigation">
   <nav class="mob navbar navbar-expand-md navbar-dark bg-dark ">
     <div class="container-fluid">
       <div class="logo" (click)="sendhome()" id="showme">AnimeWorld</div>
@@ -61,4 +67,4 @@
       </div>
     </div>
   </nav>
-</div>
+</div> -->

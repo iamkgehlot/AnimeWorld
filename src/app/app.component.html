@@ -11,15 +11,15 @@
 
 
 <body>
-     <router-outlet></router-outlet> 
+     <router-outlet (activate)="onActivate($event)"></router-outlet> 
      <app-totop></app-totop>
+     
+     
 </body>
-
-
 
 <!-- <--------------- Footer content-------------->
 <footer>
-
+     
      <div class="logo">
           AnimeWorld
      </div>

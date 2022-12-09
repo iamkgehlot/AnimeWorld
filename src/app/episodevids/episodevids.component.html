@@ -1,13 +1,13 @@
 <!-- -------if No vids--------- -->
-
-<div *ngIf="noContentFound" style="margin-top: 70px">
+<div class=back>
+<div *ngIf="noContentFound" style="margin-top: 70px" >
     <h1>No Episodes Found</h1>
 </div>
 
 <div *ngIf="!loadcomp&&!noContentFound">
     <app-loading-spinner></app-loading-spinner> <br>Loading Content
 </div>
-<div *ngIf="loadcomp">
+<div *ngIf="loadcomp" id="video"  #top >
     <div style="margin-top: 20px">
         <div *ngIf="!check&&clickonwatchspin" style="text-align:center">
             <app-loading-spinner></app-loading-spinner><br>Loading Video
@@ -38,13 +38,12 @@
                 </vg-controls>
                 <video [vgMedia]="$any(media)" [vgHls]="url12" #media id="my-video" preload="auto"></video>
             </vg-player>
-            <div style="font-size:2vw;color:white"> Episode Name : {{title}}</div>
+            <div style="font-size:2vw;color:white" *ngIf="title!=null"> Episode Name : {{title}}</div>
             <hr>
         </div>
 
         <div *ngIf="loadcomp" style="color:white">
-
-            <hr>
+            
             <!-- -------contents--------- -->
             <div class="both" style="color:white">
                 <table class="table boderless border-1">
@@ -65,8 +64,8 @@
                             <td *ngIf="!ep.title" class="note">Not Available</td>
                             <td *ngIf="ep.airDate">{{ep.airDate.substr(0,10)}}</td>
                             <td *ngIf="!ep.airDate" class="note">Not Available</td>
-                            <td><button class="btn btn-primary" (click)="getepisodevideo(ep.id,ep.title)">Watch
-                                    Now</button></td>
+                            <td><button class="watchnow" id="watchnow" (click)="getepisodevideo(ep.id,ep.title);scrollToTop()">Watch
+                                    Now <i class="fa fa-play-circle" aria-hidden="true"></i></button></td>
                         </tr>
                     </tbody>
 
@@ -93,4 +92,5 @@
 
 
 
+</div>
 </div>
