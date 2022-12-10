@@ -21,13 +21,12 @@ import { TotopComponent } from './totop/totop.component';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { EpisodevidsComponent } from './episodevids/episodevids.component';
 import { VideoplayerComponent } from './videoplayer/videoplayer.component';
+
 import { VgCoreModule } from 'ngx-videogular';
 import { VgControlsModule } from 'ngx-videogular';
 import { VgOverlayPlayModule } from 'ngx-videogular';
 import { VgBufferingModule } from 'ngx-videogular';
 import { VgStreamingModule } from 'ngx-videogular';
-
-
 
 
 
@@ -63,7 +62,6 @@ import { VgStreamingModule } from 'ngx-videogular';
     VgOverlayPlayModule,
     VgBufferingModule,
     VgStreamingModule,
-  
   
 
 
