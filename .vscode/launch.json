@@ -3,12 +3,13 @@
   "version": "0.2.0",
   "configurations": [
 
+
     {
       "name": "ng serve",
       "type": "pwa-chrome",
       "request": "launch",
       "preLaunchTask": "npm: start",
-      "url": "http://test:4200/"
+      "url": "http://localhost:4200/"
     },
     {
       "name": "ng test",
