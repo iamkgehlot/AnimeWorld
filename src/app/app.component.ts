@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MOVIES} from '@consumet/extensions'
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
   ngOnInit(): void {
+    const gogoanime = new MOVIES.FlixHQ();
+    // Search for an anime. In this case, "One Piece"
+    const results = gogoanime.search("Black Adam").then(data => {
+      // print results
+      console.log(data);
+    })
+
 
 
   }

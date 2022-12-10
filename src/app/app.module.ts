@@ -26,8 +26,8 @@ import { VgControlsModule } from 'ngx-videogular';
 import { VgOverlayPlayModule } from 'ngx-videogular';
 import { VgBufferingModule } from 'ngx-videogular';
 import { VgStreamingModule } from 'ngx-videogular';
-import {MOVIES} from '@consumet/extensions';
-import FlixHQ from '@consumet/extensions/dist/providers/movies/flixhq';
+
+
 
 
 
