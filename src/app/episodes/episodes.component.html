@@ -9,7 +9,7 @@
 <app-loading-spinner *ngIf="loader2"></app-loading-spinner>
 <div class="container" *ngIf="!errorep&&!erroryt&&!errorss&&!errortop">
     <div class="episodesContainer">
-        <div class="background-image" style="background:url({{datar?.data?.images?.jpg.image_url}});    
+        <div *ngIf="dataload" class="background-image" style="background:url({{datar.data.images.jpg.image_url}});    
         height: 100%;
         width: 100%;
          background-attachment: fixed;
