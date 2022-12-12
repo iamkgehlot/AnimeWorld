@@ -38,11 +38,11 @@ export class EpisodevidsComponent implements OnInit {
     if (this.id >= 0) {
 
       this.episodedetails = await this.urlservice.consumetapi(this.id).toPromise();
-      if ((this.episodedetails.episodes)?.length != 0) {
+      if ((this.episodedetails?.episodes)?.length != 0) {
         this.loadcomp = true;
-        this.totalepisodes = (this.episodedetails.episodes)?.length
+        this.totalepisodes = (this.episodedetails?.episodes)?.length
         this.totalPages = Math.ceil(this.totalepisodes / 10)
-        this.firstepisode = await this.urlservice.consumetepisodevid(this.episodedetails.episodes[1].id).toPromise();
+        this.firstepisode = await this.urlservice.consumetepisodevid(this.episodedetails?.episodes[1].id).toPromise();
         if (this.totalPages > 1) {
           this.hasNextPage = true
 
@@ -50,7 +50,7 @@ export class EpisodevidsComponent implements OnInit {
         } else {
           this.hasNextPage = false;
         }
-      } else if ((this.episodedetails.episodes)?.length == 0) {
+      } else if ((this.episodedetails?.episodes)?.length == 0) {
         this.noContentFound = true;
       }
     } else {
@@ -70,10 +70,10 @@ export class EpisodevidsComponent implements OnInit {
     this.videoid = episodeid;
     this.clickonwatchspin = true;
     this.episodevideo = await this.urlservice.consumetepisodevid(episodeid).toPromise();
-    for (let i = (this.episodevideo.sources).length; i >= 0; i--) {
+    for (let i = (this.episodevideo?.sources).length; i >= 0; i--) {
 
-      if (this.episodevideo.sources[i]?.url) {
-        this.url12 = (this.episodevideo.sources[i - 1].url);
+      if (this.episodevideo?.sources[i]?.url) {
+        this.url12 = (this.episodevideo?.sources[i - 1].url);
         this.check = true;
         break;
       }
