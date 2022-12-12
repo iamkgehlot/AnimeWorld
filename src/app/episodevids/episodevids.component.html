@@ -56,15 +56,15 @@
                         </tr>
                     </thead>
 
-                    <tbody *ngFor="let ep of episodedetails.episodes;let i=index ">
+                    <tbody *ngFor="let ep of episodedetails?.episodes;let i=index ">
                         <tr *ngIf="i>=min && i<max" style="color:white">
-                            <th scope="row" *ngIf="ep.number">{{ep.number}}</th>
-                            <td *ngIf="!ep.number" class="note">Not Available</td>
-                            <td *ngIf="ep.title">{{ep.title}}</td>
-                            <td *ngIf="!ep.title" class="note">Not Available</td>
-                            <td *ngIf="ep.airDate">{{ep.airDate.substr(0,10)}}</td>
-                            <td *ngIf="!ep.airDate" class="note">Not Available</td>
-                            <td><button class="watchnow" id="watchnow" (click)="getepisodevideo(ep.id,ep.title);scrollToTop()">Watch
+                            <th scope="row" *ngIf="ep?.number">{{ep?.number}}</th>
+                            <td *ngIf="!ep?.number" class="note">Not Available</td>
+                            <td *ngIf="ep?.title">{{ep?.title}}</td>
+                            <td *ngIf="!ep?.title" class="note">Not Available</td>
+                            <td *ngIf="ep?.airDate">{{ep.airDate.substr(0,10)}}</td>
+                            <td *ngIf="!ep?.airDate" class="note">Not Available</td>
+                            <td><button class="watchnow" id="watchnow" (click)="getepisodevideo(ep?.id,ep?.title);scrollToTop()">Watch
                                     Now <i class="fa fa-play-circle" aria-hidden="true"></i></button></td>
                         </tr>
                     </tbody>
