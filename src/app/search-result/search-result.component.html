@@ -11,8 +11,9 @@
   <h1 class="Showing" id='Showing' *ngIf="loader  && searchText;loadComponent" style="font-size: 25px;"> Searching For :
     {{ searchText.value}}</h1>
   <!-- showing for -->
-  <h1 class="Showing" id='Showing' *ngIf="!loader && searchText;loadComponent" style="font-size: 25px;"> Showing Results
-    For : {{ searchText.value}}</h1>
+  <div id='Showing' *ngIf="!loader && searchText;loadComponent" >   <hr class="hr1">
+    <h1  style="margin-top:0px"> Showing Results for :{{ searchText.value}}</h1>
+    <hr class="hr1"></div>
   <!-- loader -->
   <app-loading-spinner *ngIf="loader && searchText;loadComponent"></app-loading-spinner>
   <!-- results -->
