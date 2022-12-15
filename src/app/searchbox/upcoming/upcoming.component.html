@@ -14,11 +14,11 @@
                     <img [src]="sr.images.jpg.image_url" alt="Fate stye night" style="height: 312px;">
                     <span class="ep" *ngIf="sr.status==='Finished Airing'">{{sr.status}}</span>
                     <span class="epair" *ngIf="sr.status!='Finished Airing'">{{sr.status}}</span>
-                    <span class="comments" *ngIf="!sr.score">Rating Not Available</span>
-                    <span class="comments" *ngIf="sr.score"><i class="fas fa-star"></i> {{sr.score}}</span>
+                    <span class="rating" *ngIf="!sr.score">Rating Not Available</span>
+                    <span class="rating" *ngIf="sr.score"><i class="fas fa-star"></i> {{sr.score}}</span>
                     <span class="watch"><i class="fa fa-clock"></i> {{sr.duration |hrtomin}}</span>
                     <div class="content-type">
-                        <span class="action">{{sr.type}}</span>
+                        <span class="type">{{sr.type}}</span>
                     </div>
                     <div class="show-name">
                         {{sr.title}}

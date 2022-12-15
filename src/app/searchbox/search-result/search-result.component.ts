@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SearchResultServiceService } from '../services/search-result-service.service';
-import { arr } from '../services/SearchResultArray';
+import { SearchResultServiceService } from '../../services/search-result-service.service';
+import { arr } from '../../services/SearchResultArray';
 
 
 @Component({

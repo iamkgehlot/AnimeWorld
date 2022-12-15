@@ -18,7 +18,7 @@
                     <div
                         style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
 
-                        <div style="float: left; padding-right: 10px;"> <img class="img"
+                        <div style="float: left; padding-right: 10px;"> <img class="img" alt="banner"
                                 [src]="randombaner.data[0].images.jpg.image_url" style=" border-radius: 10px; "><br>
                         </div>
                         <div class="bannercontent">
@@ -48,7 +48,7 @@
                     <div
                         style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
 
-                        <div style="float: left; padding-right: 10px;"> <img class="img"
+                        <div style="float: left; padding-right: 10px;"> <img class="img" alt="banner"
                                 [src]="randombaner.data[1].images.jpg.image_url" style=" border-radius: 10px;"><br>
                         </div>
                         <div class="bannercontent">
@@ -78,7 +78,7 @@
                     <div
                         style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
 
-                        <div style="float: left; padding-right: 10px;"> <img class="img"
+                        <div style="float: left; padding-right: 10px;"> <img class="img" alt="banner"
                                 [src]="randombaner.data[2].images.jpg.image_url" style=" border-radius: 10px;"><br>
                         </div>
                         <div class="bannercontent">
@@ -107,7 +107,7 @@
                     <div
                         style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
 
-                        <div style="float: left; padding-right: 10px;"> <img class="img"
+                        <div style="float: left; padding-right: 10px;"> <img class="img" alt="banner"
                                 [src]="randombaner.data[3].images.jpg.image_url" style=" border-radius: 10px;"><br>
                         </div>
                         <div class="bannercontent">
@@ -137,7 +137,7 @@
                     <div
                         style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
 
-                        <div style="float: left; padding-right: 10px;"> <img class="img"
+                        <div style="float: left; padding-right: 10px;"> <img alt="banner" class="img"
                                 [src]="randombaner.data[4].images.jpg.image_url" style=" border-radius: 10px;"><br>
                         </div>
                         <div class="bannercontent">
@@ -198,8 +198,7 @@
 ">
         <h1 class="h1" style="text-align: left;padding-left:20px ;display: inline-block; padding-top: 20px;"><i class="fa fa-random" aria-hidden="true"></i> Random
             Suggestions </h1>
-
-        <button class="mybtn  " (click)="apphome.reloadcomp()"
+        <button class="mybtn" aria-label="reload" (click)="apphome.reloadcomp()"
         >Refresh</button>
     </div>
    

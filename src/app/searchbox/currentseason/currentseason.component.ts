@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SearchResultServiceService } from '../services/search-result-service.service';
-import *  as $ from "jquery";
+import { SearchResultServiceService } from '../../services/search-result-service.service';
 declare var window: any;
 
 @Component({
-  selector: 'app-top',
-  templateUrl: './top.component.html',
-  styleUrls: ['./top.component.css']
+  selector: 'app-currentseason',
+  templateUrl: './currentseason.component.html',
+  styleUrls: ['./currentseason.component.css']
 })
-export class TopComponent implements OnInit {
-
+export class CurrentseasonComponent implements OnInit {
 
   constructor(private urlservice: SearchResultServiceService, private router: Router, private activatedRoute: ActivatedRoute) { }
+
   datar: any;
   currentpage: any;
   check1!: number;
@@ -20,70 +19,39 @@ export class TopComponent implements OnInit {
 
   ngOnInit(): void {
 
-
-
     this.currentpage = this.activatedRoute.snapshot.paramMap.get('num');
     this.check1 = Number(this.currentpage);
 
-    this.urlservice.getTop(this.currentpage).subscribe((result: any) => {
-
+    //current page subscribe
+    this.urlservice.getCurrentSeason(this.currentpage).subscribe((result: any) => {
       this.datar = result;
       this.loadcomponent = true;
     })
-
-    $("#navshow").css({
-
-      transition: '  display .1s ease'
-    });
-
-    $("#hideme").css({
-
-      transition: '  display .1s ease'
-    });
-
-    $("#hideme2").css({
-
-      transition: '  display .1s ease'
-    });
-
-    $("#showme").css({
-
-
-      transition: 'display .5s ease'
-    });
-
-    $('#formchange').css({
-
-
-      transition: ' margin-top .5s ease'
-    });
-
   }
+
+  //prev page
   nextpage: any;
   prevPage() {
-
-
-
     if (this.datar.pagination.current_page > 1) {
       this.nextpage = this.datar.pagination.current_page - 1;
-      this.router.navigate(['top/page/', this.nextpage]).then(page => { window.location.reload(); });
+      this.router.navigate(['current/page/', this.nextpage]).then(page => { window.location.reload(); });
 
     }
 
 
   }
-  nextPage() {
 
+  //next page
+  nextPage() {
+    console.log("next click1")
     if (this.datar.pagination.last_visible_page != this.datar.pagination.current_page) {
       this.nextpage = this.datar.pagination.current_page + 1;
-      this.router.navigate(['top/page/', this.nextpage]).then(page => { window.location.reload(); });
-    }
+      this.router.navigate(['current/page/', this.nextpage]).then(page => { window.location.reload(); });
 
+    }
   }
 
   redirect(id: string) {
     this.router.navigateByUrl('episodes/' + id);
-
   }
-
 }

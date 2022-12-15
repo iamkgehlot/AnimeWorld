@@ -305,6 +305,8 @@ background-color: #000000;
 }
 .img{
     height: 20vw;
+    width: 217px;
+    height: auto;
 }
 #Banners-container img {
     width: 217px;

@@ -1,18 +1,15 @@
-<div class="containerR" *ngIf="loadcomponent">
+<div class="container" *ngIf="loadcomponent">
     <h1 class=" h1" style="text-align: left;padding-left:20px "><i class="fa fa-clone" aria-hidden="true"></i> Similar Anime (Voted By Viewers) </h1>
     <hr class="hr1">
     <div class="row " id="row">
         <div class=" col" id="col" *ngFor="let sr of datar.data; let i = index">
-            <div *ngIf="i<5">
+            <div *ngIf="i<4">
                 <div id="Banners-container" routerLink='/episodes/{{sr.entry.mal_id}}/page/1'
                     (click)="redirect(sr.entry.mal_id)">
                     <div class="Image-Name">
                         <img [src]="sr.entry.images.jpg.image_url" alt="Fate stye night" style="height: 312px;">
                         <span class="ep" *ngIf="sr.status==='Finished Airing'">{{sr.votes}} Votes</span>
                         <span class="epair" *ngIf="sr.status!='Finished Airing'">{{sr.votes}} Votes</span>
-                        <div class="content-type">
-                            <span class="action">{{sr.entry.type}}</span>
-                        </div>
                         <div class="show-name">
                             {{sr.entry.title}}
                         </div>

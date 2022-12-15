@@ -2,7 +2,7 @@
 import { Component, ElementRef, HostListener, Input, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { SearchResultServiceService } from '../services/search-result-service.service';
+import { SearchResultServiceService } from '../../services/search-result-service.service';
 var document!: Document
 @Component({
   selector: 'app-episodevids',

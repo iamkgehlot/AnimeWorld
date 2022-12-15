@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Renderer2 } from '@angular/core';
-import { SearchResultServiceService } from '../services/search-result-service.service';
+import { SearchResultServiceService } from '../../services/search-result-service.service';
 
 
 
