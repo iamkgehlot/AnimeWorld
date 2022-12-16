@@ -25,8 +25,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     //calling 3 apis at max
-    setTimeout(() => {
-      //banner
+       //banner
       this.urlservice.getTop(1).subscribe((result: any) => {
         this.randombaner = result;
         if ((this.randombaner.data).lenghth != 0) {
@@ -37,6 +36,8 @@ export class HomeComponent implements OnInit {
         }
 
       })
+    setTimeout(() => {
+   
       // //pop tv
       this.urlservice.getTopUpcoming().subscribe((result: any) => {
         this.upcoming = result;
