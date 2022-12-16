@@ -7,11 +7,11 @@
 
     <app-loading-spinner *ngIf="!random"></app-loading-spinner>
     <!-- <--------------- Top Airing baner content-------------->
-    <header class="cont-slider" *ngIf="random">
-        <section class="slider">
+    <header class="cont-slider" >
+        <section class="slider" *ngIf="random">
             <!-- <--------------- #1 Banner content-------------->
             <article class="slide" (click)="redirect(randombaner.data[0].mal_id)">
-                <span class="blur" style=" background-image: url({{randombaner.data[0].images.webp.large_image_url}});"></span>
+                <span class="blur" style=" background-image: url({{randombaner.data[0].images.webp.small_image_url}});"></span>
                 <span>
                     <div class="rankfa " style="float:none"><i class="fa fa-trophy" aria-hidden="true"> </i> #1 Top
                         Airing </div>
@@ -40,7 +40,7 @@
             <!-- <--------------- #2 Banner content-------------->
             <article class="slide" (click)="redirect(randombaner.data[1].mal_id)">
                 <span class="blur"
-                    style=" background-image: url({{randombaner.data[1].images.webp.large_image_url}});"></span>
+                    style=" background-image: url({{randombaner.data[1].images.webp.small_image_url}});"></span>
                 <span>
                     <div class="rankfa " style="float:none"><i class="fa fa-trophy" aria-hidden="true"> </i>#2 Top
                         Airing
@@ -70,7 +70,7 @@
             <!-- <--------------- #3 Banner content-------------->
             <article class="slide" (click)="redirect(randombaner.data[2].mal_id)">
                 <span class="blur"
-                    style=" background-image: url({{randombaner.data[2].images.webp.large_image_url}});"></span>
+                    style=" background-image: url({{randombaner.data[2].images.webp.small_image_url}});"></span>
                 <span>
                     <div class="rankfa " style="float:none"><i class="fa fa-trophy" aria-hidden="true"> </i> #3 Top
                         Airing
@@ -99,7 +99,7 @@
             <!-- <--------------- #4 Banner content-------------->
             <article class="slide" (click)="redirect(randombaner.data[3].mal_id)">
                 <span class="blur"
-                    style=" background-image: url({{randombaner.data[3].images.webp.large_image_url}});"></span>
+                    style=" background-image: url({{randombaner.data[3].images.webp.small_image_url}});"></span>
                 <span>
                     <div class="rankfa " style="float:none"><i class="fa fa-trophy" aria-hidden="true"> </i> #4 Top
                         Airing
@@ -129,7 +129,7 @@
             <!-- <--------------- #5 Banner content-------------->
             <article class="slide" (click)="redirect(randombaner.data[4].mal_id)">
                 <span class="blur"
-                    style=" background-image: url({{randombaner.data[4].images.webp.large_image_url}});"></span>
+                    style=" background-image: url({{randombaner.data[4].images.webp.small_image_url}});"></span>
                 <span>
                     <div class="rankfa " style="float:none"><i class="fa fa-trophy" aria-hidden="true"> </i> #5 Top
                         Airing

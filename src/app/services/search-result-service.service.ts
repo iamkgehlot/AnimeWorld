@@ -20,12 +20,12 @@ export class SearchResultServiceService {
 
   //next prev pge
   getTop(pagenum:any): Observable<any> {
-    return this.http.get('https://api.jikan.moe/v4/top/anime?page='+pagenum+'&limit=20&sfw');
+    return this.http.get('https://api.jikan.moe/v4/top/anime?limit=5');
     
   }
   //popular anime
   getTopUpcoming(): Observable<any> {
-    return this.http.get('https://api.jikan.moe/v4/top/anime?filter=bypopularity&limit=4&sfw');
+    return this.http.get('https://api.jikan.moe/v4/top/anime?filter=bypopularity&limit=4&sfw&type=tv');
     
   }
   //popular movie
