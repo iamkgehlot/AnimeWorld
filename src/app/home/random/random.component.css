@@ -11,7 +11,12 @@
     --bs-border-color: #FFFF00;
 
 }
+.imgs{
+    border-radius: 10px;
+    height: 15vw;
+    width: 10vw;
 
+}
 
 
 .hr1 {

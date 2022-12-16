@@ -303,9 +303,19 @@ background-color: #000000;
     border-color: aliceblue;
     /* margin-left: 15px; */
 }
-.img{
-    height: 20vw;
+img{
+    width: 217px;
+    height: 310px;
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-top: 12px;
+    cursor: pointer;
 }
+.imgs{
+    height: 15vw;
+    width: 10vw;
+}
+
 #Banners-container img {
     width: 217px;
     
