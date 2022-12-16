@@ -13,8 +13,8 @@
 .cont-slider {
 
     position: relative;
-    height: 80vh;
-    max-height: 80vh;
+    height: 400px;
+    max-height: 400px;
 background-color: #000000;
     max-width: 100vw;
     margin: 0 auto;
@@ -32,12 +32,12 @@ background-color: #000000;
     height: 100%;
 }
 
-.slider:hover {
+/* .slider:hover {
     -webkit-animation-play-state: paused;
     -moz-animation-play-state: paused;
     -o-animation-play-state: paused;
     animation-play-state: paused;
-}
+} */
 
  .blur{
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 100%);

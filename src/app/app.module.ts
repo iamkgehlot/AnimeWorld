@@ -8,7 +8,7 @@ import { SearchboxComponent } from './searchbox/searchbox.component';
 import { FormsModule } from '@angular/forms';
 import { EpisodesComponent } from './episodes/episodes.component';
 import { HrtominPipe } from './pipes/hrtomin.pipe';
-import { RecommendationsComponent } from './episodes/recommendations/recommendations.component';
+
 import { HomeComponent } from './home/home.component';
 import { TopComponent } from './searchbox/top/top.component';
 import { ReviewsComponent } from './episodes/reviews/reviews.component';
@@ -37,7 +37,6 @@ import { VgStreamingModule } from 'ngx-videogular';
     SearchboxComponent,
     EpisodesComponent,
     HrtominPipe,
-    RecommendationsComponent,
     HomeComponent,
     TopComponent,
     ReviewsComponent,

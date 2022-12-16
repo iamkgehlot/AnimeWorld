@@ -35,7 +35,7 @@ export class ImagesComponent implements OnInit {
   loadspin = true;
   ngOnInit(): void {
 
-    setTimeout(() => {
+   
       this.urlservice.getImages(this.id).subscribe((result: any) => {
         this.loadspin = false;
         this.images = result;
@@ -48,7 +48,7 @@ export class ImagesComponent implements OnInit {
         }
 
       })
-    }, 1500);
+   
 
   }
 

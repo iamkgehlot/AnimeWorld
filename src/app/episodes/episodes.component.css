@@ -257,9 +257,20 @@ width: 2px;
   margin-bottom: 5px;
 }
 
+.gallery img{
+ 
+    max-width: 100%;
+height: auto;
+}
+
+
 .gallery iframe,
 .gallery img {
   max-width: 100%;
+ 
+ 
+
+
 
   vertical-align: left;
 }
@@ -285,5 +296,10 @@ width: 2px;
   background-color: #8ebf42;
   color:black;
   border-color: var(--bs-nav-tabs-link-active-border-color);
+}
+
+.imgp{
+  max-width: 100%;
+height: auto
 }
 
