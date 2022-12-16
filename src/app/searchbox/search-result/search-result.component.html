@@ -21,7 +21,7 @@
     <div class=" col" id="col" *ngFor="let sr of SearchResultArray; let i = index">
       <div id="Banners-container" (click)="redirect(sr.mal_id) ">
         <div class="Image-Name">
-          <img [src]="sr.images.webp.image_url" alt="Fate stye night" style="height: 312px;">
+          <img [src]="sr.images.webp.image_url" alt="Fate stye night" width="225" height="325" class="imgp">
           <span class="ep" *ngIf="sr.status==='Finished Airing'">{{sr.status}}</span>
           <span class="epair" *ngIf="sr.status!='Finished Airing'">{{sr.status}}</span>
           <span class="comments" *ngIf="!sr.score">Rating Not Available</span>

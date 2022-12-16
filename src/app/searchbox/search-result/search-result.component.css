@@ -9,6 +9,7 @@
 .row>* {
   max-width: 257px;
   margin: auto;
+  height: 450px;
 }
 
 .container {
@@ -221,4 +222,9 @@ h1{
   display: contents;
   margin-top: 20px;
 
+}
+.imgp{
+  max-width: 100%;
+  min-height: 312px;
+height: auto
 }
