@@ -8,27 +8,13 @@
   display: table;
   padding-bottom: 20px;
 
-
-
 }
-
-@media screen and (max-width: 767px) {
-  .container {
-    min-height: 50vh;
-    padding-bottom: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-
-  }
-}
-
-
-/* data */
 
 
 h1{
   font-size: 20px;
 }
+/* hr tag */
 .hr1{
   border: 0;
   clear: both;
@@ -38,20 +24,17 @@ h1{
   height: 1px;
 }
 
-/* 
-data */
 
-
+/* data */
 
 .heading {
   font-size: 20px;
-  /* font-family: 'Zen Kurenaido', sans-serif; */
   font-weight: bold;
 
 }
 
 .viewAll {
-  /* font-family: 'Mulish', sans-serif; */
+
   position: relative;
   left: 35%;
   font-weight: bold;
@@ -67,6 +50,17 @@ data */
 
 }
 
+.rating {
+  background: rgb(32, 241, 216);
+  padding: 2px 8px;
+  border-radius: 3px;
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  top: 295px;
+  left: 10px;
+  font-size: 0.5em;
+}
 .Image-Name:hover {
   color: #1c87c9;
   transform: scale(1.1);
@@ -88,7 +82,9 @@ data */
   display: block;
   overflow: visible;
   transform: scale(1.1);
-  transition: opacity .9s,transform .5s,transform .5s;
+
+
+  transition: opacity .9s, transform .5s, transform.5s;
   -webkit-transition: opacity .9s, transform .5s, transform .5s;
 
 }
@@ -115,7 +111,11 @@ data */
   position: relative;
   color: white;
   width: 217px;
-
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 
 }
 
@@ -129,7 +129,6 @@ data */
   top: 25px;
   left: 10px;
   font-size: 0.9em;
-  /* font-family: 'Ubuntu', sans-serif; */
 }
 
 .epair {
@@ -143,22 +142,8 @@ data */
   left: 10px;
   font-size: 0.9em;
   font: 900;
-  /* font-family: 'Ubuntu', sans-serif; */
-}
 
-.rating {
-  background: rgb(32, 241, 216);
-  padding: 2px 8px;
-  border-radius: 3px;
-  color: black;
-  font-weight: bold;
-  position: absolute;
-  top: 295px;
-  left: 10px;
-  font-size: 0.5em;
-  /* font-family: 'Ubuntu', sans-serif; */
 }
-
 
 
 .watch {
@@ -173,7 +158,6 @@ data */
   color: black;
   font-weight: bold;
   font-size: 0.5em;
-  /* font-family: 'Ubuntu', sans-serif; */
 }
 
 .content-type {
@@ -181,7 +165,6 @@ data */
   height: 13px;
   margin: 7px 0 7px 0;
 }
-
 
 .type {
   display: flex;
@@ -192,12 +175,7 @@ data */
   align-items: center;
 }
 
-
-
 .show-name {
-
-  /* font-family: 'Nunito', sans-serif; */
-  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
   font-size: 15px;
   cursor: default;
   margin-bottom: 5px;
@@ -207,6 +185,11 @@ data */
   width: 210px;
   overflow: visible;
   font-weight: 600;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .epcon {

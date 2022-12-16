@@ -11,7 +11,7 @@ body {
 
 .limitTextHeight {
     height: 165px;
-    overflow: hidden;
+    overflow: hidden
 }
 
 .comment-img {

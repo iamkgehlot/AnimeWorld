@@ -21,7 +21,7 @@ export class RelationsComponent implements OnInit {
 
   //get relation data
   ngOnInit(): void {
-  
+    setTimeout(() => {
       this.urlservice.getRelations(this.id).subscribe((result: any) => {
         this.relations = result;
         this.loadspinner = false;
@@ -32,7 +32,7 @@ export class RelationsComponent implements OnInit {
           this.notfound = true;
         }
       })
-   
+    }, 1000);
 
 
   }

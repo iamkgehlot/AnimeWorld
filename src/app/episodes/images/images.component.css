@@ -17,28 +17,19 @@ height: auto
 }
 
 
-@media screen and (max-width: 767px) {
-  .container {
-    min-height: 50vh;
-    padding-bottom: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-
-  }
-}
 
 
 /* data */
 
 .heading {
   font-size: 20px;
-  font-family: 'Zen Kurenaido', sans-serif;
+ 
   font-weight: bold;
 
 }
 
 .viewAll {
-  font-family: 'Mulish', sans-serif;
+
   position: relative;
   left: 35%;
   font-weight: bold;
@@ -111,7 +102,7 @@ height: auto
   top: 25px;
   left: 10px;
   font-size: 0.9em;
-  font-family: 'Ubuntu', sans-serif;
+ 
 }
 
 .epair {
@@ -125,7 +116,7 @@ height: auto
   left: 10px;
   font-size: 0.9em;
   font: 900;
-  font-family: 'Ubuntu', sans-serif;
+ 
 }
 
 .comments {
@@ -138,7 +129,7 @@ height: auto
   top: 295px;
   left: 10px;
   font-size: 0.5em;
-  font-family: 'Ubuntu', sans-serif;
+ 
 }
 
 
@@ -155,7 +146,7 @@ height: auto
   color: black;
   font-weight: bold;
   font-size: 0.5em;
-  font-family: 'Ubuntu', sans-serif;
+  
 }
 
 .content-type {
@@ -182,9 +173,7 @@ height: auto
 
 .show-name {
 
-  /* font-family: 'Nunito', sans-serif; */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+  
   font-size: 15px;
 
   cursor: default;
@@ -300,7 +289,7 @@ height: auto
   border-radius: 30px;
   border-color: #8ebf42;
   text-decoration: none;
-  font-family: sans-serif;
+
   font-size: 15px;
   font-weight: bolder;
   padding: 8px 16px;

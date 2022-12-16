@@ -186,7 +186,7 @@
             <!-- <--------------- Relations content-------------->
             <div class="tab-pane fade " id="nav-relations" role="tabpanel" aria-labelledby="nav-relations-tab"
                 tabindex="0">
-                <div class="both1">
+                <div class="both1" *ngIf="showrelations" >
                     <app-relations *ngIf="showrelations" [id]="sendid()"></app-relations>
                 </div>
             </div>

@@ -1,9 +1,9 @@
 
-import { Component, ElementRef, HostListener, Input, OnInit } from '@angular/core';
+import { Component,Input, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { SearchResultServiceService } from '../../services/search-result-service.service';
-var document!: Document
+
 @Component({
   selector: 'app-episodevids',
   templateUrl: './episodevids.component.html',
@@ -11,7 +11,7 @@ var document!: Document
 })
 export class EpisodevidsComponent implements OnInit {
 
-  constructor(private router: Router, private urlservice: SearchResultServiceService, private sanitizer: DomSanitizer) {
+  constructor( private urlservice: SearchResultServiceService) {
 
   }
 
