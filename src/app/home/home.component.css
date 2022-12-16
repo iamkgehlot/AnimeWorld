@@ -303,14 +303,15 @@ background-color: #000000;
     border-color: aliceblue;
     /* margin-left: 15px; */
 }
-img{
+.imgp{
     width: 225px;
     max-height: 400px;
    
 }
 .imgs{
-    max-height: 400px;
     width: 225px;
+    max-height: 400px;
+   
 }
 
 #Banners-container img {
@@ -473,78 +474,4 @@ img{
     transform: scale(1.1);
     transition: opacity .9s,transform .5s,transform .5s;
     -webkit-transition: opacity .9s, transform .5s, transform .5s;
-}
-@media only screen and (max-width: 768px) {
-  
-    .img{
-        height: 20vw;
-    }
-    .cont-slider{
-        height: 50vw;
-    }
-    
-   
-   .slide{
-    height: 50vw;
-    font-size: 2vw;
-    line-height: 2.5vw;
-    overflow: hidden;
-   }
-   .bannercontent{
-    font-size: 2vw;
-    line-height: 2.5vw;
-  
-   }
-   .rankfa{
-    font-size: 2vw;
-    line-height: 2.5vw;
-
-   }
-   .titile{
-    font-size: 2vw;
-    line-height: 2.5vw;
-   }
-   #Banners-container {
-    margin-top: 5px;
-margin: auto;
-    height: auto;
-    width: 15vw;
-   }
-   #Banners-container img {
-    width: 15vw;
-    height: 20vw;
-   }
- .ep{
-    display: none;
- }
- .epair{
-    display: none;
- }
- .comments{
-    display: none;
- }
- .watch{
-    display: none;
- }
- .show-name{
-    width: 14vw;
-    font-size: 2vw;
- }
- .Image-Name{
-    width: auto;
-    margin: auto;
- }
- .container{
-    padding: auto;
-    height: auto;
- }
- .action{
-    font-size: 1vw;
- }
- .mybtn{
-    font-size: 2vw;
-    font-weight: bolder;
-    padding: 8px 16px;
-   }
- 
 }

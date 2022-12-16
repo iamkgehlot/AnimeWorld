@@ -23,30 +23,30 @@ export class HomeComponent implements OnInit {
   api3 = false;
 
   ngOnInit(): void {
+      //banner
+    this.urlservice.getTop(1).subscribe((result: any) => {
+      this.randombaner = result;
+      if ((this.randombaner.data).lenghth != 0) {
+        this.random = true;
+      }
+      else {
+        this.random = false;
+      }
+
+    })
+
+      // //pop tv
+    this.urlservice.getTopUpcoming().subscribe((result: any) => {
+      this.upcoming = result;
+      if ((this.upcoming.data).length != 0) {
+        this.up = false;
+      }
+
+    
+  })
 
     //calling 3 apis at max
-       //banner
-      this.urlservice.getTop(1).subscribe((result: any) => {
-        this.randombaner = result;
-        if ((this.randombaner.data).lenghth != 0) {
-          this.random = true;
-        }
-        else {
-          this.random = false;
-        }
-
-      })
     setTimeout(() => {
-   
-      // //pop tv
-      this.urlservice.getTopUpcoming().subscribe((result: any) => {
-        this.upcoming = result;
-        if ((this.upcoming.data).length != 0) {
-          this.up = false;
-        }
-
-      
-    })
         //pop movie
         this.urlservice.getpopmov().subscribe((result: any) => {
           this.popmov = result;
@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
 
         })
 
-      }, 1000);
+      }, 500);
 
       setTimeout(() => { this.api3 = true; }, 2000);
 

@@ -13,8 +13,9 @@
 }
 .imgs{
     border-radius: 10px;
-    height: 15vw;
-    width: 10vw;
+    width: 225px;
+    max-height: 400px;
+   
 
 }
 
@@ -123,48 +124,7 @@
 
 }
 
-@media only screen and (max-width: 768px) {
-    .both {
-        font-size: 2.2vw;
-        display: block;
-        margin: auto;
 
-    }
-
-
-    
-
-    .slider {
-        height: 50%;
-    }
-
-    .slide {
-        height: 70%
-    }
-
-    .list-group {
-        padding-left: 0%;
-        width: auto;
-    }
-
-    .btn .mybtn {
-        font-size: 2vw;
-        font-weight: bolder;
-        padding: 8px 16px;
-    }
-
-}
-
-@media only screen and (max-width: 992px) {
-
-    .episodesContainer {
-        margin-top: 20px;
-        display: block;
-    }
-
-  
-
-}
 
 
 

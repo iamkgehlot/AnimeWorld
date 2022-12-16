@@ -18,8 +18,8 @@
                     <div
                         style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
 
-                        <div style="float: left; padding-right: 10px;"> <img class="imgs" alt="banner"
-                                [src]="randombaner.data[0].images.jpg.image_url" style=" border-radius: 10px; "><br>
+                        <div style="float: left; padding-right: 10px;"> <img  width="225" height="320" class="imgs" alt="banner"
+                                [src]="randombaner.data[0].images.jpg.image_url" style=" border-radius: 10px; width: 225px;max-height: 400px;"><br>
                         </div>
                         <div class="bannercontent">
                             <a><a class="titile">Title</a> : {{randombaner.data[0].title}}</a><br>
@@ -48,8 +48,8 @@
                     <div
                         style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
 
-                        <div style="float: left; padding-right: 10px;"> <img class="imgs" alt="banner"
-                                [src]="randombaner.data[1].images.jpg.image_url" style=" border-radius: 10px;"><br>
+                        <div style="float: left; padding-right: 10px;"> <img width="225" height="320" class="imgs" alt="banner"
+                                [src]="randombaner.data[1].images.jpg.image_url" style=" border-radius: 10px; width: 225px;max-height: 400px;"><br>
                         </div>
                         <div class="bannercontent">
                             <a><a class="titile">Title</a> : {{randombaner.data[1].title}}</a><br>
@@ -78,8 +78,8 @@
                     <div
                         style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
 
-                        <div style="float: left; padding-right: 10px;"> <img class="imgs" alt="banner"
-                                [src]="randombaner.data[2].images.jpg.image_url" style=" border-radius: 10px;"><br>
+                        <div style="float: left; padding-right: 10px;"> <img width="225" height="320" class="imgs" alt="banner"
+                                [src]="randombaner.data[2].images.jpg.image_url" style=" border-radius: 10px; width: 225px;max-height: 400px;"><br>
                         </div>
                         <div class="bannercontent">
                             <a><a class="titile">Title</a> : {{randombaner.data[2].title}}</a><br>
@@ -107,8 +107,8 @@
                     <div
                         style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
 
-                        <div style="float: left; padding-right: 10px;"> <img class="imgs" alt="banner"
-                                [src]="randombaner.data[3].images.jpg.image_url" style=" border-radius: 10px;"><br>
+                        <div style="float: left; padding-right: 10px;"> <img width="225" height="320" class="imgs" alt="banner"
+                                [src]="randombaner.data[3].images.jpg.image_url" style=" border-radius: 10px; width: 225px;max-height: 400px;"><br>
                         </div>
                         <div class="bannercontent">
                             <a><a class="titile">Title</a> : {{randombaner.data[3].title}}</a><br>
@@ -137,8 +137,8 @@
                     <div
                         style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
 
-                        <div style="float: left; padding-right: 10px;"> <img alt="banner" class="imgs"
-                                [src]="randombaner.data[4].images.jpg.image_url" style=" border-radius: 10px;"><br>
+                        <div style="float: left; padding-right: 10px;"> <img width="225" height="320" alt="banner" class="imgs"
+               [src]="randombaner.data[4].images.jpg.image_url" style=" border-radius: 10px; width: 225px;max-height: 400px;"><br>
                         </div>
                         <div class="bannercontent">
                             <a><a class="titile">Title</a> : {{randombaner.data[4].title}}</a><br>
@@ -170,7 +170,7 @@
         <div class=" col" id="col" *ngFor="let sr of upcoming.data; let i = index">
             <div id="Banners-container" (click)="redirect(sr.mal_id)">
                 <div class="Image-Name">
-                    <img [src]="sr.images.jpg.image_url" alt="Fate stye night">
+                    <img width="225" height="320" class="imgp" [src]="sr.images.jpg.image_url" alt="Fate stye night">
                     <span class="ep" *ngIf="sr.status==='Finished Airing'">{{sr.status}}</span>
                     <span class="epair" *ngIf="sr.status!='Finished Airing'">{{sr.status}}</span>
                     <span class="comments" *ngIf="!sr.score">Rating Not Available</span>
@@ -215,7 +215,7 @@
         <div class=" col" id="col" *ngFor="let sr of popmov.data; let i = index">
             <div id="Banners-container" (click)="redirect(sr.mal_id)">
                 <div class="Image-Name">
-                    <img [src]="sr.images.jpg.image_url" alt="Fate stye night">
+                    <img width="225" height="320" class="imgp" [src]="sr.images.jpg.image_url" alt="Fate stye night">
                     <span class="ep" *ngIf="sr.status==='Finished Airing'">{{sr.status}}</span>
                     <span class="epair" *ngIf="sr.status!='Finished Airing'">{{sr.status}}</span>
                     <span class="comments" *ngIf="!sr.score">Rating Not Available</span>
