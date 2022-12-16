@@ -7,7 +7,7 @@
                 <div id="Banners-container" routerLink='/episodes/{{sr.entry.mal_id}}/page/1'
                     (click)="redirect(sr.entry.mal_id)">
                     <div class="Image-Name">
-                        <img [src]="sr.entry.images.jpg.image_url" alt="Fate stye night" style="height: 312px;">
+                        <img [src]="sr.entry.images.webp.image_url" alt="Fate stye night" style="height: 312px;">
                         <span class="ep" *ngIf="sr.status==='Finished Airing'">{{sr.votes}} Votes</span>
                         <span class="epair" *ngIf="sr.status!='Finished Airing'">{{sr.votes}} Votes</span>
                         <div class="show-name">

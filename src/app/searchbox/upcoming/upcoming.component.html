@@ -11,7 +11,7 @@
         <div style="margin-top:0px" class=" col" id="col" *ngFor="let sr of datar.data; let i = index">
             <div id="Banners-container" (click)="redirect(sr.mal_id)">
                 <div class="Image-Name">
-                    <img [src]="sr.images.jpg.image_url" alt="Fate stye night" style="height: 312px;">
+                    <img [src]="sr.images.webp.image_url" alt="Fate stye night" style="height: 312px;">
                     <span class="ep" *ngIf="sr.status==='Finished Airing'">{{sr.status}}</span>
                     <span class="epair" *ngIf="sr.status!='Finished Airing'">{{sr.status}}</span>
                     <span class="rating" *ngIf="!sr.score">Rating Not Available</span>

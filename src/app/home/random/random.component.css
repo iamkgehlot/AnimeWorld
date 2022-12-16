@@ -11,13 +11,13 @@
     --bs-border-color: #FFFF00;
 
 }
-.imgs{
+/* .imgs{
     border-radius: 10px;
     width: 225px;
     max-height: 400px;
    
 
-}
+} */
 
 
 .hr1 {
@@ -71,6 +71,8 @@
 
 .img {
     border-radius: 10px;
+    max-width: 100%;
+height: auto
 }
 
 .title {

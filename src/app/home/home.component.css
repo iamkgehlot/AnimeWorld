@@ -303,20 +303,23 @@ background-color: #000000;
     border-color: aliceblue;
     /* margin-left: 15px; */
 }
-.imgp{
-    width: 225px;
-    max-height: 400px;
-   
-}
+
 .imgs{
-    width: 225px;
-    max-height: 400px;
+    width: 15vw;
    
+    height: auto
+   
+} 
+
+.imgp{
+    max-width: 100%;
+height: auto
 }
 
 #Banners-container img {
-    width: 217px;
-    
+    /* width: 217px;
+    height: 320px;
+     */
     border-radius: 5px;
     margin-right: 20px;
     margin-top: 12px;
