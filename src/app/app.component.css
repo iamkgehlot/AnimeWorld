@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
 
 body {
   background-color: black !important;
@@ -62,7 +61,6 @@ footer {
 .logo {
   height: 1.25rem;
   display: flex;
-
   padding-top: 5vw;
   font-family: 'Times New Roman';
   font-size: 3vw;
