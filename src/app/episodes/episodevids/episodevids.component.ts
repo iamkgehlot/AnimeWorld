@@ -70,7 +70,7 @@ export class EpisodevidsComponent implements OnInit {
     this.videoid = episodeid;
     this.clickonwatchspin = true;
     this.episodevideo = await this.urlservice.consumetepisodevid(episodeid).toPromise();
-    for (let i = (this.episodevideo?.sources).length; i >= 0; i--) {
+    for (let i = 0; i <= (this.episodevideo?.sources).length; i++) {
 
       if (this.episodevideo?.sources[i]?.url) {
         this.url12 = (this.episodevideo?.sources[i - 1].url);
