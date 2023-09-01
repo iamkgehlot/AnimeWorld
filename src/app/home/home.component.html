@@ -7,19 +7,19 @@
 
     <app-loading-spinner *ngIf="!random"></app-loading-spinner>
     <!-- <--------------- Top Airing baner content-------------->
-    <header class="cont-slider" *ngIf="random">
-        <section class="slider">
+    <header class="cont-slider" >
+        <section class="slider" *ngIf="random">
             <!-- <--------------- #1 Banner content-------------->
             <article class="slide" (click)="redirect(randombaner.data[0].mal_id)">
-                <span class="blur" style=" background-image: url({{randombaner.data[0].images.jpg.large_image_url}});"></span>
+                <span class="blur" style=" background-image: url({{randombaner.data[0].images.webp.small_image_url}});"></span>
                 <span>
                     <div class="rankfa " style="float:none"><i class="fa fa-trophy" aria-hidden="true"> </i> #1 Top
                         Airing </div>
                     <div
                         style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
 
-                        <div style="float: left; padding-right: 10px;"> <img class="img"
-                                [src]="randombaner.data[0].images.jpg.image_url" style=" border-radius: 10px; "><br>
+                        <div style="float: left; padding-right: 10px;"> <img  width="225" height="320" class="imgs" alt="banner"
+                                [src]="randombaner.data[0].images.webp.image_url" style=" border-radius: 10px; "><br>
                         </div>
                         <div class="bannercontent">
                             <a><a class="titile">Title</a> : {{randombaner.data[0].title}}</a><br>
@@ -40,7 +40,7 @@
             <!-- <--------------- #2 Banner content-------------->
             <article class="slide" (click)="redirect(randombaner.data[1].mal_id)">
                 <span class="blur"
-                    style=" background-image: url({{randombaner.data[1].images.jpg.large_image_url}});"></span>
+                    style=" background-image: url({{randombaner.data[1].images.webp.small_image_url}});"></span>
                 <span>
                     <div class="rankfa " style="float:none"><i class="fa fa-trophy" aria-hidden="true"> </i>#2 Top
                         Airing
@@ -48,8 +48,8 @@
                     <div
                         style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
 
-                        <div style="float: left; padding-right: 10px;"> <img class="img"
-                                [src]="randombaner.data[1].images.jpg.image_url" style=" border-radius: 10px;"><br>
+                        <div style="float: left; padding-right: 10px;"> <img width="225" height="320" class="imgs" alt="banner"
+                                [src]="randombaner.data[1].images.webp.image_url" style=" border-radius: 10px; "><br>
                         </div>
                         <div class="bannercontent">
                             <a><a class="titile">Title</a> : {{randombaner.data[1].title}}</a><br>
@@ -70,7 +70,7 @@
             <!-- <--------------- #3 Banner content-------------->
             <article class="slide" (click)="redirect(randombaner.data[2].mal_id)">
                 <span class="blur"
-                    style=" background-image: url({{randombaner.data[2].images.jpg.large_image_url}});"></span>
+                    style=" background-image: url({{randombaner.data[2].images.webp.small_image_url}});"></span>
                 <span>
                     <div class="rankfa " style="float:none"><i class="fa fa-trophy" aria-hidden="true"> </i> #3 Top
                         Airing
@@ -78,8 +78,8 @@
                     <div
                         style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
 
-                        <div style="float: left; padding-right: 10px;"> <img class="img"
-                                [src]="randombaner.data[2].images.jpg.image_url" style=" border-radius: 10px;"><br>
+                        <div style="float: left; padding-right: 10px;"> <img width="225" height="320" class="imgs" alt="banner"
+                                [src]="randombaner.data[2].images.webp.image_url" style=" border-radius: 10px; "><br>
                         </div>
                         <div class="bannercontent">
                             <a><a class="titile">Title</a> : {{randombaner.data[2].title}}</a><br>
@@ -99,7 +99,7 @@
             <!-- <--------------- #4 Banner content-------------->
             <article class="slide" (click)="redirect(randombaner.data[3].mal_id)">
                 <span class="blur"
-                    style=" background-image: url({{randombaner.data[3].images.jpg.large_image_url}});"></span>
+                    style=" background-image: url({{randombaner.data[3].images.webp.small_image_url}});"></span>
                 <span>
                     <div class="rankfa " style="float:none"><i class="fa fa-trophy" aria-hidden="true"> </i> #4 Top
                         Airing
@@ -107,8 +107,8 @@
                     <div
                         style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
 
-                        <div style="float: left; padding-right: 10px;"> <img class="img"
-                                [src]="randombaner.data[3].images.jpg.image_url" style=" border-radius: 10px;"><br>
+                        <div style="float: left; padding-right: 10px;"> <img width="225" height="320" class="imgs" alt="banner"
+                                [src]="randombaner.data[3].images.webp.image_url" style=" border-radius: 10px;"><br>
                         </div>
                         <div class="bannercontent">
                             <a><a class="titile">Title</a> : {{randombaner.data[3].title}}</a><br>
@@ -129,7 +129,7 @@
             <!-- <--------------- #5 Banner content-------------->
             <article class="slide" (click)="redirect(randombaner.data[4].mal_id)">
                 <span class="blur"
-                    style=" background-image: url({{randombaner.data[4].images.jpg.large_image_url}});"></span>
+                    style=" background-image: url({{randombaner.data[4].images.webp.small_image_url}});"></span>
                 <span>
                     <div class="rankfa " style="float:none"><i class="fa fa-trophy" aria-hidden="true"> </i> #5 Top
                         Airing
@@ -137,8 +137,8 @@
                     <div
                         style="float:left;margin: 20px;display: block; text-align: left; display:flex; justify-content: center;">
 
-                        <div style="float: left; padding-right: 10px;"> <img class="img"
-                                [src]="randombaner.data[4].images.jpg.image_url" style=" border-radius: 10px;"><br>
+                        <div style="float: left; padding-right: 10px;"> <img width="225" height="320" alt="banner" class="imgs"
+               [src]="randombaner.data[4].images.webp.image_url" style=" border-radius: 10px; "><br>
                         </div>
                         <div class="bannercontent">
                             <a><a class="titile">Title</a> : {{randombaner.data[4].title}}</a><br>
@@ -170,7 +170,7 @@
         <div class=" col" id="col" *ngFor="let sr of upcoming.data; let i = index">
             <div id="Banners-container" (click)="redirect(sr.mal_id)">
                 <div class="Image-Name">
-                    <img [src]="sr.images.jpg.image_url" alt="Fate stye night">
+                    <img class="imgp" width="225" height="325"  [src]="sr.images.webp.image_url" alt="Fate stye night">
                     <span class="ep" *ngIf="sr.status==='Finished Airing'">{{sr.status}}</span>
                     <span class="epair" *ngIf="sr.status!='Finished Airing'">{{sr.status}}</span>
                     <span class="comments" *ngIf="!sr.score">Rating Not Available</span>
@@ -198,8 +198,7 @@
 ">
         <h1 class="h1" style="text-align: left;padding-left:20px ;display: inline-block; padding-top: 20px;"><i class="fa fa-random" aria-hidden="true"></i> Random
             Suggestions </h1>
-
-        <button class="mybtn  " (click)="apphome.reloadcomp()"
+        <button class="mybtn" aria-label="reload" (click)="apphome.reloadcomp()"
         >Refresh</button>
     </div>
    
@@ -216,7 +215,7 @@
         <div class=" col" id="col" *ngFor="let sr of popmov.data; let i = index">
             <div id="Banners-container" (click)="redirect(sr.mal_id)">
                 <div class="Image-Name">
-                    <img [src]="sr.images.jpg.image_url" alt="Fate stye night">
+                    <img class="imgp" width="225" height="325" [src]="sr.images.webp.image_url" alt="Fate stye night">
                     <span class="ep" *ngIf="sr.status==='Finished Airing'">{{sr.status}}</span>
                     <span class="epair" *ngIf="sr.status!='Finished Airing'">{{sr.status}}</span>
                     <span class="comments" *ngIf="!sr.score">Rating Not Available</span>

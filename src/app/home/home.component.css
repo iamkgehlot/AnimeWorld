@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alexandria&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Alexandria&display=swap'); */
 
 * {
     margin: 0;
@@ -13,8 +13,8 @@
 .cont-slider {
 
     position: relative;
-    height: 80vh;
-    max-height: 80vh;
+    height: 400px;
+    max-height: 400px;
 background-color: #000000;
     max-width: 100vw;
     margin: 0 auto;
@@ -32,12 +32,12 @@ background-color: #000000;
     height: 100%;
 }
 
-.slider:hover {
+/* .slider:hover {
     -webkit-animation-play-state: paused;
     -moz-animation-play-state: paused;
     -o-animation-play-state: paused;
     animation-play-state: paused;
-}
+} */
 
  .blur{
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
@@ -121,7 +121,7 @@ background-color: #000000;
 .h1 {
     
    
-    font-family: 'Alexandria', sans-serif;
+    /* font-family: 'Alexandria', sans-serif; */
     font-size: 20px;
     float: left;
 }
@@ -242,13 +242,13 @@ background-color: #000000;
 
 .heading {
     font-size: 20px;
-    font-family: 'Zen Kurenaido', sans-serif;
+    /* font-family: 'Zen Kurenaido', sans-serif; */
     font-weight: bold;
 
 }
 
 .viewAll {
-    font-family: 'Mulish', sans-serif;
+    /* font-family: 'Mulish', sans-serif; */
     position: relative;
     left: 35%;
     font-weight: bold;
@@ -303,12 +303,23 @@ background-color: #000000;
     border-color: aliceblue;
     /* margin-left: 15px; */
 }
-.img{
-    height: 20vw;
+
+.imgs{
+    width: 15vw;
+   
+    height: auto
+   
+} 
+
+.imgp{
+    max-width: 100%;
+height: auto
 }
+
 #Banners-container img {
-    width: 217px;
-    
+    /* width: 217px;
+    height: 320px;
+     */
     border-radius: 5px;
     margin-right: 20px;
     margin-top: 12px;
@@ -333,7 +344,7 @@ background-color: #000000;
     top: 25px;
     left: 10px;
     font-size: 0.9em;
-    font-family: 'Ubuntu', sans-serif;
+    /* font-family: 'Ubuntu', sans-serif; */
 }
 
 .epair {
@@ -347,7 +358,7 @@ background-color: #000000;
     left: 10px;
     font-size: 0.9em;
     font: 900;
-    font-family: 'Ubuntu', sans-serif;
+    /* font-family: 'Ubuntu', sans-serif; */
 }
 
 .comments {
@@ -360,7 +371,7 @@ background-color: #000000;
     top: 295px;
     left: 10px;
     font-size: 0.5em;
-    font-family: 'Ubuntu', sans-serif;
+    /* font-family: 'Ubuntu', sans-serif; */
 }
 
 
@@ -377,7 +388,7 @@ background-color: #000000;
     color: black;
     font-weight: bold;
     font-size: 0.5em;
-    font-family: 'Ubuntu', sans-serif;
+    /* font-family: 'Ubuntu', sans-serif; */
 }
 
 .content-type {
@@ -405,7 +416,7 @@ background-color: #000000;
 .show-name {
 
     /* font-family: 'Nunito', sans-serif; */
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
 
     font-size: 15px;
 
@@ -446,7 +457,7 @@ background-color: #000000;
     border-radius: 30px;
     border-color: #8ebf42;
     text-decoration: none;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
     font-size: 15px;
     font-weight: bolder;
     padding: 8px 16px;
@@ -466,78 +477,4 @@ background-color: #000000;
     transform: scale(1.1);
     transition: opacity .9s,transform .5s,transform .5s;
     -webkit-transition: opacity .9s, transform .5s, transform .5s;
-}
-@media only screen and (max-width: 768px) {
-  
-    .img{
-        height: 20vw;
-    }
-    .cont-slider{
-        height: 50vw;
-    }
-    
-   
-   .slide{
-    height: 50vw;
-    font-size: 2vw;
-    line-height: 2.5vw;
-    overflow: hidden;
-   }
-   .bannercontent{
-    font-size: 2vw;
-    line-height: 2.5vw;
-  
-   }
-   .rankfa{
-    font-size: 2vw;
-    line-height: 2.5vw;
-
-   }
-   .titile{
-    font-size: 2vw;
-    line-height: 2.5vw;
-   }
-   #Banners-container {
-    margin-top: 5px;
-margin: auto;
-    height: auto;
-    width: 15vw;
-   }
-   #Banners-container img {
-    width: 15vw;
-    height: 20vw;
-   }
- .ep{
-    display: none;
- }
- .epair{
-    display: none;
- }
- .comments{
-    display: none;
- }
- .watch{
-    display: none;
- }
- .show-name{
-    width: 14vw;
-    font-size: 2vw;
- }
- .Image-Name{
-    width: auto;
-    margin: auto;
- }
- .container{
-    padding: auto;
-    height: auto;
- }
- .action{
-    font-size: 1vw;
- }
- .mybtn{
-    font-size: 2vw;
-    font-weight: bolder;
-    padding: 8px 16px;
-   }
- 
 }

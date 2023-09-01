@@ -57,7 +57,6 @@
 .table {
   justify-content: center;
   color: white;
-  font-family: 'Mulish', sans-serif;
   padding-top: 20px;
   margin-top: 20px
 }
@@ -257,16 +256,27 @@ width: 2px;
   margin-bottom: 5px;
 }
 
+.gallery img{
+ 
+    max-width: 100%;
+height: auto;
+}
+
+
 .gallery iframe,
 .gallery img {
   max-width: 100%;
+ 
+ 
+
+
 
   vertical-align: left;
 }
 
 /* navlink */
 .nav-link {
-  font-family: 'Mulish', sans-serif;
+  
   color: #1c87c9;
   font-weight: bolder;
 
@@ -285,5 +295,10 @@ width: 2px;
   background-color: #8ebf42;
   color:black;
   border-color: var(--bs-nav-tabs-link-active-border-color);
+}
+
+.imgp{
+  max-width: 100%;
+height: auto
 }
 

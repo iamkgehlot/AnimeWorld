@@ -1,0 +1,24 @@
+<app-loading-spinner *ngIf="loadspin"></app-loading-spinner>
+
+<!-- <--------------- #No content-------------->
+<div *ngIf="loadnotfound" style="padding:30px">
+  <h1>No Images Found</h1>
+</div>
+<!-- <--------------- Images content-------------->
+<div class="row " id="row" *ngIf="loadcomponent">
+  <div class=" col" id="col" *ngFor="let sr of images.data; let i = index">
+    <div id="Banners-container">
+      <!-- (click)="" > -->
+      <div class="Image-Name">
+        <img class="imgp" width="225" height="325" [src]="sr.jpg.image_url" alt="Fate stye night" style="height: 312px;">
+        <div class="show-name">
+          <div class="btn">
+            <button class="mybtn"
+              (click)="todownload(sr.webp.large_image_url,sr.webp.large_image_url.substring(((sr.webp.large_image_url).length - 10)))">DownLoad
+              Image</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -55,7 +55,7 @@ export class EpisodesComponent implements OnInit {
 
 
 
-    setTimeout(() => {
+   
       //getFull Episode Details for banner
       this.urlService.getEpFull(this.episodenum.id).subscribe((result: any) => {
         this.datar = result;
@@ -78,7 +78,7 @@ export class EpisodesComponent implements OnInit {
 
       })
 
-    }, 500);
+    
 
   }
 

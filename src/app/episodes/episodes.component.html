@@ -9,7 +9,7 @@
 <app-loading-spinner *ngIf="loader2"></app-loading-spinner>
 <div class="container" *ngIf="!errorep&&!erroryt&&!errorss&&!errortop">
     <div class="episodesContainer">
-        <div class="background-image" style="background:url({{datar.data.images.jpg.image_url}});    
+        <div *ngIf="dataload" class="background-image" style="background:url({{datar.data.images.jpg.image_url}});    
         height: 100%;
         width: 100%;
          background-attachment: fixed;
@@ -24,7 +24,7 @@
       
         <!-- <--------------- Summary content-------------->
         <div class="both" *ngIf="dataload">
-            <div class="left"><img class="img" [src]="datar.data.images.jpg.image_url"></div>
+            <div class="left"><img width="225" height="320" class="imgp" [src]="datar.data.images.jpg.image_url"></div>
             <div class="left">
                 <ul class="list-group list-group-flush" style="text-align:left;" *ngIf="dataload">
                     <li class="list-group-item" *ngIf="datar.data.title "><a class="title">Title:</a> <a
@@ -115,7 +115,7 @@
                             <span>
                                 <div style="background-color: black;border-radius: 20px;"
                                     *ngFor="let vid of viddata.data.promo">
-                                    <a [href]="vid.trailer.embed_url" target="tab"><img
+                                    <a [href]="vid.trailer.embed_url" target="tab"><img width="100" height="70"
                                             [src]="vid.trailer.images.image_url" style="content:none;padding-top:5px">
                                         <a>{{vid.title}}</a>
                                     </a>
@@ -159,7 +159,7 @@
                             <span>
                                 <div style="background-color: black;border-radius: 20px;"
                                     *ngFor="let vids of musicviddata.data.music_videos">
-                                    <a [href]="vids.video.embed_url" target="tabmusic"><img
+                                    <a [href]="vids.video.embed_url" target="tabmusic"><img width="100" height="70"
                                             [src]="vids.video.images.image_url" style="content:none;padding-top:5px">
                                         <a>{{vids.title}}</a>
                                     </a>
@@ -186,7 +186,7 @@
             <!-- <--------------- Relations content-------------->
             <div class="tab-pane fade " id="nav-relations" role="tabpanel" aria-labelledby="nav-relations-tab"
                 tabindex="0">
-                <div class="both1">
+                <div class="both1" *ngIf="showrelations" >
                     <app-relations *ngIf="showrelations" [id]="sendid()"></app-relations>
                 </div>
             </div>
@@ -194,6 +194,5 @@
         </div>
 
     </div>
-    <!-- <--------------- Recommendations content-------------->
-    <app-recommendations [id]="sendid()"></app-recommendations>
+
 </div>
