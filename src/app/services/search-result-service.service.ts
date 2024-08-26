@@ -80,7 +80,7 @@ export class SearchResultServiceService {
   }
   //get episode details
 consumetapi(id:any):Observable<any>{
-  return this.http.get("https://api.consumet.org/meta/anilist/info/"+id)
+  return this.http.get("https://consumetapi-beta.vercel.app/meta/anilist/info/"+id)
 }
 //get episode m3u8 links
 consumetepisodevid(episodeId:any):Observable<any>{
